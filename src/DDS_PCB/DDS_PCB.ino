@@ -3,26 +3,56 @@
 //Library for handling the SPI transfer
 #include <SPI.h>
 
-
+// Pin Descriptions:
+// SDATA_SPI - Data signal for SPI, used to program AD9833
+// SCLK_SPI - Clock signal for SPI, used to program AD9833
+//FSYNC - SYNC pin for SPI, used to program AD9833, but is routed by the ADG985 switch, where it is input to the DIN pin.
+//  SCLK_Switch - Clock for ADG984 switch
+// SYNC_Switch - Sync pin for switch. Active low, set low allows progamming of switches
+//  RESET_Switch - Reset pin for switch. Active low, Resets all switches to default, open, position.
+// DIN_Switch - Send the values to open/close switches
 
 //Variable for the SPI Enable pin
-#define FSYNCPin 5
+#define FSYNC_Pin 5
+#define SDATA_SPI_Pin 11
+#define SCLK_SPI_Pin  13
 
+#define SCLK_SWITCH_Pin 9
+#define SYNC_SWITCH_Pin 2
+#define RESET_SWITCH_Pin 3
+#define DIN_SWITCH_Pin 4
+
+
+//Clock generator frequency
+#define DDS_CLOCK_FREQUENCY 5e5 //500kHz
 void setup() {
 
-Serial.begin(9600);
+  Serial.begin(9600);
 
   // For SPI data transfer setup
+
+  pinMode(FSYNC_Pin, OUTPUT); 
+  pinMode(SDATA_SPI_Pin, OUTPUT); 
+  pinMode(SCLK_SPI_Pin, OUTPUT); 
   
-  pinMode(FSYNCPin, OUTPUT); //FSYNC on pin 5
-  pinMode(11, OUTPUT); //SDATA on pin 11
-  pinMode(13, OUTPUT); //SCLK on pin 13
+  
+   digitalWrite(FSYNC_Pin, HIGH); //Set FSYNC High. FSYNC is active low
+  digitalWrite(SDATA_SPI_Pin, LOW); //Set SDATA Low
+  digitalWrite(SCLK_SPI_Pin, LOW); //Set SCLK Low
 
-  digitalWrite(5, HIGH); //Set FSYNC High. FSYNC is active low
-  digitalWrite(11, LOW); //Set SDATA Low
-  digitalWrite(13, LOW); //Set SCLK Low
+  //For Digital Switch
+  pinMode (SCLK_SWITCH_Pin, OUTPUT);
+  pinMode (SYNC_SWITCH_Pin, OUTPUT);
+  pinMode (RESET_SWITCH_Pin, OUTPUT);
+  pinMode (DIN_SWITCH_Pin, OUTPUT);
 
-//Arduino handles most of the underlying SPI transfer by itself
+  digitalWrite ( SCLK_SWITCH_Pin, LOW );
+  digitalWrite ( DIN_SWITCH_Pin, LOW );
+  digitalWrite ( SYNC_SWITCH_Pin, HIGH );  
+  digitalWrite ( RESET_SWITCH_Pin, HIGH );
+
+ 
+  //Arduino handles most of the underlying SPI transfer by itself, set it up here
   SPI.begin();  //Enable SPI
   SPI.setBitOrder(MSBFIRST);  //Send data Most significant bit first, this is necessary for the AD9833
   SPI.setDataMode(SPI_MODE2);  //Set SPI Mode 2 (Data captured on falling edge of clock, clock inversion on)
@@ -30,60 +60,33 @@ Serial.begin(9600);
 
 }
 
+
+
 void loop() {
-delay(100);
-//Program the AD9833, see http://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf for more details
 
-//// Code for generating the frequency registers
-//
-int f = 5000;// set output frequency 
-//
-unsigned long  F_MCLK = 2e5;    //AD9833 crystal oscillator clock: 25Mhz
-unsigned long freq = (unsigned long)(0x10000000 / F_MCLK * f); //frequency value to send to AD9833, needs to be separated into two parts
-unsigned int msb = (freq >> 14); //4 MSB of long are 0, this gets the next 14 MSB
-unsigned int lsb = (freq & 0x3fff); // Gives the 14 LSB
+  int freqA = 2000;// set output frequency
+  int freqB = 5000;
+  int freqC = 10000;
+  
+  int ChanA = 1;
+  int ChanB = 2;
+  int ChanC = 3;
+  unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;   
+  
+   Set_AD9833_Frequency(1000,F_MCLK,1);
 
-//Now we have two sets of 14 bits. Each word to be sent to the AD9833 should be 16 bits, with the 2 MSB indicating which register to send to
-//Here, using Register 0 (set 2 MSB to 01). To use Register 1, set 2MSB to 10 ( msb | 0x8000) 
-msb = msb | 0x4000;
-lsb = lsb | 0x4000;
+       Set_AD9833_Frequency(2500,F_MCLK,2);
 
-/*Serial.print(msb,HEX);
-Serial.print("\n");
-Serial.print(lsb,HEX);
-Serial.print("\n");
-*/
-//Frequency is controlled by a 28 bit word, which has to be inputted in two parts
+              Set_AD9833_Frequency(10000,F_MCLK,3);
 
- AD9833_SendWord(0x2000); //Control register
- AD9833_SendWord(lsb); //Frequency Regsiter part 1 (LSB)
- AD9833_SendWord(msb);  //Frequency Register part 2 (MSB)
- AD9833_SendWord(0xC000);  //Phase regsister, don't need to change this at the moment, so set to 0 phase
- //AD9833_SendWord(0x2000);  //Exit reset, sets the device to run
+while(1) {
+  delay(1000);
+}
+//digitalWrite(FSYNC_Pin, HIGH); //Set FSYNC High. FSYNC is active low
 
-
-  //Loop every 10 seconds, don't need to do this, but for testing this is better as we can see the signals coming to the board
- delay(2000);
-AD9833_SendWord(0x2100);
-delay(1000);
+  
 
 }
 
-
-//SPI Data write
-//Can only send 8 bits at a time, so this splits up a 16 bit word and sends it as two parts
-
-void AD9833_SendWord(unsigned int data) {
-  
-  //enable SPI on slave device
-  digitalWrite(FSYNCPin, LOW);
-  
-  //Send 16 bit word as two 8 bit sections
-  SPI.transfer((data >> 8) & 0xFF);
-  SPI.transfer(data & 0xFF);
-  
-  //Disable SPI on slave device
-  digitalWrite(FSYNCPin, HIGH);
-}
 
 
