@@ -1,12 +1,6 @@
-
-//To do:
-
-//Figure out wierd thing with DDS not programming correctly
-//Tidy up code for switches/DDS
-//      - Turning on/off FYSNC pin before each write to DDS. Fix this in next iteration by making sure Digital isolators are high in the default state.
-
-//Library for handling the SPI transfer
-#include <SPI.h>
+/* Code for programming the prototype Parallel CS board
+Tom Dowrick 19.10.2015
+*/
 
 // Pin Descriptions:
 // SDATA_SPI - Data signal for SPI, used to program AD9833
@@ -16,6 +10,9 @@
 // SYNC_Switch - Sync pin for switch. Active low, set low allows progamming of switches
 //  RESET_Switch - Reset pin for switch. Active low, Resets all switches to default, open, position.
 // DIN_Switch - Send the values to open/close switches
+
+//Library for handling the SPI transfer
+#include <SPI.h>
 
 //Variable for the SPI Enable pin
 #define FSYNC_Pin 5
@@ -27,21 +24,21 @@
 #define RESET_SWITCH_Pin 3
 #define DIN_SWITCH_Pin 4
 
+//Clock generator frequency, set by resistor R_SET on the PCB. This is used in the formula for setting the DDS sine wave frequency
+#define DDS_CLOCK_FREQUENCY 5e5
 
-//Clock generator frequency
-#define DDS_CLOCK_FREQUENCY 5e5 //500kHz
 void setup() {
 
   Serial.begin(9600);
 
   // For SPI data transfer setup
 
-  pinMode(FSYNC_Pin, OUTPUT); 
-  pinMode(SDATA_SPI_Pin, OUTPUT); 
-  pinMode(SCLK_SPI_Pin, OUTPUT); 
-  
-  
-   digitalWrite(FSYNC_Pin, HIGH); //Set FSYNC High. FSYNC is active low
+  pinMode(FSYNC_Pin, OUTPUT);
+  pinMode(SDATA_SPI_Pin, OUTPUT);
+  pinMode(SCLK_SPI_Pin, OUTPUT);
+
+
+  digitalWrite(FSYNC_Pin, HIGH); //Set FSYNC High. FSYNC is active low
   digitalWrite(SDATA_SPI_Pin, LOW); //Set SDATA Low
   digitalWrite(SCLK_SPI_Pin, LOW); //Set SCLK Low
 
@@ -53,10 +50,10 @@ void setup() {
 
   digitalWrite ( SCLK_SWITCH_Pin, LOW );
   digitalWrite ( DIN_SWITCH_Pin, LOW );
-  digitalWrite ( SYNC_SWITCH_Pin, HIGH );  
+  digitalWrite ( SYNC_SWITCH_Pin, HIGH );
   digitalWrite ( RESET_SWITCH_Pin, HIGH );
 
- 
+
   //Arduino handles most of the underlying SPI transfer by itself, set it up here
   SPI.begin();  //Enable SPI
   SPI.setBitOrder(MSBFIRST);  //Send data Most significant bit first, this is necessary for the AD9833
@@ -69,27 +66,27 @@ void setup() {
 
 void loop() {
 
-  int freqA = 2000;// set output frequency
-  int freqB = 5000;
-  int freqC = 10000;
-  
-  int ChanA = 1;
-  int ChanB = 2;
-  int ChanC = 3;
-  unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;   
-  
-   Set_AD9833_Frequency(4000,F_MCLK,2);
 
-       Set_AD9833_Frequency(8000,F_MCLK,3);
+  unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
 
-              Set_AD9833_Frequency(1000,F_MCLK,1);
+  int Freqs[3] = {2000, 5000, 10000};
+  int Chans[3] = {1, 2, 3};
 
-//while(1) {
-  delay(1000);
-//}
-//digitalWrite(FSYNC_Pin, HIGH); //Set FSYNC High. FSYNC is active low
+  //Number of channels being used
+  int n_chans = sizeof(Chans);
 
-  
+//Loop through each freq/chan pair and program the switches/DDS chip
+  for (int i = 0; i < n_chans; i++) {
+    Set_AD9833_Frequency(Freqs[i], F_MCLK, Chans[i]);
+  }
+
+
+//Idle loop
+ // while (1) {
+    delay(1000);
+  //}
+
+
 
 }
 
