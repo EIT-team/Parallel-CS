@@ -1,4 +1,9 @@
 
+//To do:
+
+//Figure out wierd thing with DDS not programming correctly
+//Tidy up code for switches/DDS
+//      - Turning on/off FYSNC pin before each write to DDS. Fix this in next iteration by making sure Digital isolators are high in the default state.
 
 //Library for handling the SPI transfer
 #include <SPI.h>
@@ -73,15 +78,15 @@ void loop() {
   int ChanC = 3;
   unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;   
   
-   Set_AD9833_Frequency(1000,F_MCLK,1);
+   Set_AD9833_Frequency(4000,F_MCLK,2);
 
-       Set_AD9833_Frequency(2500,F_MCLK,2);
+       Set_AD9833_Frequency(8000,F_MCLK,3);
 
-              Set_AD9833_Frequency(10000,F_MCLK,3);
+              Set_AD9833_Frequency(1000,F_MCLK,1);
 
-while(1) {
+//while(1) {
   delay(1000);
-}
+//}
 //digitalWrite(FSYNC_Pin, HIGH); //Set FSYNC High. FSYNC is active low
 
   

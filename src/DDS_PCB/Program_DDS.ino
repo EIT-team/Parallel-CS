@@ -1,4 +1,4 @@
-
+#define DELAY_TIME 5
 void Set_AD9833_Frequency(int freq, unsigned long F_MCLK, int chan) {
   
   /*Program the AD9833, see http://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf for more details
@@ -22,24 +22,24 @@ void Set_AD9833_Frequency(int freq, unsigned long F_MCLK, int chan) {
   */
   //Frequency is controlled by a 28 bit word, which has to be inputted in two parts
  Set_ADG984(chan);
-delay(1);
+delay(DELAY_TIME);
   AD9833_SendWord(0x2000); //Control register
-   delay(1);
+   delay(DELAY_TIME);
  Set_ADG984(chan);
-delay(1);
+delay(DELAY_TIME);
   AD9833_SendWord(lsb); //Frequency Regsiter part 1 (LSB)
-  delay(1);
+  delay(DELAY_TIME);
  Set_ADG984(chan);
- delay(1);
+ delay(DELAY_TIME);
   AD9833_SendWord(msb);  //Frequency Register part 2 (MSB)
-  delay(1);
+  delay(DELAY_TIME);
  Set_ADG984(chan);
- delay(1);
+ delay(DELAY_TIME);
   AD9833_SendWord(0xC000);  //Phase regsister, don't need to change this at the moment, so set to 0 phase
-  delay(1);
+  delay(DELAY_TIME);
 
   //AD9833_SendWord(0x2000);  //Exit reset, sets the device to run
-delay(1);
+delay(DELAY_TIME);
 
 }
 
@@ -56,6 +56,7 @@ Can only send 8 bits at a time, so this splits up a 16 bit word and sends it as 
   SPI.transfer((data >> 8) & 0xFF);
   SPI.transfer(data & 0xFF);
 
+delay(DELAY_TIME);
   //Disable SPI 
    Set_ADG984(8);
 
