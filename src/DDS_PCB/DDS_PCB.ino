@@ -67,28 +67,52 @@ void setup() {
 void loop() {
 
 
-  unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
+unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
 
-  int Freqs[3] = {2000, 5000, 10000};
-  int Chans[3] = {1, 2, 3};
+  int Freqs[3] = {1000, 2000, 3000};
+  
 
   //Number of channels being used
-  int n_chans = sizeof(Chans);
+  int n_chans = sizeof(Freqs);
 
 //Loop through each freq/chan pair and program the switches/DDS chip
-  for (int i = 0; i < n_chans; i++) {
-    Set_AD9833_Frequency(Freqs[i], F_MCLK, Chans[i]);
-  }
 
+
+//  for (int i = 0; i < n_chans; i++) {
+//    Set_AD9833_Frequency(Freqs[i], F_MCLK, i+1);
+//  }
+
+
+delay(1000);
+
+ Set_AD9833_Frequency(500, F_MCLK, 2);
+  Set_AD9833_Frequency(2500, F_MCLK, 3);
+Sweep_Freq(50,3000,1,1000);
+
+  
 
 //Idle loop
  // while (1) {
-    delay(1000);
   //}
 
 
 
 }
+
+//Sweeps the frequency output on a channel, with increment and max value set by user.
+
+void Sweep_Freq (int freq_step, int freq_max, int chan, int delay_time) {
+  
+    unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
+
+  for (int i = freq_step ; i <=freq_max;i = i + freq_step)
+  {
+   Set_AD9833_Frequency(i, F_MCLK, chan);
+        delay(delay_time); 
+  }
+  
+}
+  
 
 
 

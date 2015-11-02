@@ -3,7 +3,7 @@
 
 
 
-#define DELAY_TIME 20    //Time to delay after programming switches
+#define DELAY_TIME 50    //Time to delay after programming switches
 #define CONTROL_REGISTER_VALUE 0x2000    //Default value for control register of DDS chip
 #define PHASE_REGISTER_VALUE 0xC000      //Default value for phase register of DDS chip
 
@@ -32,7 +32,7 @@ void Set_AD9833_Frequency(int freq, unsigned long F_MCLK, int chan) {
 void AD9833_SendWord(unsigned int data, int chan) {
   /*SPI Data write
   Can only send 8 bits at a time, so this splits up a 16 bit word and sends it as two parts
-  Add in 5ms delay before/after SPI transfer to ensure that switches have been opened correctly */
+  Add in several ms delay before/after SPI transfer to account for propagation delay differences between digital isolators and switching circuitry */
 
   //Set FSYNC pin on the DDS chip we want to program
   Set_ADG984(chan);
