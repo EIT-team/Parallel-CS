@@ -6,6 +6,8 @@
 #define DELAY_TIME 50    //Time to delay after programming switches
 #define CONTROL_REGISTER_VALUE 0x2000    //Default value for control register of DDS chip
 #define PHASE_REGISTER_VALUE 0xC000      //Default value for phase register of DDS chip
+#define RESET_CONTROL_REGISTER 0x2100    //Reset control register of DDS to produce midscale output
+
 
 void Set_AD9833_Frequency(int freq, unsigned long F_MCLK, int chan) {
  
@@ -49,4 +51,46 @@ void AD9833_SendWord(unsigned int data, int chan) {
 
 
 }
+
+
+//Sweeps the frequency output on a channel, with increment and max value set by user.
+
+void Sweep_Freq (int freq_min, int freq_step, int freq_max, int chan, int delay_time) {
+  
+    unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
+
+  for (int i = freq_min ; i <=freq_max;i = i + freq_step)
+  {
+
+        Set_AD9833_Frequency(500, F_MCLK, 2);
+  Set_AD9833_Frequency(2500, F_MCLK, 3);
+  
+
+   Set_AD9833_Frequency(i, F_MCLK, chan);
+   delay(delay_time);
+     Reset_DDS(2);
+    Reset_DDS(3);
+    
+    delay(delay_time); 
+    
+  }
+  
+}
+
+//Resets all channels to default output (essentially off)
+void Reset_DDS(int chan) {
+
+AD9833_SendWord(RESET_CONTROL_REGISTER, chan); 
+}
+
+
+void Reset_All(int n_chans) {
+
+  for (int j = 1; j <= n_chans  ; j++) {
+  Reset_DDS(j);
+}
+}
+
+
+
 

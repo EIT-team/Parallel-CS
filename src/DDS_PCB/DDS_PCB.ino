@@ -83,13 +83,15 @@ unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
 //  }
 
 
-delay(1000);
+// Frequency Sweep
+Reset_All(n_chans);
+delay(10000);
 
- Set_AD9833_Frequency(500, F_MCLK, 2);
-  Set_AD9833_Frequency(2500, F_MCLK, 3);
-Sweep_Freq(50,3000,1,1000);
 
-  
+Sweep_Freq(500,100,3000,1,10000);
+
+Reset_All(n_chans);
+delay(50000);
 
 //Idle loop
  // while (1) {
@@ -98,21 +100,4 @@ Sweep_Freq(50,3000,1,1000);
 
 
 }
-
-//Sweeps the frequency output on a channel, with increment and max value set by user.
-
-void Sweep_Freq (int freq_step, int freq_max, int chan, int delay_time) {
-  
-    unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
-
-  for (int i = freq_step ; i <=freq_max;i = i + freq_step)
-  {
-   Set_AD9833_Frequency(i, F_MCLK, chan);
-        delay(delay_time); 
-  }
-  
-}
-  
-
-
 
