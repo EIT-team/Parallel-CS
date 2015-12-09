@@ -79,7 +79,7 @@ Serial.print('\n');
 //Loop through each freq/chan pair and program the switches/DDS chip
 
 
-  for (int i = 6; i < n_chans; i++) {
+  for (int i = 0; i < n_chans; i++) {
      Serial.print(i);
     Serial.print('\n');
 
