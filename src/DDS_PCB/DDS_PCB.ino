@@ -27,6 +27,12 @@ Tom Dowrick 19.10.2015
 //Clock generator frequency, set by resistor R_SET on the PCB. This is used in the formula for setting the DDS sine wave frequency
 #define DDS_CLOCK_FREQUENCY 10e6
 
+//*/*/*
+//##############################CHANGE FREQUENCIES HERE################
+int Freqs[8] = {6000,10000,14000,18000,22000,26000,30000,34000};
+//#######################################
+//*/*/*/
+
 void setup() {
 
   Serial.begin(9600);
@@ -69,23 +75,16 @@ void loop() {
 
 unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
 
-  int Freqs[8] = {1000, 2000, 3000,4000,5000,6000,7000,25000};
-  
-
-  //Number of channels being used
-  int n_chans = sizeof(Freqs)/sizeof(int);
-Serial.print(n_chans);
-Serial.print('\n');
-//Loop through each freq/chan pair and program the switches/DDS chip
-
-
-  for (int i = 0; i < n_chans; i++) {
-     Serial.print(i);
-    Serial.print('\n');
-
-    Set_AD9833_Frequency(Freqs[i], F_MCLK, i+1);
+ 
    
-  }
+  int n_chans = sizeof(Freqs)/sizeof(int);
+  
+  //Test_Single_Chan(Freqs,8,2);
+  
+  Program_Freqs (Freqs,n_chans);
+
+
+
 
 delay(1000);
 
@@ -107,3 +106,35 @@ delay(1000);
 
 }
 
+void Program_Freqs (int Freqs [], int n_chans) {
+ 
+  unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
+
+
+Serial.print(n_chans);
+Serial.print('\n');
+//Loop through each freq/chan pair and program the switches/DDS chip
+
+
+  for (int i = 0; i < n_chans; i++) {
+    Serial.print(i);
+    Serial.print('\n');
+
+    Set_AD9833_Frequency(Freqs[i], F_MCLK, i+1);
+   
+  }
+  
+}
+
+
+void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
+    unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
+Serial.print("Single Chan Sweep");
+
+  for (int i = 0; i < n_freqs; i++) {
+
+      Set_AD9833_Frequency(Freqs[i], F_MCLK, chan);
+  delay(2500);
+  }
+  
+}

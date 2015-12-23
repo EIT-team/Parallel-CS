@@ -9,7 +9,6 @@ Achieve this by sending an FSYNC signal from the microcontroller which is always
 void Set_ADG984 (int channel_to_open) {
 
   //Reset switches
-  Serial.print("Programming Switches\n");
   
   //digitalWrite(RESET_SWITCH_Pin, LOW);
   //digitalWrite(RESET_SWITCH_Pin, HIGH);
@@ -27,8 +26,8 @@ void Set_ADG984 (int channel_to_open) {
     //Sets the target channel to digital LOW, by open circuting the switch, causing the digital isolator to take its default value of digital LOW
       if (j == channel_to_open) {
         digitalWrite(DIN_SWITCH_Pin, LOW);
-        Serial.print(j);
-        Serial.print("LOW \n");
+       // Serial.print(j);
+       // Serial.print("LOW \n");
       }
     //Sets all other channels digital HIGH, by connecting to the high FYSNC signal coming from the microcontroller.
      else        
