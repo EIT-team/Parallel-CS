@@ -9,7 +9,7 @@ Achieve this by sending an FSYNC signal from the microcontroller which is always
 void Set_ADG984 (int channel_to_open) {
 
   //Reset switches
-  
+  //
   //digitalWrite(RESET_SWITCH_Pin, LOW);
   //digitalWrite(RESET_SWITCH_Pin, HIGH);
 

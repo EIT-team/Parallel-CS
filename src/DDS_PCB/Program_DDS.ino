@@ -1,7 +1,7 @@
 /*Program the AD9833, see http://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf for more details
   Calculates register values needed to program specific frequency and then uses AD9833_SendWord function to actually program the chip using SPI*/
 
-
+//
 
 #define DELAY_TIME 100    //Time to delay after programming switches
 #define CONTROL_REGISTER_VALUE 0x2000    //Default value for control register of DDS chip
