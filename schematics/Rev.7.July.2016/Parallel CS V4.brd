@@ -3491,7 +3491,7 @@ design rules under a new name.</description>
 <wire x1="43.42" y1="62" x2="14" y2="62" width="0.6096" layer="16"/>
 <wire x1="14" y1="62" x2="10.5" y2="65.5" width="0.6096" layer="16"/>
 <wire x1="10.5" y1="65.5" x2="3.5" y2="65.5" width="0.6096" layer="16"/>
-<wire x1="3.5" y1="65.5" x2="11" y2="136" width="0" layer="19" extent="1-16"/>
+<wire x1="10.5" y1="65.5" x2="11" y2="136" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="VSS">
 <contactref element="JP1" pad="1"/>
