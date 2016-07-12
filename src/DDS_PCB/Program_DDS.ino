@@ -9,7 +9,7 @@
 #define RESET_CONTROL_REGISTER 0x2100    //Reset control register of DDS to produce midscale output
 
 
-void Set_AD9833_Frequency(int freq, unsigned long F_MCLK, int chan) {
+void Set_AD9833_Frequency(long freq, unsigned long F_MCLK, int chan) {
  
 
   // Generating the frequency registers from the desired frequency

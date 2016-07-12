@@ -29,7 +29,8 @@ Tom Dowrick 19.10.2015
 
 //*/*/*
 //##############################CHANGE FREQUENCIES HERE################
-int Freqs[8] = {6000,9000,12000,15000,9000,26000,12000,15000};
+// 10.6.2015 - Sources 1, 5, 7, 8 working.
+long Freqs[8] = {6000,8888,8888,8888,70000,8888,8000,9000};
 //#######################################
 //*/*/*/
 
@@ -77,7 +78,7 @@ unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
 
  
    
-  int n_chans = sizeof(Freqs)/sizeof(int);
+  int n_chans = sizeof(Freqs)/sizeof(long);
   
   //Test_Single_Chan(Freqs,8,2);
   
@@ -106,7 +107,7 @@ delay(1000);
 
 }
 
-void Program_Freqs (int Freqs [], int n_chans) {
+void Program_Freqs (long Freqs [], int n_chans) {
  
   unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
 
