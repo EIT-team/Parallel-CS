@@ -28,6 +28,19 @@ void Set_AD9833_Frequency(long freq, unsigned long F_MCLK, int chan) {
   AD9833_SendWord(msb, chan);                         //Frequency Register part 2 (MSB)
   AD9833_SendWord(PHASE_REGISTER_VALUE, chan);        //Phase regsister, don't need to change this at the moment, so set to 0 phase
 
+}
+
+void Set_AD9833_Phase(int phase, int chan) {
+ 
+  float phase_max  = 4096;
+  
+  // Calculate phase word for required phase value
+  unsigned int phase_word = (PHASE_REGISTER_VALUE + (phase/360.0) * phase_max); // The phase on the DDS is equal to 12 LSB of phase word * 2*pi/4096 
+  Serial.println(phase_word);
+
+  //Set control register, frequency register (in two parts LSB and MSB) and phase register
+  AD9833_SendWord(phase_word, chan);        //Phase regsister
+
 } 
 
 

@@ -73,9 +73,9 @@ void loop() {
 
 byte byteRead; // Serial read data
 unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
-int chan_to_prog;
-int freq_to_prog;
- 
+int chan_to_prog; //Channel number
+int val_to_prog; //Frequency (Hz) or phase (degrees) value
+String what_to_prog; //Freq/Phase
    
   int n_chans = sizeof(Freqs)/sizeof(long);
   
@@ -87,13 +87,19 @@ int freq_to_prog;
 // Input 'chan_to_prog freq_to_prog' pair to serial monitor 
   while (1) {
     if (Serial.available()) {
+      what_to_prog = Serial.readStringUntil(' ');
       chan_to_prog = Serial.parseInt();
-      freq_to_prog = Serial.parseInt();
+      val_to_prog = Serial.parseInt();
+      Serial.println(what_to_prog);
       Serial.println(chan_to_prog);
-      Serial.println(freq_to_prog);
+      Serial.println(val_to_prog);
 
-      Set_AD9833_Frequency(freq_to_prog, F_MCLK, chan_to_prog);
-
+      if (what_to_prog == "freq") {
+        Set_AD9833_Frequency(val_to_prog, F_MCLK, chan_to_prog);
+      }
+      else {
+        Set_AD9833_Phase(val_to_prog, chan_to_prog);
+      }
     }
   }
 
