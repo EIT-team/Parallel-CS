@@ -27,12 +27,10 @@ Tom Dowrick 19.10.2015
 //Clock generator frequency, set by resistor R_SET on the PCB. This is used in the formula for setting the DDS sine wave frequency
 #define DDS_CLOCK_FREQUENCY 10e6
 
-//*/*/*
 //##############################CHANGE FREQUENCIES HERE################
-// 10.6.2015 - Sources 1, 5, 7, 8 working.
-long Freqs[8] = {6000,8888,8888,8888,70000,8888,8000,9000};
+// 10.6.2015 - Sources 1, 5, 7, 8 working. Clock of 5 is malfunctioning and running 10x slower, so need to set freq 10x higher!
+long Freqs[8] = {1000,1000,1000,1000,1000,1000,1000,1000};
 //#######################################
-//*/*/*/
 
 void setup() {
 
@@ -73,9 +71,10 @@ void setup() {
 
 void loop() {
 
-
+byte byteRead; // Serial read data
 unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
-
+int chan_to_prog;
+int freq_to_prog;
  
    
   int n_chans = sizeof(Freqs)/sizeof(long);
@@ -84,8 +83,19 @@ unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
   
   Program_Freqs (Freqs,n_chans);
 
+// Allow setting of frequency from serial monitor
+// Input 'chan_to_prog freq_to_prog' pair to serial monitor 
+  while (1) {
+    if (Serial.available()) {
+      chan_to_prog = Serial.parseInt();
+      freq_to_prog = Serial.parseInt();
+      Serial.println(chan_to_prog);
+      Serial.println(freq_to_prog);
 
+      Set_AD9833_Frequency(freq_to_prog, F_MCLK, chan_to_prog);
 
+    }
+  }
 
 delay(1000);
 
