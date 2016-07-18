@@ -83,8 +83,9 @@ String what_to_prog; //Freq/Phase
   
   Program_Freqs (Freqs,n_chans);
 
-// Allow setting of frequency from serial monitor
-// Input 'chan_to_prog freq_to_prog' pair to serial monitor 
+// Allow setting of frequency/phase from serial monitor
+// Input 'freq chan_to_prog val_to_prog' to program frequency
+// 'phase chan_to_prog val_to prog' to set phase
   while (1) {
     if (Serial.available()) {
       what_to_prog = Serial.readStringUntil(' ');
@@ -99,6 +100,9 @@ String what_to_prog; //Freq/Phase
       }
       else {
         Set_AD9833_Phase(val_to_prog, chan_to_prog);
+
+//        Serial.println(analogRead(0));
+//        Serial.println(analogRead(1));
       }
     }
   }
