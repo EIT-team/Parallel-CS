@@ -3068,11 +3068,11 @@ design rules under a new name.</description>
 <element name="R_HOW2" library="rcl" package="R0805" value="100k" x="71.07" y="137.7" rot="R180"/>
 <element name="R_HOW3" library="rcl" package="R0805" value="100k" x="69.73" y="140.7" rot="R180"/>
 <element name="R_HOW4" library="rcl" package="R0805" value="100k" x="69.39" y="132.7" rot="R180"/>
-<element name="R_HOW5" library="rcl" package="R0805" value="100k" x="74.45" y="143.8"/>
+<element name="R_HOW5" library="rcl" package="R0805" value="1k" x="74.45" y="143.8"/>
 <element name="R_HOW6" library="rcl" package="R0805" value="100k" x="74.41" y="140.65"/>
 <element name="R_HOW7" library="rcl" package="R0805" value="100k" x="90.15" y="140.75" rot="R270"/>
 <element name="R_HOW8" library="rcl" package="R0805" value="1k" x="91.09" y="144.65"/>
-<element name="R_HOW9" library="rcl" package="R0805" value="1k" x="74.43" y="147.15"/>
+<element name="R_HOW9" library="rcl" package="R0805" value="100k" x="74.43" y="147.15"/>
 <element name="R_PULLUP" library="rcl" package="R0805" value="10k" x="19.09" y="137.18" rot="R90"/>
 <element name="R_S2D1" library="rcl" package="R0805" value="10k" x="53.15" y="142.46" rot="R270"/>
 <element name="R_S2D2" library="rcl" package="R0805" value="10k" x="49.35" y="139.65" rot="R90"/>
@@ -3165,11 +3165,11 @@ design rules under a new name.</description>
 <element name="R_HOW13" library="rcl" package="R0805" value="100k" x="71.07" y="119.7" rot="R180"/>
 <element name="R_HOW14" library="rcl" package="R0805" value="100k" x="69.73" y="122.7" rot="R180"/>
 <element name="R_HOW15" library="rcl" package="R0805" value="100k" x="69.39" y="114.7" rot="R180"/>
-<element name="R_HOW16" library="rcl" package="R0805" value="100k" x="74.45" y="125.8"/>
+<element name="R_HOW16" library="rcl" package="R0805" value="1k" x="74.45" y="125.8"/>
 <element name="R_HOW17" library="rcl" package="R0805" value="100k" x="74.41" y="122.65"/>
 <element name="R_HOW18" library="rcl" package="R0805" value="100k" x="90.15" y="122.75" rot="R270"/>
 <element name="R_HOW19" library="rcl" package="R0805" value="1k" x="91.09" y="126.65"/>
-<element name="R_HOW20" library="rcl" package="R0805" value="1k" x="74.43" y="129.15"/>
+<element name="R_HOW20" library="rcl" package="R0805" value="100k" x="74.43" y="129.15"/>
 <element name="R_PULLUP1" library="rcl" package="R0805" value="10k" x="19.09" y="119.18" rot="R90"/>
 <element name="R_S2D5" library="rcl" package="R0805" value="10k" x="53.15" y="124.46" rot="R270"/>
 <element name="R_S2D6" library="rcl" package="R0805" value="10k" x="49.35" y="121.65" rot="R90"/>
@@ -3220,11 +3220,11 @@ design rules under a new name.</description>
 <element name="R_HOW23" library="rcl" package="R0805" value="100k" x="71.07" y="101.7" rot="R180"/>
 <element name="R_HOW24" library="rcl" package="R0805" value="100k" x="69.73" y="104.7" rot="R180"/>
 <element name="R_HOW25" library="rcl" package="R0805" value="100k" x="69.39" y="96.7" rot="R180"/>
-<element name="R_HOW26" library="rcl" package="R0805" value="100k" x="74.45" y="107.8"/>
+<element name="R_HOW26" library="rcl" package="R0805" value="1k" x="74.45" y="107.8"/>
 <element name="R_HOW27" library="rcl" package="R0805" value="100k" x="74.41" y="104.65"/>
 <element name="R_HOW28" library="rcl" package="R0805" value="100k" x="90.15" y="104.75" rot="R270"/>
 <element name="R_HOW29" library="rcl" package="R0805" value="1k" x="91.09" y="108.65"/>
-<element name="R_HOW30" library="rcl" package="R0805" value="1k" x="74.43" y="111.15"/>
+<element name="R_HOW30" library="rcl" package="R0805" value="100k" x="74.43" y="111.15"/>
 <element name="R_PULLUP2" library="rcl" package="R0805" value="10k" x="19.09" y="101.18" rot="R90"/>
 <element name="R_S2D9" library="rcl" package="R0805" value="10k" x="53.15" y="106.46" rot="R270"/>
 <element name="R_S2D10" library="rcl" package="R0805" value="10k" x="49.35" y="103.65" rot="R90"/>
@@ -3275,11 +3275,11 @@ design rules under a new name.</description>
 <element name="R_HOW33" library="rcl" package="R0805" value="100k" x="71.07" y="45.7" rot="R180"/>
 <element name="R_HOW34" library="rcl" package="R0805" value="100k" x="69.73" y="48.7" rot="R180"/>
 <element name="R_HOW35" library="rcl" package="R0805" value="100k" x="69.39" y="40.7" rot="R180"/>
-<element name="R_HOW36" library="rcl" package="R0805" value="100k" x="74.45" y="51.8"/>
+<element name="R_HOW36" library="rcl" package="R0805" value="1k" x="74.45" y="51.8"/>
 <element name="R_HOW37" library="rcl" package="R0805" value="100k" x="74.41" y="48.65"/>
 <element name="R_HOW38" library="rcl" package="R0805" value="100k" x="90.15" y="48.75" rot="R270"/>
 <element name="R_HOW39" library="rcl" package="R0805" value="1k" x="91.09" y="52.65"/>
-<element name="R_HOW40" library="rcl" package="R0805" value="1k" x="74.43" y="55.15"/>
+<element name="R_HOW40" library="rcl" package="R0805" value="100k" x="74.43" y="55.15"/>
 <element name="R_PULLUP3" library="rcl" package="R0805" value="10k" x="19.09" y="45.18" rot="R90"/>
 <element name="R_S2D13" library="rcl" package="R0805" value="10k" x="53.15" y="50.46" rot="R270"/>
 <element name="R_S2D14" library="rcl" package="R0805" value="10k" x="49.35" y="47.65" rot="R90"/>
@@ -3330,11 +3330,11 @@ design rules under a new name.</description>
 <element name="R_HOW43" library="rcl" package="R0805" value="100k" x="71.07" y="27.7" rot="R180"/>
 <element name="R_HOW44" library="rcl" package="R0805" value="100k" x="69.73" y="30.7" rot="R180"/>
 <element name="R_HOW45" library="rcl" package="R0805" value="100k" x="69.39" y="22.7" rot="R180"/>
-<element name="R_HOW46" library="rcl" package="R0805" value="100k" x="74.45" y="33.8"/>
+<element name="R_HOW46" library="rcl" package="R0805" value="1k" x="74.45" y="33.8"/>
 <element name="R_HOW47" library="rcl" package="R0805" value="100k" x="74.41" y="30.65"/>
 <element name="R_HOW48" library="rcl" package="R0805" value="100k" x="90.15" y="30.75" rot="R270"/>
 <element name="R_HOW49" library="rcl" package="R0805" value="1k" x="91.09" y="34.65"/>
-<element name="R_HOW50" library="rcl" package="R0805" value="1k" x="74.43" y="37.15"/>
+<element name="R_HOW50" library="rcl" package="R0805" value="100k" x="74.43" y="37.15"/>
 <element name="R_PULLUP4" library="rcl" package="R0805" value="10k" x="19.09" y="27.18" rot="R90"/>
 <element name="R_S2D17" library="rcl" package="R0805" value="10k" x="53.15" y="32.46" rot="R270"/>
 <element name="R_S2D18" library="rcl" package="R0805" value="10k" x="49.35" y="29.65" rot="R90"/>
@@ -3385,11 +3385,11 @@ design rules under a new name.</description>
 <element name="R_HOW53" library="rcl" package="R0805" value="100k" x="71.07" y="9.7" rot="R180"/>
 <element name="R_HOW54" library="rcl" package="R0805" value="100k" x="69.73" y="12.7" rot="R180"/>
 <element name="R_HOW55" library="rcl" package="R0805" value="100k" x="69.39" y="4.7" rot="R180"/>
-<element name="R_HOW56" library="rcl" package="R0805" value="100k" x="74.45" y="15.8"/>
+<element name="R_HOW56" library="rcl" package="R0805" value="1k" x="74.45" y="15.8"/>
 <element name="R_HOW57" library="rcl" package="R0805" value="100k" x="74.41" y="12.65"/>
 <element name="R_HOW58" library="rcl" package="R0805" value="100k" x="90.15" y="12.75" rot="R270"/>
 <element name="R_HOW59" library="rcl" package="R0805" value="1k" x="91.09" y="16.65"/>
-<element name="R_HOW60" library="rcl" package="R0805" value="1k" x="74.43" y="19.15"/>
+<element name="R_HOW60" library="rcl" package="R0805" value="100k" x="74.43" y="19.15"/>
 <element name="R_PULLUP5" library="rcl" package="R0805" value="10k" x="19.09" y="9.18" rot="R90"/>
 <element name="R_S2D21" library="rcl" package="R0805" value="10k" x="53.15" y="14.46" rot="R270"/>
 <element name="R_S2D22" library="rcl" package="R0805" value="10k" x="49.35" y="11.65" rot="R90"/>
