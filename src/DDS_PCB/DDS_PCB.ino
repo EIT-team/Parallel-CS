@@ -1,5 +1,5 @@
 /* Code for programming the prototype Parallel CS board
-Tom Dowrick 19.10.2015
+  Tom Dowrick 19.10.2015
 */
 
 // Pin Descriptions:
@@ -29,7 +29,7 @@ Tom Dowrick 19.10.2015
 
 //##############################CHANGE FREQUENCIES HERE################
 // 10.6.2015 - Sources 1, 5, 7, 8 working. Clock of 5 is malfunctioning and running 10x slower, so need to set freq 10x higher!
-long Freqs[8] = {1000,1000,1000,1000,1000,1000,1000,1000};
+long Freqs[8] = {1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000};
 //#######################################
 
 void setup() {
@@ -71,21 +71,19 @@ void setup() {
 
 void loop() {
 
-byte byteRead; // Serial read data
-unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
-int chan_to_prog; //Channel number
-int val_to_prog; //Frequency (Hz) or phase (degrees) value
-String what_to_prog; //Freq/Phase
-   
-  int n_chans = sizeof(Freqs)/sizeof(long);
-  
-  //Test_Single_Chan(Freqs,8,2);
-  
-  Program_Freqs (Freqs,n_chans);
+  byte byteRead; // Serial read data
+  unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
+  int chan_to_prog; //Channel number
+  int val_to_prog; //Frequency (Hz) or phase (degrees) value
+  String what_to_prog; //Freq/Phase
 
-// Allow setting of frequency/phase from serial monitor
-// Input 'freq chan_to_prog val_to_prog' to program frequency
-// 'phase chan_to_prog val_to prog' to set phase
+  int n_chans = sizeof(Freqs) / sizeof(long);
+
+  Program_Freqs (Freqs, n_chans);
+
+  // Allow setting of frequency/phase from serial monitor
+  // Input 'freq chan_to_prog val_to_prog' to program frequency
+  // 'phase chan_to_prog val_to prog' to set phase
   while (1) {
     if (Serial.available()) {
       what_to_prog = Serial.readStringUntil(' ');
@@ -101,61 +99,43 @@ String what_to_prog; //Freq/Phase
       else {
         Set_AD9833_Phase(val_to_prog, chan_to_prog);
 
-//        Serial.println(analogRead(0));
-//        Serial.println(analogRead(1));
       }
     }
   }
 
-delay(1000);
-
-  // Frequency Sweep
-  /*Reset_All(n_chans);
-  delay(10000);
-  
-  
-  Sweep_Freq(500,100,3000,1,10000);
-  
-  Reset_All(n_chans);
-  delay(50000);
-*/
-//Idle loop
- // while (1) {
-  //}
-
-
+  delay(1000);
 
 }
 
 void Program_Freqs (long Freqs [], int n_chans) {
- 
+
   unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
 
 
-Serial.print(n_chans);
-Serial.print('\n');
-//Loop through each freq/chan pair and program the switches/DDS chip
+  Serial.print(n_chans);
+  Serial.print('\n');
+  //Loop through each freq/chan pair and program the switches/DDS chip
 
 
   for (int i = 0; i < n_chans; i++) {
     Serial.print(i);
     Serial.print('\n');
 
-    Set_AD9833_Frequency(Freqs[i], F_MCLK, i+1);
-   
+    Set_AD9833_Frequency(Freqs[i], F_MCLK, i + 1);
+
   }
-  
+
 }
 
 
 void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
-    unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
-Serial.print("Single Chan Sweep");
+  unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
+  Serial.print("Single Chan Sweep");
 
   for (int i = 0; i < n_freqs; i++) {
 
-      Set_AD9833_Frequency(Freqs[i], F_MCLK, chan);
-  delay(2500);
+    Set_AD9833_Frequency(Freqs[i], F_MCLK, chan);
+    delay(2500);
   }
-  
+
 }

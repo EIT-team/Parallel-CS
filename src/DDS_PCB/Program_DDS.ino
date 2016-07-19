@@ -30,6 +30,8 @@ void Set_AD9833_Frequency(long freq, unsigned long F_MCLK, int chan) {
 
 }
 
+//Function to set only the phase of a particular channel, frequency remains unchanged.
+//Can be used to set particular phase difference between two channels
 void Set_AD9833_Phase(int phase, int chan) {
  
   float phase_max  = 4096;
@@ -67,6 +69,7 @@ void AD9833_SendWord(unsigned int data, int chan) {
 
 
 //Sweeps the frequency output on a channel, with increment and max value set by user.
+//e.g.   Sweep_Freq(500,100,3000,1,10000);
 
 void Sweep_Freq (int freq_min, int freq_step, int freq_max, int chan, int delay_time) {
   
