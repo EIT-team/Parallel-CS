@@ -98,12 +98,12 @@ String what_to_prog; //Freq/Phase
       if (what_to_prog == "freq") {
         Set_AD9833_Frequency(val_to_prog, F_MCLK, chan_to_prog);
       }
-      else {
+      else if (what_to_prog == "phase") {
         Set_AD9833_Phase(val_to_prog, chan_to_prog);
 
-//        Serial.println(analogRead(0));
-//        Serial.println(analogRead(1));
       }
+
+      else Set_Phase_Diff(val_to_prog, chan_to_prog);
     }
   }
 
@@ -147,6 +147,52 @@ Serial.print('\n');
   
 }
 
+void Set_Phase_Diff (int freq, int phase) {
+
+  unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
+
+  int chanA = 1;
+  int chanB = 2;
+
+  float voltageA;
+  float voltageB;
+  float v_diff;
+
+  float new_phase = 0;
+  
+  float maxDDSVoltage = 0.6; //AD9833 Waveform output voltage
+  float desired_v_diff = maxDDSVoltage * float(phase)/360;
+  Serial.println("Desired v_diff: " + String(desired_v_diff));
+  
+  //Set both channels to the same frequency and zero phase
+  Set_AD9833_Frequency(freq,F_MCLK,chanA);
+  Set_AD9833_Frequency(freq,F_MCLK,chanB);
+
+  int phase_locked = 0;
+  while (phase_locked == 0) {
+
+    delay(2000); //Slow down for debugging
+
+    voltageA = float(analogRead(chanA-1))/1024; //Analog pin numbering starts at 0
+    voltageB = float(analogRead(chanB-1))/1024;
+    Serial.println("A: " + String(voltageA) );
+    Serial.println("B: " + String(voltageB));
+    v_diff = voltageA-voltageB;
+    Serial.println("V Diff: " + String(v_diff));
+    
+    if (v_diff == desired_v_diff) {
+      phase_locked = 1;
+    }
+
+    else {
+
+      new_phase = new_phase + 180* v_diff / maxDDSVoltage;
+      Serial.print("Setting Phase: ");
+      Serial.println(new_phase);
+      Set_AD9833_Phase(new_phase, chanB);
+    }
+  }
+}
 
 void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
     unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
