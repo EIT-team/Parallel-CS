@@ -1,13 +1,7 @@
 # Parallel-CS
 Parallel inject current source design
 
-Includes:
-
-Circuit schematics
-
-PCB Layout
-
-Arduino code for programming output frequency of DDS chip (/src/DDS_PCB)
+Includes: Circuit schematics, PCB Layout ,Arduino code for programming output frequency of CS
 
 **Instructions for programming CS board**
 
@@ -26,5 +20,7 @@ After programming, frequency and/or phase can be adjusted using serial monitor:
 - The terminal should echo a message confirming programming is happening
 
 Once programmed, the D-Sub cable can be unplugged.
+
+Amplitude can be adjusted by turning potentiometer. (Clockwise increases, anticlockwise decreases)
 
 
