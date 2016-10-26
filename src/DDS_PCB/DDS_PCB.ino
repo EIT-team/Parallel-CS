@@ -1,26 +1,26 @@
-  /* Code for programming the prototype Parallel CS board
-    Tom Dowrick 19.10.2015
-  */
-  
-  // Pin Descriptions:
-  // SDATA_SPI - Data signal for SPI, used to program AD9833
-  // SCLK_SPI - Clock signal for SPI, used to program AD9833
-  //FSYNC - SYNC pin for SPI, used to program AD9833, but is routed by the ADG985 switch, where it is input to the DIN pin.
-  //  SCLK_Switch - Clock for ADG984 switch
-  // SYNC_Switch - Sync pin for switch. Active low, set low allows progamming of switches
-  //  RESET_Switch - Reset pin for switch. Active low, Resets all switches to default, open, position.
-  // DIN_Switch - Send the values to open/close switches
-  
-  //Library for handling the SPI transfer
-  #include <SPI.h>
-  
-  //Variable for the SPI Enable pin
-  #define FSYNC_Pin 5
-  #define SDATA_SPI_Pin 11
-  #define SCLK_SPI_Pin  13
-  
-  #define SCLK_SWITCH_Pin 9
-  #define SYNC_SWITCH_Pin 2
+/* Code for programming the prototype Parallel CS board
+  Tom Dowrick 19.10.2015
+*/
+
+// Pin Descriptions:
+// SDATA_SPI - Data signal for SPI, used to program AD9833
+// SCLK_SPI - Clock signal for SPI, used to program AD9833
+//FSYNC - SYNC pin for SPI, used to program AD9833, but is routed by the ADG985 switch, where it is input to the DIN pin.
+//  SCLK_Switch - Clock for ADG984 switch
+// SYNC_Switch - Sync pin for switch. Active low, set low allows progamming of switches
+//  RESET_Switch - Reset pin for switch. Active low, Resets all switches to default, open, position.
+// DIN_Switch - Send the values to open/close switches
+
+//Library for handling the SPI transfer
+#include <SPI.h>
+
+//Variable for the SPI Enable pin
+#define FSYNC_Pin 5
+#define SDATA_SPI_Pin 11
+#define SCLK_SPI_Pin  13
+
+#define SCLK_SWITCH_Pin 9
+#define SYNC_SWITCH_Pin 2
 #define RESET_SWITCH_Pin 3
 #define DIN_SWITCH_Pin 4
 
@@ -88,19 +88,30 @@ void loop() {
       what_to_prog = Serial.readStringUntil(' ');
       chan_to_prog = Serial.parseInt();
       val_to_prog = Serial.parseInt();
-      Serial.println(what_to_prog);
-     Serial.println(chan_to_prog);
+
 
       if (what_to_prog == "reset")
         Reset_All(n_chans);
 
       else if (what_to_prog == "all")
         Program_Freqs(Freqs, n_chans);
-        
+
       else if (what_to_prog == "freq") {
+        Serial.print("Programming channel: ");
+        Serial.print(chan_to_prog);
+        Serial.print(" to frequency: ");
+        Serial.print(val_to_prog);
+        Serial.println("Hz");
+
         Set_AD9833_Frequency(val_to_prog, F_MCLK, chan_to_prog);
       }
       else {
+
+                Serial.print("Programming channel: ");
+        Serial.print(chan_to_prog);
+        Serial.print(" to phase: ");
+        Serial.print(val_to_prog);
+        Serial.println(" degrees");
         Set_AD9833_Phase(val_to_prog, chan_to_prog);
 
       }
@@ -124,7 +135,7 @@ void Program_Freqs (long Freqs [], int n_chans) {
   for (int i = 0; i < n_chans; i++) {
     //Serial.print(i);
     //Serial.print('\n');
-  
+
     Set_AD9833_Frequency(Freqs[i], F_MCLK, i + 1);
 
   }
