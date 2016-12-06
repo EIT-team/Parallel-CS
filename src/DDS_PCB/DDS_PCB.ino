@@ -107,7 +107,7 @@ void loop() {
       }
       else {
 
-                Serial.print("Programming channel: ");
+        Serial.print("Programming channel: ");
         Serial.print(chan_to_prog);
         Serial.print(" to phase: ");
         Serial.print(val_to_prog);
@@ -122,6 +122,27 @@ void loop() {
 
 }
 
+void Program_Then_Turn_Off(long Freqs[], int n_chans, unsigned int on_time_milli) {
+
+  unsigned int max_delay = 25000;
+  
+  // At the moment (6.12.16) we want to limit the injection time to some maximum value to be over-cautious.
+  // If the specified injection time is too long, cancel the injections by resetting all DDS chips and return 
+  if (on_time_milli > max_delay) {
+      Serial.println("Injection time higher than maximum defined time. Turning off all DDS chips");
+      Reset_All(n_chans);
+      return;
+      
+  }
+
+  //Program all of the channels, wait a specified time, then turn off.
+  else {
+      Program_Freqs(Freqs, n_chans);
+      delay(on_time_milli);
+      Reset_All(n_chans);
+
+  }
+}
 void Program_Freqs (long Freqs [], int n_chans) {
 
   unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;

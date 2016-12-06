@@ -10,7 +10,7 @@
 
 
 void Set_AD9833_Frequency(long freq, unsigned long F_MCLK, int chan) {
- 
+
 
   // Generating the frequency registers from the desired frequency
   unsigned long freq_word = (unsigned long)(0x10000000 / F_MCLK * freq); //frequency value to send to AD9833, needs to be separated into two parts, 14 bits long each
@@ -33,23 +33,23 @@ void Set_AD9833_Frequency(long freq, unsigned long F_MCLK, int chan) {
 //Function to set only the phase of a particular channel, frequency remains unchanged.
 //Can be used to set particular phase difference between two channels
 void Set_AD9833_Phase(int phase, int chan) {
- 
+
   float phase_max  = 4096;
-  
+
   // Calculate phase word for required phase value
-  unsigned int phase_word = (PHASE_REGISTER_VALUE + (phase/360.0) * phase_max); // The phase on the DDS is equal to 12 LSB of phase word * 2*pi/4096 
+  unsigned int phase_word = (PHASE_REGISTER_VALUE + (phase / 360.0) * phase_max); // The phase on the DDS is equal to 12 LSB of phase word * 2*pi/4096
   //Serial.println(phase_word);
 
   //Set control register, frequency register (in two parts LSB and MSB) and phase register
   AD9833_SendWord(phase_word, chan);        //Phase regsister
 
-} 
+}
 
 
 void AD9833_SendWord(unsigned int data, int chan) {
   /*SPI Data write
-  Can only send 8 bits at a time, so this splits up a 16 bit word and sends it as two parts
-  Add in several ms delay before/after SPI transfer to account for propagation delay differences between digital isolators and switching circuitry */
+    Can only send 8 bits at a time, so this splits up a 16 bit word and sends it as two parts
+    Add in several ms delay before/after SPI transfer to account for propagation delay differences between digital isolators and switching circuitry */
 
   //Set FSYNC pin on the DDS chip we want to program
   Set_ADG984(chan);
@@ -72,39 +72,39 @@ void AD9833_SendWord(unsigned int data, int chan) {
 //e.g.   Sweep_Freq(500,100,3000,1,10000);
 
 void Sweep_Freq (int freq_min, int freq_step, int freq_max, int chan, int delay_time) {
-  
-    unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
 
-  for (int i = freq_min ; i <=freq_max;i = i + freq_step)
+  unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
+
+  for (int i = freq_min ; i <= freq_max; i = i + freq_step)
   {
 
-        Set_AD9833_Frequency(500, F_MCLK, 2);
-  Set_AD9833_Frequency(2500, F_MCLK, 3);
-  
+    Set_AD9833_Frequency(500, F_MCLK, 2);
+    Set_AD9833_Frequency(2500, F_MCLK, 3);
 
-   Set_AD9833_Frequency(i, F_MCLK, chan);
-   delay(delay_time);
-     Reset_DDS(2);
+
+    Set_AD9833_Frequency(i, F_MCLK, chan);
+    delay(delay_time);
+    Reset_DDS(2);
     Reset_DDS(3);
-    
-    delay(delay_time); 
-    
+
+    delay(delay_time);
+
   }
-  
+
 }
 
 //Resets all channels to default output (essentially off)
 void Reset_DDS(int chan) {
 
-AD9833_SendWord(RESET_CONTROL_REGISTER, chan); 
+  AD9833_SendWord(RESET_CONTROL_REGISTER, chan);
 }
 
 
 void Reset_All(int n_chans) {
 
   for (int j = 1; j <= n_chans  ; j++) {
-  Reset_DDS(j);
-}
+    Reset_DDS(j);
+  }
 }
 
 
