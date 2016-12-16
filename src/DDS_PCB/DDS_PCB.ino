@@ -28,8 +28,7 @@
 #define DDS_CLOCK_FREQUENCY 10e6
 
 //##############################CHANGE FREQUENCIES HERE################
-// 10.6.2015 - Sources 1, 5, 7, 8 working. Clock of 5 is malfunctioning and running 10x slower, so need to set freq 10x higher!
-long Freqs[8] = {1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000};
+long Freqs[8] = {1000, 2000, 1000, 1000, 1000, 1000, 1000, 1000};
 //#######################################
 
 void setup() {
@@ -89,14 +88,30 @@ void loop() {
       what_to_prog = Serial.readStringUntil(' ');
       chan_to_prog = Serial.parseInt();
       val_to_prog = Serial.parseInt();
-      Serial.println(what_to_prog);
-      Serial.println(chan_to_prog);
-      Serial.println(val_to_prog);
 
-      if (what_to_prog == "freq") {
+
+      if (what_to_prog == "reset")
+        Reset_All(n_chans);
+
+      else if (what_to_prog == "all")
+        Program_Freqs(Freqs, n_chans);
+
+      else if (what_to_prog == "freq") {
+        Serial.print("Programming channel: ");
+        Serial.print(chan_to_prog);
+        Serial.print(" to frequency: ");
+        Serial.print(val_to_prog);
+        Serial.println("Hz");
+
         Set_AD9833_Frequency(val_to_prog, F_MCLK, chan_to_prog);
       }
       else {
+
+                Serial.print("Programming channel: ");
+        Serial.print(chan_to_prog);
+        Serial.print(" to phase: ");
+        Serial.print(val_to_prog);
+        Serial.println(" degrees");
         Set_AD9833_Phase(val_to_prog, chan_to_prog);
 
       }
@@ -112,14 +127,14 @@ void Program_Freqs (long Freqs [], int n_chans) {
   unsigned long  F_MCLK = DDS_CLOCK_FREQUENCY;
 
 
-  Serial.print(n_chans);
-  Serial.print('\n');
+  //Serial.print(n_chans);
+  //Serial.print('\n');
   //Loop through each freq/chan pair and program the switches/DDS chip
 
 
   for (int i = 0; i < n_chans; i++) {
-    Serial.print(i);
-    Serial.print('\n');
+    //Serial.print(i);
+    //Serial.print('\n');
 
     Set_AD9833_Frequency(Freqs[i], F_MCLK, i + 1);
 
