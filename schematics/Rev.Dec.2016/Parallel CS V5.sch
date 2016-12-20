@@ -13164,25 +13164,25 @@ http://www.xganon.com</description>
 <part name="TP_VSS" library="testpad" deviceset="PTR1" device="PAD1-13"/>
 <part name="TP_FSYNC" library="testpad" deviceset="PTR1" device="PAD1-13" value="PTR1PAD1-13"/>
 <part name="R1" library="resistor" deviceset="R-US_" device="R0805" value="10k"/>
-<part name="R2" library="resistor" deviceset="R-US_" device="R0603" value="20k"/>
+<part name="R2" library="resistor" deviceset="R-US_" device="R0805" value="20k"/>
 <part name="R3" library="resistor" deviceset="R-US_" device="R0805" value="10k"/>
-<part name="R4" library="resistor" deviceset="R-US_" device="R0603" value="20k"/>
+<part name="R4" library="resistor" deviceset="R-US_" device="R0805" value="20k"/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="R_DECOUP" library="rcl" deviceset="R-US_" device="R0805" value="10k"/>
 <part name="R_PULLUP" library="rcl" deviceset="R-US_" device="R0805" value="10k"/>
 <part name="R_HOWB3" library="rcl" deviceset="R-US_" device="R0805" value="100k"/>
 <part name="R_HOWA3" library="rcl" deviceset="R-US_" device="R0805" value="100k"/>
 <part name="R5" library="resistor" deviceset="R-US_" device="R0805" value="10k"/>
-<part name="R6" library="resistor" deviceset="R-US_" device="R0603" value="20k"/>
+<part name="R6" library="resistor" deviceset="R-US_" device="R0805" value="20k"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="R7" library="resistor" deviceset="R-US_" device="R0805" value="10k"/>
-<part name="R8" library="resistor" deviceset="R-US_" device="R0603" value="20k"/>
+<part name="R8" library="resistor" deviceset="R-US_" device="R0805" value="20k"/>
 <part name="R9" library="resistor" deviceset="R-US_" device="R0805" value="10k"/>
 <part name="R10" library="resistor" deviceset="R-US_" device="R0805" value="10k"/>
 <part name="R11" library="resistor" deviceset="R-US_" device="R0805" value="10k"/>
-<part name="R12" library="resistor" deviceset="R-US_" device="R0603" value="20k"/>
-<part name="R13" library="resistor" deviceset="R-US_" device="R0603" value="20k"/>
-<part name="R14" library="resistor" deviceset="R-US_" device="R0603" value="20k"/>
+<part name="R12" library="resistor" deviceset="R-US_" device="R0805" value="20k"/>
+<part name="R13" library="resistor" deviceset="R-US_" device="R0805" value="20k"/>
+<part name="R14" library="resistor" deviceset="R-US_" device="R0805" value="20k"/>
 <part name="S1" library="switch-misc" deviceset="PVA1" device="F"/>
 <part name="S2" library="switch-misc" deviceset="PVA1" device="F"/>
 <part name="LED_VDD" library="led" deviceset="LED" device="SML0805"/>
@@ -13198,6 +13198,7 @@ http://www.xganon.com</description>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="OP_HOWL1" library="RC4560" deviceset="RC4560" device="SOP65" value="RC4560SOP65"/>
+<part name="GND13" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13708,6 +13709,7 @@ to cover case where a single device fails.</text>
 <instance part="R_HOWB3" gate="G$1" x="114.3" y="43.18"/>
 <instance part="R_HOWA3" gate="G$1" x="114.3" y="-30.48"/>
 <instance part="OP_HOWL1" gate="RC4560" x="96.52" y="68.58"/>
+<instance part="GND13" gate="1" x="-55.88" y="55.88"/>
 </instances>
 <busses>
 </busses>
@@ -13747,11 +13749,6 @@ to cover case where a single device fails.</text>
 <pinref part="C_OPC1" gate="G$1" pin="1"/>
 <wire x1="-2.54" y1="-22.86" x2="17.78" y2="-22.86" width="0.1524" layer="91"/>
 <junction x="-2.54" y="-22.86"/>
-</segment>
-<segment>
-<pinref part="R_PULLUP" gate="G$1" pin="1"/>
-<wire x1="-55.88" y1="58.42" x2="-60.96" y2="58.42" width="0.1524" layer="91"/>
-<label x="-60.96" y="58.42" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="OP_HOWL1" gate="RC4560" pin="V+"/>
@@ -13813,6 +13810,10 @@ to cover case where a single device fails.</text>
 <pinref part="R_DECOUP" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="73.66" x2="38.1" y2="66.04" width="0.1524" layer="91"/>
 <label x="38.1" y="66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R_PULLUP" gate="G$1" pin="1"/>
+<pinref part="GND13" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="FSYNC" class="0">
