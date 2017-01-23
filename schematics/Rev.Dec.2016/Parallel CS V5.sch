@@ -13179,7 +13179,7 @@ http://www.xganon.com</description>
 <part name="R8" library="resistor" deviceset="R-US_" device="R0805" value="20k"/>
 <part name="R9" library="resistor" deviceset="R-US_" device="R0805" value="10k"/>
 <part name="R10" library="resistor" deviceset="R-US_" device="R0805" value="10k"/>
-<part name="R11" library="resistor" deviceset="R-US_" device="R0805" value="10k"/>
+<part name="R11" library="resistor" deviceset="R-US_" device="R0805" value="1.5k"/>
 <part name="R12" library="resistor" deviceset="R-US_" device="R0805" value="20k"/>
 <part name="R13" library="resistor" deviceset="R-US_" device="R0805" value="20k"/>
 <part name="S1" library="switch-misc" deviceset="PVA1" device="F"/>
@@ -13833,7 +13833,7 @@ potentiometer for setting gain</text>
 <pinref part="GND13" gate="1" pin="GND"/>
 </segment>
 </net>
-<net name="FSYNC" class="0">
+<net name="FSYNC_CS1" class="0">
 <segment>
 <pinref part="DDS" gate="A" pin="FSYNC"/>
 <wire x1="-20.32" y1="81.28" x2="-33.02" y2="81.28" width="0.1524" layer="91"/>

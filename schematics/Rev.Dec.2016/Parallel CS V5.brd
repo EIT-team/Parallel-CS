@@ -163,6 +163,14 @@
 Decoup</text>
 <text x="60" y="139.5" size="0.8128" layer="27">Vdiff A</text>
 <text x="60" y="134" size="0.8128" layer="27">Vdiff B</text>
+<text x="52" y="80.5" size="0.8128" layer="112">VDD</text>
+<text x="63" y="80.5" size="0.8128" layer="112">VSS</text>
+<text x="57.5" y="77" size="0.8128" layer="112">GND</text>
+<text x="53" y="63" size="0.8128" layer="112">Master
+Clock</text>
+<text x="5.5" y="78.5" size="0.8128" layer="112">DDS
+SDATA</text>
+<text x="20" y="142" size="0.8128" layer="112">FSYNC</text>
 </plain>
 <libraries>
 <library name="LTC6900">
@@ -3262,10 +3270,10 @@ design rules under a new name.</description>
 <attribute name="NAME" x="17.954" y="142.7" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="18.97" y="141.43" size="0.0254" layer="27"/>
 </element>
-<element name="TP_GND" library="testpad" package="P1-13" value="PTR1PAD1-13" x="89.79" y="84.09" smashed="yes">
-<attribute name="TP_SIGNAL_NAME" value="" x="88.52" y="81.55" size="1" layer="37"/>
-<attribute name="NAME" x="88.774" y="85.36" size="1.27" layer="25" ratio="10"/>
-<attribute name="VALUE" x="89.79" y="84.09" size="0.0254" layer="27"/>
+<element name="TP_GND" library="testpad" package="P1-13" value="PTR1PAD1-13" x="58.79" y="79.09" smashed="yes">
+<attribute name="TP_SIGNAL_NAME" value="" x="57.52" y="76.55" size="1" layer="37"/>
+<attribute name="NAME" x="57.774" y="80.36" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="58.79" y="79.09" size="0.0254" layer="27"/>
 </element>
 <element name="TP_MCLK" library="testpad" package="P1-13" value="PTR1PAD1-13" x="54.43" y="66.51" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="53.16" y="63.97" size="1" layer="37"/>
@@ -3282,10 +3290,10 @@ design rules under a new name.</description>
 <attribute name="NAME" x="3.094" y="79.7" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="4.11" y="78.43" size="0.0254" layer="27"/>
 </element>
-<element name="TP_VDD" library="testpad" package="P1-13" value="PTR1PAD1-13" x="70.4" y="84.09" smashed="yes">
-<attribute name="TP_SIGNAL_NAME" value="" x="69.13" y="81.55" size="1" layer="37"/>
-<attribute name="NAME" x="69.384" y="85.36" size="1.27" layer="25" ratio="10"/>
-<attribute name="VALUE" x="70.4" y="84.09" size="0.0254" layer="27"/>
+<element name="TP_VDD" library="testpad" package="P1-13" value="PTR1PAD1-13" x="53.4" y="79.09" smashed="yes">
+<attribute name="TP_SIGNAL_NAME" value="" x="52.13" y="76.55" size="1" layer="37"/>
+<attribute name="NAME" x="52.384" y="80.36" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="48.9" y="77.09" size="0.0254" layer="27"/>
 </element>
 <element name="TP_VSIN" library="testpad" package="P1-13" value="PTR1PAD1-13" x="12.18" y="145.59" smashed="yes">
 <attribute name="TP_SIGNAL_NAME" value="" x="10.91" y="143.05" size="1" layer="37"/>
@@ -3307,10 +3315,10 @@ design rules under a new name.</description>
 <attribute name="NAME" x="60.574" y="137.78" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="61.59" y="136.51" size="0.0254" layer="27"/>
 </element>
-<element name="TP_VSS" library="testpad" package="P1-13" value="PTR1PAD1-13" x="78.01" y="86.59" smashed="yes">
-<attribute name="TP_SIGNAL_NAME" value="" x="76.74" y="84.05" size="1" layer="37"/>
-<attribute name="NAME" x="76.994" y="87.86" size="1.27" layer="25" ratio="10"/>
-<attribute name="VALUE" x="78.01" y="86.59" size="0.0254" layer="27"/>
+<element name="TP_VSS" library="testpad" package="P1-13" value="PTR1PAD1-13" x="64.01" y="79.09" smashed="yes">
+<attribute name="TP_SIGNAL_NAME" value="" x="62.74" y="76.55" size="1" layer="37"/>
+<attribute name="NAME" x="62.994" y="80.36" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="64.01" y="79.09" size="0.0254" layer="27"/>
 </element>
 <element name="U1" library="SwitchBoard" package="SOP65P640X120-24N" value="ADG714BRUZ" x="46" y="68.89" smashed="yes">
 <attribute name="PACKAGE" value="TSSOP-24" x="46" y="68.89" size="1.778" layer="27" display="off"/>
@@ -3344,7 +3352,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="26.27" y="70.635" size="1.27" layer="25" rot="R270"/>
 <attribute name="VALUE" x="22.46" y="71.135" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="R11" library="resistor" package="R0805" value="10k" x="23" y="78" smashed="yes">
+<element name="R11" library="resistor" package="R0805" value="1.5k" x="23" y="78" smashed="yes">
 <attribute name="NAME" x="22.365" y="79.27" size="1.27" layer="25"/>
 <attribute name="VALUE" x="21.365" y="79.46" size="1.27" layer="27"/>
 </element>
@@ -3358,11 +3366,9 @@ design rules under a new name.</description>
 </element>
 <element name="S1" library="switch-misc" package="PVA1F" value="PVA1F" x="80.5" y="75" smashed="yes" rot="R90">
 <attribute name="NAME" x="81.135" y="81.985" size="1.27" layer="25" ratio="10" rot="R90"/>
-<attribute name="VALUE" x="83.04" y="81.985" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="S2" library="switch-misc" package="PVA1F" value="PVA1F" x="80.5" y="60.5" smashed="yes" rot="R90">
 <attribute name="NAME" x="81.135" y="67.485" size="1.27" layer="25" ratio="10" rot="R90"/>
-<attribute name="VALUE" x="83.04" y="67.485" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="LED_VDD" library="led" package="SML0805" value="" x="72.5" y="78" smashed="yes" rot="R180">
 <attribute name="NAME" x="74" y="77" size="1.27" layer="25" rot="R180"/>
@@ -3708,10 +3714,12 @@ design rules under a new name.</description>
 <via x="88.5" y="146" extent="1-16" drill="0.6" shape="square"/>
 <wire x1="88.5" y1="146" x2="89" y2="146" width="0.254" layer="2"/>
 <wire x1="84.2098" y1="145.9652" x2="84.2446" y2="146" width="0.254" layer="1"/>
-<wire x1="84.2446" y1="146" x2="88.5" y2="146" width="0.254" layer="1"/>
 <wire x1="72.95" y1="72" x2="72.9528" y2="72.0028" width="0.254" layer="1"/>
 <wire x1="72.9528" y1="72.0028" x2="78.0108" y2="72.0028" width="0.254" layer="1"/>
-<wire x1="88.5" y1="146" x2="86.5" y2="146.16" width="0" layer="19" extent="1-2"/>
+<wire x1="86.5" y1="146.16" x2="86.66" y2="146" width="0.3048" layer="1"/>
+<wire x1="86.66" y1="146" x2="88.5" y2="146" width="0.3048" layer="1"/>
+<wire x1="88.5" y1="146" x2="88.4652" y2="145.9652" width="0.3048" layer="1"/>
+<wire x1="88.4652" y1="145.9652" x2="84.2098" y2="145.9652" width="0.3048" layer="1"/>
 </signal>
 <signal name="SW_DIN">
 <contactref element="U1" pad="3"/>
@@ -3748,6 +3756,16 @@ design rules under a new name.</description>
 </signal>
 <signal name="FSYNC_CS1">
 <contactref element="U1" pad="6"/>
+<contactref element="DDS" pad="8"/>
+<contactref element="TP_FSYNC" pad="TP"/>
+<contactref element="R_PULLDOWN" pad="2"/>
+<wire x1="19.09" y1="137.13" x2="18.22" y2="138" width="0.254" layer="1"/>
+<wire x1="18.22" y1="138" x2="17" y2="138" width="0.254" layer="1"/>
+<wire x1="17" y1="138" x2="16.25" y2="138.75" width="0.254" layer="1"/>
+<wire x1="16.25" y1="138.75" x2="15.3852" y2="138.75" width="0.254" layer="1"/>
+<wire x1="18.97" y1="141.43" x2="19.09" y2="141.31" width="0.254" layer="1"/>
+<wire x1="19.09" y1="141.31" x2="19.09" y2="137.13" width="0.254" layer="1"/>
+<wire x1="43.1806" y1="69.2202" x2="19.09" y2="137.13" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FSYNC_CS3">
 <contactref element="U1" pad="10"/>
@@ -3865,17 +3883,6 @@ design rules under a new name.</description>
 <contactref element="R1" pad="2"/>
 <wire x1="2.73" y1="55.15" x2="1.33" y2="55.15" width="0.4064" layer="1"/>
 <wire x1="1.33" y1="55.15" x2="1.33" y2="59.34" width="0.4064" layer="1"/>
-</signal>
-<signal name="FSYNC">
-<contactref element="DDS" pad="8"/>
-<contactref element="TP_FSYNC" pad="TP"/>
-<contactref element="R_PULLDOWN" pad="2"/>
-<wire x1="19.09" y1="137.13" x2="18.22" y2="138" width="0.254" layer="1"/>
-<wire x1="18.22" y1="138" x2="17" y2="138" width="0.254" layer="1"/>
-<wire x1="17" y1="138" x2="16.25" y2="138.75" width="0.254" layer="1"/>
-<wire x1="16.25" y1="138.75" x2="15.3852" y2="138.75" width="0.254" layer="1"/>
-<wire x1="18.97" y1="141.43" x2="19.09" y2="141.31" width="0.254" layer="1"/>
-<wire x1="19.09" y1="141.31" x2="19.09" y2="137.13" width="0.254" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="DDS" pad="3"/>
@@ -4167,17 +4174,20 @@ design rules under a new name.</description>
 <signal name="N$15">
 <contactref element="JP+" pad="2"/>
 <contactref element="S1" pad="2"/>
-<wire x1="82.9892" y1="72.0028" x2="92.48" y2="72.4" width="0" layer="19" extent="1-1"/>
+<wire x1="82.9892" y1="72.0028" x2="83.3864" y2="72.4" width="0.6096" layer="1"/>
+<wire x1="83.3864" y1="72.4" x2="92.48" y2="72.4" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$18">
 <contactref element="JP-" pad="2"/>
 <contactref element="S2" pad="2"/>
-<wire x1="82.9892" y1="57.5028" x2="92.48" y2="62.75" width="0" layer="19" extent="1-1"/>
+<wire x1="82.9892" y1="57.5028" x2="88.2364" y2="62.75" width="0.6096" layer="1"/>
+<wire x1="88.2364" y1="62.75" x2="92.48" y2="62.75" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$19">
 <contactref element="JP-" pad="1"/>
 <contactref element="S2" pad="4"/>
-<wire x1="82.9892" y1="63.4972" x2="92.48" y2="64.75" width="0" layer="19" extent="1-1"/>
+<wire x1="82.9892" y1="63.4972" x2="84.242" y2="64.75" width="0.6096" layer="1"/>
+<wire x1="84.242" y1="64.75" x2="92.48" y2="64.75" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$21">
 <contactref element="R_VDD_LED" pad="1"/>
@@ -4215,7 +4225,8 @@ design rules under a new name.</description>
 <signal name="N$16">
 <contactref element="JP+" pad="1"/>
 <contactref element="S1" pad="4"/>
-<wire x1="82.9892" y1="77.9972" x2="92.48" y2="74.4" width="0" layer="19" extent="1-1"/>
+<wire x1="82.9892" y1="77.9972" x2="86.5864" y2="74.4" width="0.6096" layer="1"/>
+<wire x1="86.5864" y1="74.4" x2="92.48" y2="74.4" width="0.6096" layer="1"/>
 </signal>
 </signals>
 <errors>

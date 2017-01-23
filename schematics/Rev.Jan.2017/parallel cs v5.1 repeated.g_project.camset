@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<CAMsetup>
+	<thisfile>D:\Documents\Circuit layouts, schematics and misc technical\Parallel CS\schematics\Rev.Jan.2017\parallel cs v5.1 repeated.g_project.camset</thisfile>
+	<morelayertypes>
+	</morelayertypes>
+	<usecolors>
+		<mixer>1.000</mixer>
+		<object type="Plated H. In">10202020</object>
+		<object type="Plated H. Out">10101010</object>
+		<object type="Edge In">00808008</object>
+		<object type="Edge Out">0080C008</object>
+		<object type="Volume">A0505008</object>
+		<object type="Background">002D32AA</object>
+		<layer type="PasteMask">008080C0</layer>
+		<layer type="Silkscreen">00A0A0A0</layer>
+		<layer type="SolderMask">1000A000</layer>
+		<layer type="Copper">10A05000</layer>
+		<layer type="Core">00000000</layer>
+		<layer type="Prepreg">00000000</layer>
+		<layer type="BoardOutline">00000000</layer>
+	</usecolors>
+	<boardlayers>
+		<layer type="Silkscreen" H="35" Er="0.000" color="0088BF91">
+			<filename>D:\Documents\Circuit layouts, schematics and misc technical\Parallel CS\schematics\Rev.Jan.2017\parallel cs v5.1 repeated.gto</filename>
+			<filedisp>parallel cs v5.1 repeated.gto</filedisp>
+		</layer>
+		<layer type="SolderMask" H="35" Er="0.000" color="00008C00">
+			<filename>D:\Documents\Circuit layouts, schematics and misc technical\Parallel CS\schematics\Rev.Jan.2017\parallel cs v5.1 repeated.gts</filename>
+			<filedisp>parallel cs v5.1 repeated.gts</filedisp>
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive" color="00800000">
+			<filename>D:\Documents\Circuit layouts, schematics and misc technical\Parallel CS\schematics\Rev.Jan.2017\parallel cs v5.1 repeated.gtl</filename>
+			<filedisp>parallel cs v5.1 repeated.gtl</filedisp>
+		</layer>
+		<layer type="Prepreg" H="452" Er="4.800">
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive" color="004E7D9A">
+			<filename>D:\Documents\Circuit layouts, schematics and misc technical\Parallel CS\schematics\Rev.Jan.2017\parallel cs v5.1 repeated.g1</filename>
+			<filedisp>parallel cs v5.1 repeated.g1</filedisp>
+		</layer>
+		<layer type="Prepreg" H="452" Er="4.800">
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive" color="00AE7AB8">
+			<filename>D:\Documents\Circuit layouts, schematics and misc technical\Parallel CS\schematics\Rev.Jan.2017\parallel cs v5.1 repeated.g2</filename>
+			<filedisp>parallel cs v5.1 repeated.g2</filedisp>
+		</layer>
+		<layer type="Prepreg" H="452" Er="4.800">
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive" color="000000D0">
+			<filename>D:\Documents\Circuit layouts, schematics and misc technical\Parallel CS\schematics\Rev.Jan.2017\parallel cs v5.1 repeated.gbl</filename>
+			<filedisp>parallel cs v5.1 repeated.gbl</filedisp>
+		</layer>
+		<layer type="SolderMask" H="35" Er="0.000" color="0000B704">
+			<filename>D:\Documents\Circuit layouts, schematics and misc technical\Parallel CS\schematics\Rev.Jan.2017\parallel cs v5.1 repeated.gbs</filename>
+			<filedisp>parallel cs v5.1 repeated.gbs</filedisp>
+		</layer>
+		<layer type="BoardOutline" H="1600">
+		</layer>
+	</boardlayers>
+
+	<boarddrillplates>
+	</boarddrillplates>
+
+	<GerberSetup Incremental='no' OmitTrailingZeros='no' Milimeters='yes' Len1='2' Len2='3'/>
+	<NCDSetup Guess='yes' Incremental='no' OmitTrailingZeros='no' Units='DefaultInch' Len1='2' Len2='3' Autooffset='yes'/>
+	<IPC356Setup AutoUnits='1' AutoMagnitude='1' LongPinID='yes' CpyFromDrill='yes' Autooffset='yes'/>
+	<BoardOutlineDrawing srctype='1' trackwidthMin='0.004' trackwidthSlopStart='0.01' trackwidthMetaTrsh='0.012'/>
+	<IdentifyOutline mode='0' removeoutside='yes' horizMargin='0' vertMargin='0' brushBlob='1' />
+</CAMsetup>
