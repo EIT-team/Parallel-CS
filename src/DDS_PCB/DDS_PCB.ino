@@ -60,7 +60,6 @@ void setup() {
   SPI.setBitOrder(MSBFIRST);  //Send data Most significant bit first, this is necessary for the AD9833
   SPI.setDataMode(SPI_MODE2);  //Set SPI Mode 2 (Data captured on falling edge of clock, clock inversion on)
   SPI.setClockDivider(SPI_CLOCK_DIV128);    //  Set clock divider (optional)
-
 }
 
 void loop() {
@@ -109,19 +108,16 @@ void loop() {
         Serial.print(val_to_program);
         Serial.println(" degrees");
         Set_AD9833_Phase(val_to_program, chan_to_program);
-
       }
     }
   }
 
   delay(1000);
-
 }
 
 #define MAX_DELAY 25000;
 
 void Program_Then_Turn_Off(long Freqs[], int n_chans, unsigned int on_time_milli) {
-
   
   // At the moment (6.12.16) we want to limit the injection time to some maximum value to be over-cautious.
   // If the specified injection time is too long, cancel the injections by resetting all DDS chips and return 
@@ -129,7 +125,6 @@ void Program_Then_Turn_Off(long Freqs[], int n_chans, unsigned int on_time_milli
       Serial.println("Injection time higher than maximum defined time. Turning off all DDS chips");
       Reset_All(n_chans);
       return;
-      
   }
 
   //Program all of the channels, wait a specified time, then turn off.
@@ -137,24 +132,15 @@ void Program_Then_Turn_Off(long Freqs[], int n_chans, unsigned int on_time_milli
       Program_Freqs(Freqs, n_chans);
       delay(on_time_milli);
       Reset_All(n_chans);
-
   }
 }
 void Program_Freqs (long Freqs [], int n_chans) {
-
-  //Serial.print(n_chans);
-  //Serial.print('\n');
   //Loop through each freq/chan pair and program the switches/DDS chip
 
-
   for (int i = 0; i < n_chans; i++) {
-    //Serial.print(i);
-    //Serial.print('\n');
 
     Set_AD9833_Frequency(Freqs[i], DDS_CLOCK_FREQUENCY, i + 1);
-
   }
-
 }
 
 
@@ -166,5 +152,4 @@ void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
     Set_AD9833_Frequency(Freqs[i], DDS_CLOCK_FREQUENCY, chan);
     delay(2500);
   }
-
 }
