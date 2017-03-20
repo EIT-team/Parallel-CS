@@ -50,8 +50,8 @@ void AD9833_SendWord(unsigned int data, int chan) {
 	SPI.transfer(data & 0xFF);
 
 	// Disable SPI
-	// We want to close all of the switches, so use some sentinel values >> than the number of switches (1000) to make this happen
-	Set_ADG984(1000);
+	// We want to close all of the switches, so use some sentinel values >> than the number of switches (e.g. 1000) to make this happen
+	Set_ADG984(CLOSE_ALL_SWITCHES);
 	delay(DELAY_TIME);
 }
 

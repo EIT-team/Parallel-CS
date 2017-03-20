@@ -30,7 +30,7 @@
 #define PHASE_REGISTER_VALUE 0xC000      // Default value for phase register of DDS chip
 #define RESET_CONTROL_REGISTER 0x2100    // Reset control register of DDS to produce midscale output
 #define PHASE_MAX 4096 // Maximum value of phase register
-
+#define CLOSE_ALL_SWITCHES 1000 // If a value > N_SWITCHES is passed, then all switches are closed
 
 /*								*/
 /* Program_Switch Definitions 	*/
