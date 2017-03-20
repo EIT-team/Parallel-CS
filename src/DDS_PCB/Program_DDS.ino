@@ -47,7 +47,13 @@ void Set_AD9833_Frequency(long freq, int chan) {
 unsigned int Set_AD9833_Phase(int phase, int chan) {
 /* Function to set only the phase of a particular channel, frequency remains unchanged.
  Can be used to set particular phase difference between two channels */
- 
+	
+	// Check phase is between 0-360
+	if (phase < 0 || phase > 360) {
+		Serial.println("Phase out of valid range (0-360)");
+		phase = 0;
+	}
+	
 	// Calculate phase word for required phase value
 	// The phase on the DDS is equal to 12 LSB of phase word * 2*pi/PHASE_MAX
 	unsigned int phase_word = (PHASE_REGISTER_VALUE + (phase / 360.0) * PHASE_MAX); 
