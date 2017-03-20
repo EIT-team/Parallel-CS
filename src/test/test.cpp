@@ -2,7 +2,6 @@
 #include "catch.hpp"
 
 #include "definitions.h"
-#include "test_definitions.h"
 #include "Arduino.h"
 #include <iostream>
 	
