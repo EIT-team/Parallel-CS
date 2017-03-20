@@ -1,4 +1,5 @@
 #include "definitions.h"
+#include "Arduino.h"
 
 void Set_ADG984 (int channel_to_open) {
 /* Opens a single switch on the ADG984, to allow FSYNC to be routed to the appropriate DDS IC 

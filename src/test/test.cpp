@@ -3,5 +3,11 @@
 
 #include "definitions.h"
 #include "test_definitions.h"
-
-
+#include "Arduino.h"
+#include <iostream>
+	
+	TEST_CASE("Switches") {
+	
+	std::cout << HIGH;
+	
+	}

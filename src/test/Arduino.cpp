@@ -2,7 +2,6 @@
 
 #include "Arduino.h"
 
-
 void analogWrite(int pin, int value) {
 	;
 }
@@ -25,21 +24,36 @@ MockSerial::MockSerial() {
 	;
 }
 
-void MockSerial::print(char*) {
+void MockSerial::print(char* buffer) {
 	;
 }
 
-void MockSerial::println(char*) {
+void MockSerial::println(char* buffer) {
 	;
 }
 
-void MockSerial::print(int) {
+void MockSerial::print(int num) {
 	;
 }
 
-void MockSerial::println(int) {
+void MockSerial::println(int num) {
 	;
 }
 
 MockSerial Serial;
 
+// Mocked SPI commands
+
+MockSPI::MockSPI() {
+	;
+}
+
+void MockSPI::begin() {
+	;
+}
+
+unsigned int MockSPI::transfer(unsigned int data) {
+	return data;
+}
+
+MockSPI SPI;

@@ -1,6 +1,27 @@
 /*Program the AD9833, see http://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf for more details
 Calculates register values needed to program specific frequency and then uses AD9833_SendWord function to actually program the chip using SPI*/
 #include "definitions.h"
+#include "Arduino.h"
+
+void AD9833_SendWord(unsigned int data, int chan) {
+	/*SPI Data write
+	Can only send 8 bits at a time, so this splits up a 16 bit word and sends it as two parts
+	Add in several ms delay before/after SPI transfer to account for propagation delay differences between digital isolators and switching circuitry */
+
+	// Set FSYNC pin on the DDS chip we want to program
+	Set_ADG984(chan);
+	delay(SWITCH_DELAY_TIME);
+
+	// Send 16 bit word as two 8 bit sections
+	SPI.transfer((data >> 8) & 0xFF);
+	SPI.transfer(data & 0xFF);
+
+	// Disable SPI
+	// We want to close all of the switches, so use some sentinel values >> than the number of switches (e.g. 1000) to make this happen
+	Set_ADG984(CLOSE_ALL_SWITCHES);
+	delay(SWITCH_DELAY_TIME);
+}
+
 
 void Set_AD9833_Frequency(long freq, int chan) {
 
@@ -35,25 +56,6 @@ void Set_AD9833_Phase(int phase, int chan) {
 	AD9833_SendWord(phase_word, chan);        
 }
 
-
-void AD9833_SendWord(unsigned int data, int chan) {
-	/*SPI Data write
-	Can only send 8 bits at a time, so this splits up a 16 bit word and sends it as two parts
-	Add in several ms delay before/after SPI transfer to account for propagation delay differences between digital isolators and switching circuitry */
-
-	// Set FSYNC pin on the DDS chip we want to program
-	Set_ADG984(chan);
-	delay(SWITCH_DELAY_TIME);
-
-	// Send 16 bit word as two 8 bit sections
-	SPI.transfer((data >> 8) & 0xFF);
-	SPI.transfer(data & 0xFF);
-
-	// Disable SPI
-	// We want to close all of the switches, so use some sentinel values >> than the number of switches (e.g. 1000) to make this happen
-	Set_ADG984(CLOSE_ALL_SWITCHES);
-	delay(SWITCH_DELAY_TIME);
-}
 
 
 void Sweep_Freq (int freq_min, int freq_step, int freq_max, int chan, int on_time) {
