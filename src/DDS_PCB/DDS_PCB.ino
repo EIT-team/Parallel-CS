@@ -13,23 +13,8 @@ Tom Dowrick 19.10.2015
 
 //Library for handling the SPI transfer
 #include <SPI.h>
-
-//Variable for the SPI Enable pin
-#define FSYNC_Pin 5
-#define SDATA_SPI_Pin 11
-#define SCLK_SPI_Pin  13
-
-#define SCLK_SWITCH_Pin 9
-#define SYNC_SWITCH_Pin 2
-#define RESET_SWITCH_Pin 3
-#define DIN_SWITCH_Pin 4
-
-//Clock generator frequency, set by resistor R_SET on the PCB. This is used in the formula for setting the DDS sine wave frequency
-#define DDS_CLOCK_FREQUENCY 10e6
-
-//##############################CHANGE FREQUENCIES HERE################
-long Freqs[8] = {1000, 2000, 1000, 1000, 1000, 1000, 1000, 1000};
-//#######################################
+#inlude "definitions.h"
+#include "frequencies.h""
 
 void setup() {
 
@@ -70,10 +55,8 @@ void loop() {
 	int val_to_program; //Frequency (Hz) or phase (degrees) value
 	String what_to_program; //Freq or Phase
 
-	int n_chans = sizeof(Freqs) / sizeof(long);
-
 	// Program DDS chips according to values in Freqs[].
-	Program_Freqs (Freqs, n_chans);
+	Program_Freqs (Freqs, NUM_CHANNELS);
 
 	// Allow setting of frequency/phase from serial monitor
 	// Input 'freq chan_to_program val_to_program' to program frequency
@@ -87,10 +70,10 @@ void loop() {
 			val_to_program = Serial.parseInt();
 
 			if (what_to_program == "reset")
-			Reset_All(n_chans);
+			Reset_All(NUM_CHANNELS);
 
 			else if (what_to_program == "all")
-			Program_Freqs(Freqs, n_chans);
+			Program_Freqs(Freqs, NUM_CHANNELS);
 
 			else if (what_to_program == "freq") {
 				Serial.print("Programming channel: "); 
@@ -116,13 +99,11 @@ void loop() {
 	delay(1000);
 }
 
-#define MAX_DELAY 25000;
-
 void Program_Then_Turn_Off(long Freqs[], int n_chans, unsigned int on_time_milli) {
 
 	// At the moment (6.12.16) we want to limit the injection time to some maximum value to be over-cautious.
 	// If the specified injection time is too long, cancel the injections by resetting all DDS chips and return 
-	if (on_time_milli > MAX_DELAY) {
+	if (on_time_milli > MAX_CAUTIOUS_INJECTION) {
 		Serial.println("Injection time higher than maximum defined time. Turning off all DDS chips");
 		Reset_All(n_chans);
 		return;

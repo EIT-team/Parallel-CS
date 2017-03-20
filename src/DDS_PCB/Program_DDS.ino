@@ -1,14 +1,6 @@
 /*Program the AD9833, see http://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf for more details
 Calculates register values needed to program specific frequency and then uses AD9833_SendWord function to actually program the chip using SPI*/
-
-//
-
-#define DELAY_TIME 5    // Time to delay after programming switches
-#define CONTROL_REGISTER_VALUE 0x2000    // Default value for control register of DDS chip
-#define PHASE_REGISTER_VALUE 0xC000      // Default value for phase register of DDS chip
-#define RESET_CONTROL_REGISTER 0x2100    // Reset control register of DDS to produce midscale output
-
-#define PHASE_MAX 4096 // Maximum value of phase register
+#inlude "definitions.h"
 
 void Set_AD9833_Frequency(long freq, unsigned long F_MCLK, int chan) {
 
