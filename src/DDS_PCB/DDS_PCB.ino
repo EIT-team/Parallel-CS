@@ -13,7 +13,7 @@ Tom Dowrick 19.10.2015
 
 //Library for handling the SPI transfer
 #include <SPI.h>
-#inlude "definitions.h"
+#include "definitions.h"
 #include "frequencies.h""
 
 void setup() {
@@ -82,7 +82,7 @@ void loop() {
 				Serial.print(val_to_program);
 				Serial.println("Hz");
 
-				Set_AD9833_Frequency(val_to_program, DDS_CLOCK_FREQUENCY, chan_to_program);
+				Set_AD9833_Frequency(val_to_program, chan_to_program);
 			}
 			else {
 
@@ -122,7 +122,7 @@ void Program_Freqs (long Freqs [], int n_chans) {
 	//Loop through each freq/chan pair and program the switches/DDS chip
 
 	for (int i = 0; i < n_chans; i++) {
-		Set_AD9833_Frequency(Freqs[i], DDS_CLOCK_FREQUENCY, i + 1);
+		Set_AD9833_Frequency(Freqs[i], i + 1);
 	}
 }
 
@@ -131,7 +131,7 @@ void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
 
 	Serial.print("Single Chan Sweep");
 	for (int i = 0; i < n_freqs; i++) {
-		Set_AD9833_Frequency(Freqs[i], DDS_CLOCK_FREQUENCY, chan);
+		Set_AD9833_Frequency(Freqs[i], chan);
 		delay(2500);
 	}
 }

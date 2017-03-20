@@ -1,12 +1,12 @@
 /*Program the AD9833, see http://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf for more details
 Calculates register values needed to program specific frequency and then uses AD9833_SendWord function to actually program the chip using SPI*/
-#inlude "definitions.h"
+#include "definitions.h"
 
-void Set_AD9833_Frequency(long freq, unsigned long F_MCLK, int chan) {
+void Set_AD9833_Frequency(long freq, int chan) {
 
 	// Generating the frequency registers from the desired frequency
 	// Frequency value to send to AD9833, needs to be separated into two parts, 14 bits long each
-	unsigned long freq_word = (unsigned long)(0x10000000 / F_MCLK * freq); 
+	unsigned long freq_word = (unsigned long)(0x10000000 / DDS_CLOCK_FREQUENCY * freq); 
 	unsigned int msb = (freq_word >> 14); // 4 MSB of long data type aren't used, this gets the next 14 MSB
 	unsigned int lsb = (freq_word & 0x3fff); // Gives the 14 LSB
 
@@ -65,7 +65,7 @@ chan: which channel to program
 delay_time: how long to program each channel for (milliseconds) */
  
 	for (int i = freq_min ; i <= freq_max; i = i + freq_step) {
-		Set_AD9833_Frequency(i, F_MCLK, chan);
+		Set_AD9833_Frequency(i, chan);
 		delay(delay_time);
 	}
 }

@@ -17,7 +17,6 @@
 long Freqs[NUM_CHANNELS] = {	FREQ_1,
 								FREQ_2,
 								FREQ_3,
-								FREQ_3,
 								FREQ_4,
 								FREQ_5,
 								FREQ_6,

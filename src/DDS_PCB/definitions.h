@@ -19,7 +19,7 @@
 #define DDS_CLOCK_FREQUENCY 10e6
 
 // Maximum value for injection when operating with limited length injections (milliseconds)
-#define MAX_CAUTIOUS_INJECTION 25000;
+#define MAX_CAUTIOUS_INJECTION 25000
 
 /*								*/
 /* Program_DDS Defintions 		*/
