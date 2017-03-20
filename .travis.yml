@@ -6,5 +6,6 @@ install:
 
   - cd Parallel-CS
   - git checkout development
+  - cd src
   - make
   - ./test_file
