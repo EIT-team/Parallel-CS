@@ -44,7 +44,7 @@ void Set_AD9833_Frequency(long freq, int chan) {
 }
 
 
-void Set_AD9833_Phase(int phase, int chan) {
+unsigned int Set_AD9833_Phase(int phase, int chan) {
 /* Function to set only the phase of a particular channel, frequency remains unchanged.
  Can be used to set particular phase difference between two channels */
  
@@ -54,6 +54,8 @@ void Set_AD9833_Phase(int phase, int chan) {
 
 	// Set Phase register
 	AD9833_SendWord(phase_word, chan);        
+	
+	return phase_word;
 }
 
 

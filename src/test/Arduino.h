@@ -15,6 +15,7 @@ void digitalWrite(int, int);
 
 // Declarations for my Arduino functions
 void Set_ADG984(int);
+unsigned int Set_AD9833_Phase(int, int);
 
 class MockSerial {
 	// Mocks the Arduino Serial class

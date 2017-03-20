@@ -5,8 +5,14 @@
 #include "Arduino.h"
 #include <iostream>
 	
-	TEST_CASE("Switches") {
+	TEST_CASE("Set Phase") {
 	
-	std::cout << HIGH;
+	unsigned int phase_word;
 	
+	int phase = 0;
+	int chan = 0;
+	
+	phase_word = Set_AD9833_Phase(phase, chan);
+	
+	CHECK(phase_word == 0xC000);
 	}
