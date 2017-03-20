@@ -39,12 +39,13 @@ unsigned int Get_LSB(unsigned long freq_word) {
 	unsigned int lsb = freq_word & 0x3fff;
 	return lsb; // Gives the 14 LSB
 }
-void Set_AD9833_Frequency(long freq, int chan) {
+int Set_AD9833_Frequency(long freq, int chan) {
 	
 	// Abort if frequency is 0, negative or greater than 100kHz
 	if (freq <= 0 || freq > 1e5) {
 		Serial.println("Invalid Frequency.");
-		return;
+		
+		return -1;
 	}
 	
 	// Generate the frequency register values for the desired frequency
@@ -64,6 +65,8 @@ void Set_AD9833_Frequency(long freq, int chan) {
 	AD9833_SendWord(msb, chan);                         // Frequency Register part 2 (MSB)
 	AD9833_SendWord(PHASE_REGISTER_VALUE, chan);        // Phase regsister, don't need to change this at the moment, so set to 0 phase
 	
+	// Everything OK
+	return 1;
 }
 
 

@@ -16,6 +16,11 @@ void digitalWrite(int, int);
 // Declarations for my Arduino functions
 void Set_ADG984(int);
 unsigned int Set_AD9833_Phase(int, int);
+int Set_AD9833_Frequency(long, int);
+unsigned long Get_Frequency_Word(long);
+unsigned int Get_MSB(unsigned long);
+unsigned int Get_LSB(unsigned long);
+
 
 class MockSerial {
 	// Mocks the Arduino Serial class
