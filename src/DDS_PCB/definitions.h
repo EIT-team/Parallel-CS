@@ -21,6 +21,9 @@
 // Maximum value for injection when operating with limited length injections (milliseconds)
 #define MAX_CAUTIOUS_INJECTION 25000
 
+#define ONE_SECOND_DELAY 1000
+#define SERIAL_BAUD_RATE 9600
+
 /*								*/
 /* Program_DDS Defintions 		*/
 /*								*/

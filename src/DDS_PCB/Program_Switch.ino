@@ -13,6 +13,7 @@ Inputs  - channel_to_open, this is the channel we want to activate, i.e. set to 
 	digitalWrite(SYNC_SWITCH_Pin, LOW);
 
 	//Iterate once for each switch.
+ // Do this in descending order as that it how they are clocked into the switch IC
 	for (int j = N_SWITCHES; j > 0; j--) {
 
 		//Sets the target channel to digital LOW, by open circuting the switch, causing the digital isolator to take its default value of digital LOW
