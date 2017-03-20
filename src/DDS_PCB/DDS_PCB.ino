@@ -112,6 +112,26 @@ void loop() {
 }
 
 
+void Program_Freqs (long Freqs [], int n_chans) {
+  //Loop through each freq/chan pair and program the switches/DDS chip
+
+  for (int i = 0; i < n_chans; i++) {
+    Set_AD9833_Frequency(Freqs[i], i + 1);
+  }
+}
+
+
+void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
+
+  Serial.print("Single Chan Sweep");
+  for (int i = 0; i < n_freqs; i++) {
+    Set_AD9833_Frequency(Freqs[i], chan);
+    delay(ONE_SECOND_DELAY);
+  }
+}
+
+
+
 void Program_Then_Turn_Off(long Freqs[], int n_chans, unsigned int on_time_milli) {
 
   // At the moment (6.12.16) we want to limit the injection time to some maximum value to be over-cautious.
@@ -131,21 +151,3 @@ void Program_Then_Turn_Off(long Freqs[], int n_chans, unsigned int on_time_milli
   }
 }
 
-
-void Program_Freqs (long Freqs [], int n_chans) {
-  //Loop through each freq/chan pair and program the switches/DDS chip
-
-  for (int i = 0; i < n_chans; i++) {
-    Set_AD9833_Frequency(Freqs[i], i + 1);
-  }
-}
-
-
-void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
-
-  Serial.print("Single Chan Sweep");
-  for (int i = 0; i < n_freqs; i++) {
-    Set_AD9833_Frequency(Freqs[i], chan);
-    delay(ONE_SECOND_DELAY);
-  }
-}
