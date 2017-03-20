@@ -59,12 +59,12 @@ void loop() {
   // Program DDS chips according to values in Freqs[].
   Program_Freqs (Freqs, NUM_CHANNELS);
 
+  // Character buffer used to store output messages to reduce the number of Serial.print() commands
+  char buffer[PRINT_BUFFER_SIZE];
+  
   // Allow setting of frequency/phase from serial monitor
   // Input 'freq chan_to_program val_to_program' to program frequency
   // 'phase chan_to_program val_to_program' to set phase
-
-  // Character buffer used to store output messages to reduce the number of Serial.print() commands
-  char buffer[PRINT_BUFFER_SIZE];
 
   while (1) {
     // Wait for Serial data to be received and parse it
