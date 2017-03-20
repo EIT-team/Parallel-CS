@@ -6,37 +6,27 @@
 
 //Inputs  - channel_to_open, this is the channel we want to activate, i.e. set to digital LOW
 
-void Set_ADG984 (int channel_to_open) {
+#define N_SWITCHES 8
 
-  //Reset switches
-  //
-  //digitalWrite(RESET_SWITCH_Pin, LOW);
-  //digitalWrite(RESET_SWITCH_Pin, HIGH);
+void Set_ADG984 (int channel_to_open) {
 
   //Program the switches
   //Set SYNC low, clock through switch setting values (0 or 1) , then set SYNC high to actually open/close switches
-
-
-  //Set SYNC low to enable programming of switches
   digitalWrite(SYNC_SWITCH_Pin, LOW);
 
   //Iterate 8 times, once for each switch.
-  for (int j = 8 ; j > 0 ; j--) {
+  for (int j = N_SWITCHES; j > 0; j--) {
 
     //Sets the target channel to digital LOW, by open circuting the switch, causing the digital isolator to take its default value of digital LOW
     if (j == channel_to_open) {
       digitalWrite(DIN_SWITCH_Pin, LOW);
-      // Serial.print(j);
-      // Serial.print("LOW \n");
+
     }
     //Sets all other channels digital HIGH, by connecting to the high FYSNC signal coming from the microcontroller.
-    else
+    else {
       digitalWrite(DIN_SWITCH_Pin, HIGH);
-
-
-
-
-
+	}
+	
     //Generate clock pulse to clock in switch values to DIN pins.
     digitalWrite(SCLK_SWITCH_Pin, HIGH);
     digitalWrite(SCLK_SWITCH_Pin, LOW);
@@ -48,7 +38,6 @@ void Set_ADG984 (int channel_to_open) {
 
   //Set SYNC high to update switches
   digitalWrite(SYNC_SWITCH_Pin, HIGH);
-
 
 }
 
