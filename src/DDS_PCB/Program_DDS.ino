@@ -22,14 +22,36 @@ void AD9833_SendWord(unsigned int data, int chan) {
 	delay(SWITCH_DELAY_TIME);
 }
 
+unsigned long Get_Frequency_Word(long freq) {
+	// Calculate the frequency word
+	unsigned long freq_word = (unsigned long)(0x10000000 / DDS_CLOCK_FREQUENCY * freq);
+	return freq_word;
+}
+unsigned int Get_MSB(unsigned long freq_word) {
+	// Get the MSB of the frequency word
+	// 4 MSB of long data type aren't used, this gets the next 14 MSB
+	unsigned int msb = freq_word >>14;
+	return msb;
+}
 
+unsigned int Get_LSB(unsigned long freq_word) {
+	// Get the LSB of the frequency word
+	unsigned int lsb = freq_word & 0x3fff;
+	return lsb; // Gives the 14 LSB
+}
 void Set_AD9833_Frequency(long freq, int chan) {
-
-	// Generating the frequency registers from the desired frequency
+	
+	// Abort if frequency is 0, negative or greater than 100kHz
+	if (freq <= 0 || freq > 1e5) {
+		Serial.println("Invalid Frequency.");
+		return;
+	}
+	
+	// Generate the frequency register values for the desired frequency
 	// Frequency value to send to AD9833, needs to be separated into two parts, 14 bits long each
-	unsigned long freq_word = (unsigned long)(0x10000000 / DDS_CLOCK_FREQUENCY * freq); 
-	unsigned int msb = (freq_word >> 14); // 4 MSB of long data type aren't used, this gets the next 14 MSB
-	unsigned int lsb = (freq_word & 0x3fff); // Gives the 14 LSB
+	unsigned long freq_word =  Get_Frequency_Word(freq);
+	unsigned int msb = Get_MSB(freq_word); 
+	unsigned int lsb = Get_LSB(freq_word);
 
 	// Now we have two sets of 14 bits. Each word to be sent to the AD9833 should be 16 bits, with the 2 MSB indicating which register on the chip to send to
 	// Here, using Register 0 (set 2 MSB to 01). To use Register 1, set 2MSB to 10 ( msb | 0x8000)
@@ -41,6 +63,7 @@ void Set_AD9833_Frequency(long freq, int chan) {
 	AD9833_SendWord(lsb, chan);                         // Frequency Regsiter part 1 (LSB)
 	AD9833_SendWord(msb, chan);                         // Frequency Register part 2 (MSB)
 	AD9833_SendWord(PHASE_REGISTER_VALUE, chan);        // Phase regsister, don't need to change this at the moment, so set to 0 phase
+	
 }
 
 
