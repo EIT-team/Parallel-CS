@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/EIT-team/Parallel-CS.svg?branch=master)](https://travis-ci.org/EIT-team/Parallel-CS)
+
 # Parallel-CS
 Parallel inject current source design
 
