@@ -56,17 +56,17 @@ void AD9833_SendWord(unsigned int data, int chan) {
 }
 
 
-void Sweep_Freq (int freq_min, int freq_step, int freq_max, int chan, int delay_time) {
+void Sweep_Freq (int freq_min, int freq_step, int freq_max, int chan, int on_time) {
 /* Sweeps the frequency output on a channel, with increment and max value set by user.
 freq_min: starting frequency (Hz)
 freq_step: increment (Hz)
 freq_max: Stopping frequency (Hz)
 chan: which channel to program
-delay_time: how long to program each channel for (milliseconds) */
+on_time: how long to program each channel for (milliseconds) */
  
 	for (int i = freq_min ; i <= freq_max; i = i + freq_step) {
 		Set_AD9833_Frequency(i, chan);
-		delay(delay_time);
+		delay(on_time);
 	}
 }
 

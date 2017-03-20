@@ -13,6 +13,7 @@
 
 //Library for handling the SPI transfer
 #include <SPI.h>
+
 #include "definitions.h"
 #include "frequencies.h"
 
@@ -90,7 +91,6 @@ void loop() {
         Set_AD9833_Frequency(val_to_program, chan_to_program);
       }
 
-
       else if (what_to_program == "phase")	 {
         Serial.print("Programming channel: ");
         Serial.print(chan_to_program);
@@ -100,15 +100,16 @@ void loop() {
         Set_AD9833_Phase(val_to_program, chan_to_program);
       }
 
+      // default case - invalid command has been passed
       else {
         Serial.println("Command not recognised.");
       }
     }
   }
 
-
-  delay(1000);
+  delay(ONE_SECOND_DELAY);
 }
+
 
 void Program_Then_Turn_Off(long Freqs[], int n_chans, unsigned int on_time_milli) {
 
@@ -144,6 +145,6 @@ void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
   Serial.print("Single Chan Sweep");
   for (int i = 0; i < n_freqs; i++) {
     Set_AD9833_Frequency(Freqs[i], chan);
-    delay(2500);
+    delay(ONE_SECOND_DELAY);
   }
 }
