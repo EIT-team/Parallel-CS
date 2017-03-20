@@ -43,7 +43,7 @@ void AD9833_SendWord(unsigned int data, int chan) {
 
 	// Set FSYNC pin on the DDS chip we want to program
 	Set_ADG984(chan);
-	delay(DELAY_TIME);
+	delay(SWITCH_DELAY_TIME);
 
 	// Send 16 bit word as two 8 bit sections
 	SPI.transfer((data >> 8) & 0xFF);
@@ -52,7 +52,7 @@ void AD9833_SendWord(unsigned int data, int chan) {
 	// Disable SPI
 	// We want to close all of the switches, so use some sentinel values >> than the number of switches (e.g. 1000) to make this happen
 	Set_ADG984(CLOSE_ALL_SWITCHES);
-	delay(DELAY_TIME);
+	delay(SWITCH_DELAY_TIME);
 }
 
 

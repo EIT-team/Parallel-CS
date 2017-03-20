@@ -29,7 +29,7 @@
 /* Program_DDS Defintions 		*/
 /*								*/
 
-#define DELAY_TIME 5    // Time to delay after programming switches
+#define SWITCH_DELAY_TIME 5    // Time to delay after programming switches
 #define CONTROL_REGISTER_VALUE 0x2000    // Default value for control register of DDS chip
 #define PHASE_REGISTER_VALUE 0xC000      // Default value for phase register of DDS chip
 #define RESET_CONTROL_REGISTER 0x2100    // Reset control register of DDS to produce midscale output

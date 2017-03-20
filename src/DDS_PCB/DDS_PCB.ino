@@ -65,11 +65,14 @@ void loop() {
 
   // Character buffer used to store output messages to reduce the number of Serial.print() commands
   char buffer[PRINT_BUFFER_SIZE];
-   
+
   while (1) {
     // Wait for Serial data to be received and parse it
+
+    delay(ONE_SECOND_DELAY);
+
     if (Serial.available()) {
-      
+
       what_to_program = Serial.readStringUntil(' ');
       chan_to_program = Serial.parseInt();
       val_to_program = Serial.parseInt();
@@ -89,7 +92,7 @@ void loop() {
       else if (what_to_program == "freq")     {
         snprintf(buffer, PRINT_BUFFER_SIZE, "Programming channel: %d to freqency %d Hz", chan_to_program, val_to_program);
         Serial.println(buffer);
-               
+
         Set_AD9833_Frequency(val_to_program, chan_to_program);
       }
 
@@ -106,8 +109,6 @@ void loop() {
       }
     }
   }
-
-  delay(ONE_SECOND_DELAY);
 }
 
 
