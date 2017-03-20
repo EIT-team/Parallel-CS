@@ -30,10 +30,11 @@ void Set_AD9833_Frequency(long freq, unsigned long F_MCLK, int chan) {
 	AD9833_SendWord(PHASE_REGISTER_VALUE, chan);        // Phase regsister, don't need to change this at the moment, so set to 0 phase
 }
 
-// Function to set only the phase of a particular channel, frequency remains unchanged.
-// Can be used to set particular phase difference between two channels
-void Set_AD9833_Phase(int phase, int chan) {
 
+void Set_AD9833_Phase(int phase, int chan) {
+/* Function to set only the phase of a particular channel, frequency remains unchanged.
+ Can be used to set particular phase difference between two channels */
+ 
 	// Calculate phase word for required phase value
 	// The phase on the DDS is equal to 12 LSB of phase word * 2*pi/PHASE_MAX
 	unsigned int phase_word = (PHASE_REGISTER_VALUE + (phase / 360.0) * PHASE_MAX); 
@@ -63,27 +64,29 @@ void AD9833_SendWord(unsigned int data, int chan) {
 }
 
 
-// Sweeps the frequency output on a channel, with increment and max value set by user.
-// e.g.   Sweep_Freq(500,100,3000,1,10000);
-
 void Sweep_Freq (int freq_min, int freq_step, int freq_max, int chan, int delay_time) {
-
-	for (int i = freq_min ; i <= freq_max; i = i + freq_step)
-	{
+/* Sweeps the frequency output on a channel, with increment and max value set by user.
+freq_min: starting frequency (Hz)
+freq_step: increment (Hz)
+freq_max: Stopping frequency (Hz)
+chan: which channel to program
+delay_time: how long to program each channel for (milliseconds) */
+ 
+	for (int i = freq_min ; i <= freq_max; i = i + freq_step) {
 		Set_AD9833_Frequency(i, F_MCLK, chan);
 		delay(delay_time);
 	}
 }
 
-//Resets all channels to default output (essentially off)
-void Reset_DDS(int chan) {
 
+void Reset_DDS(int chan) {
+// Reset single channel to midscale output (turns off AC output)
 	AD9833_SendWord(RESET_CONTROL_REGISTER, chan);
 }
 
 
 void Reset_All(int n_chans) {
-
+//Resets all channels to default output 
 	for (int j = 1; j <= n_chans  ; j++) {
 		Reset_DDS(j);
 	}
