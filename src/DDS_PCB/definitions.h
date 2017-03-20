@@ -24,6 +24,7 @@
 #define ONE_SECOND_DELAY 1000
 #define SERIAL_BAUD_RATE 9600
 
+#define PRINT_BUFFER_SIZE 50
 /*								*/
 /* Program_DDS Defintions 		*/
 /*								*/

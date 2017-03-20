@@ -63,6 +63,9 @@ void loop() {
   // Input 'freq chan_to_program val_to_program' to program frequency
   // 'phase chan_to_program val_to_program' to set phase
 
+  // Character buffer used to store output messages to reduce the number of Serial.print() commands
+  char buffer[PRINT_BUFFER_SIZE];
+   
   while (1) {
     // Wait for Serial data to be received and parse it
     if (Serial.available()) {
@@ -75,28 +78,25 @@ void loop() {
       // Can't use switch statement to do this as it won't accept a string as a comparator
       if (what_to_program == "reset") {
         Reset_All(NUM_CHANNELS);
+        Serial.println("Resetting all channel");
 
       }
       else if (what_to_program == "all") {
         Program_Freqs(Freqs, NUM_CHANNELS);
+        Serial.println("Programming default frequencies");
       }
 
       else if (what_to_program == "freq")     {
-        Serial.print("Programming channel: ");
-        Serial.print(chan_to_program);
-        Serial.print(" to frequency: ");
-        Serial.print(val_to_program);
-        Serial.println("Hz");
-
+        snprintf(buffer, PRINT_BUFFER_SIZE, "Programming channel: %d to freqency %d Hz", chan_to_program, val_to_program);
+        Serial.println(buffer);
+               
         Set_AD9833_Frequency(val_to_program, chan_to_program);
       }
 
       else if (what_to_program == "phase")	 {
-        Serial.print("Programming channel: ");
-        Serial.print(chan_to_program);
-        Serial.print(" to phase: ");
-        Serial.print(val_to_program);
-        Serial.println(" degrees");
+        snprintf(buffer, PRINT_BUFFER_SIZE, "Programming channel: %d to phase %d degrees", chan_to_program, val_to_program);
+        Serial.println(buffer);
+
         Set_AD9833_Phase(val_to_program, chan_to_program);
       }
 
