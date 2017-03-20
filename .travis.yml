@@ -1,0 +1,10 @@
+language: bash
+
+
+install:
+  - git clone https://github.com/EIT-team/Parallel-CS
+
+  - cd Parallel-CS
+  - git checkout development
+  - make
+  - ./test_file
