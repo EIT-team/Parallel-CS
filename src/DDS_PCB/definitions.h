@@ -33,8 +33,16 @@
 #define CONTROL_REGISTER_VALUE 0x2000    // Default value for control register of DDS chip
 #define PHASE_REGISTER_VALUE 0xC000      // Default value for phase register of DDS chip
 #define RESET_CONTROL_REGISTER 0x2100    // Reset control register of DDS to produce midscale output
-#define PHASE_MAX 4096 // Maximum value of phase register
+#define PHASE_REGISTER_MAX 4096 // Maximum value of phase register
 #define CLOSE_ALL_SWITCHES 1000 // If a value > N_SWITCHES is passed, then all switches are closed
+#define DDS_PROGRAM_CONSTANT 0x10000000 // 2^28
+#define MAX_FREQUENCY 1e5
+
+// Bit masks and shifts
+#define LSB_BIT_MASK 0x3fff
+#define SPI_BIT_MASK 0xFF
+#define FREQ_REG_MASK 0x4000 	//Use Register 0 (set 2 MSB to 01). To use Register 1, set 2MSB to 10 (0x8000)
+
 
 /*								*/
 /* Program_Switch Definitions 	*/

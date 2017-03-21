@@ -13,8 +13,8 @@ void AD9833_SendWord(unsigned int data, int chan) {
 	delay(SWITCH_DELAY_TIME);
 
 	// Send 16 bit word as two 8 bit sections
-	SPI.transfer((data >> 8) & 0xFF);
-	SPI.transfer(data & 0xFF);
+	SPI.transfer( (data >> 8) & SPI_BIT_MASK);
+	SPI.transfer(data & SPI_BIT_MASK);
 
 	// Disable SPI
 	// We want to close all of the switches, so use some sentinel values >> than the number of switches (e.g. 1000) to make this happen
@@ -24,27 +24,26 @@ void AD9833_SendWord(unsigned int data, int chan) {
 
 unsigned long Get_Frequency_Word(long freq) {
 	// Calculate the frequency word
-	unsigned long freq_word = (unsigned long)(0x10000000 / DDS_CLOCK_FREQUENCY * freq);
+	unsigned long freq_word = (unsigned long)(DDS_PROGRAM_CONSTANT / DDS_CLOCK_FREQUENCY * freq);
 	return freq_word;
 }
 unsigned int Get_MSB(unsigned long freq_word) {
 	// Get the MSB of the frequency word
 	// 4 MSB of long data type aren't used, this gets the next 14 MSB
-	unsigned int msb = freq_word >>14;
+	unsigned int msb = freq_word >> 14;
 	return msb;
 }
 
 unsigned int Get_LSB(unsigned long freq_word) {
 	// Get the LSB of the frequency word
-	unsigned int lsb = freq_word & 0x3fff;
-	return lsb; // Gives the 14 LSB
+	unsigned int lsb = freq_word & LSB_BIT_MASK;  // Gives the 14 LSB
+	return lsb;
 }
 int Set_AD9833_Frequency(long freq, int chan) {
 	
 	// Abort if frequency is 0, negative or greater than 100kHz
-	if (freq <= 0 || freq > 1e5) {
+	if (freq <= 0 || freq > MAX_FREQUENCY) {
 		Serial.println("Invalid Frequency.");
-		
 		return -1;
 	}
 	
@@ -55,9 +54,8 @@ int Set_AD9833_Frequency(long freq, int chan) {
 	unsigned int lsb = Get_LSB(freq_word);
 
 	// Now we have two sets of 14 bits. Each word to be sent to the AD9833 should be 16 bits, with the 2 MSB indicating which register on the chip to send to
-	// Here, using Register 0 (set 2 MSB to 01). To use Register 1, set 2MSB to 10 ( msb | 0x8000)
-	msb = msb | 0x4000;
-	lsb = lsb | 0x4000;
+	msb = msb | FREQ_REG_MASK;
+	lsb = lsb | FREQ_REG_MASK;
 
 	// Set control register, frequency register (in two parts LSB and MSB) and phase register
 	AD9833_SendWord(CONTROL_REGISTER_VALUE, chan);       // Control register
@@ -82,7 +80,7 @@ unsigned int Set_AD9833_Phase(int phase, int chan) {
 	
 	// Calculate phase word for required phase value
 	// The phase on the DDS is equal to 12 LSB of phase word * 2*pi/PHASE_MAX
-	unsigned int phase_word = (PHASE_REGISTER_VALUE + (phase / 360.0) * PHASE_MAX); 
+	unsigned int phase_word = (PHASE_REGISTER_VALUE + (phase / 360.0) * PHASE_REGISTER_MAX); 
 
 	// Set Phase register
 	AD9833_SendWord(phase_word, chan);        
