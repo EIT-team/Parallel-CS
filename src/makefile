@@ -7,7 +7,7 @@ INC_TEST=-I./test/
 all: main
 
 main: test.o Program_Switch.o Arduino.o Program_DDS.o
-	$(CC) -o test_file test.o Program_Switch.o Arduino.o Program_DDS.o
+	$(CC) -o run_tests test.o Program_Switch.o Arduino.o Program_DDS.o
 
 Program_DDS.o: DDS_PCB/Program_DDS.ino Arduino.o Program_Switch.o test/Arduino.h
 	$(CC) $(CFLAGS) $(ARDFLAGS) DDS_PCB/Program_DDS.ino $(INC_TEST)
