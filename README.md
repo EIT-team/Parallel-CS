@@ -3,7 +3,7 @@
 # Parallel-CS
 Parallel inject current source design
 
-Includes: Circuit schematics, PCB Layout, Arduino code for programming output frequency and/pr phase of CS.
+Includes: Circuit schematics, PCB Layout, Arduino code for programming output frequency and/or phase of CS.
 
 **Instructions for programming CS board**
 
