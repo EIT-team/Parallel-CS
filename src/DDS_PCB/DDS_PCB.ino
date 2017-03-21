@@ -72,18 +72,18 @@ void loop() {
     delay(ONE_SECOND_DELAY);
 
     if (Serial.available()) {
-
-      what_to_program = Serial.readStringUntil(' ');
-      chan_to_program = Serial.parseInt();
-      val_to_program = Serial.parseInt();
+	  
+      what_to_program = Serial.readStringUntil(' '); // Get a string
+      chan_to_program = Serial.parseInt(); // Get an int
+      val_to_program = Serial.parseInt(); // Get an int
 
       // Process input and call appropriate commands
       // Can't use switch statement to do this as it won't accept a string as a comparator
       if (what_to_program == "reset") {
         Reset_All(NUM_CHANNELS);
         Serial.println("Resetting all channel");
-
       }
+	  
       else if (what_to_program == "all") {
         Program_Freqs(Freqs, NUM_CHANNELS);
         Serial.println("Programming default frequencies");
@@ -99,7 +99,6 @@ void loop() {
       else if (what_to_program == "phase")	 {
         snprintf(buffer, PRINT_BUFFER_SIZE, "Programming channel: %d to phase %d degrees", chan_to_program, val_to_program);
         Serial.println(buffer);
-
         Set_AD9833_Phase(val_to_program, chan_to_program);
       }
 
@@ -122,20 +121,10 @@ void Program_Freqs (long Freqs [], int n_chans) {
 
 // Additional functions that may be helpful
 
-void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
-
-  Serial.print("Single Chan Sweep");
-  for (int i = 0; i < n_freqs; i++) {
-    Set_AD9833_Frequency(Freqs[i], chan);
-    delay(ONE_SECOND_DELAY);
-  }
-}
-
-
 void Program_Then_Turn_Off(long Freqs[], int n_chans, unsigned int on_time_milli) {
 
-  // At the moment (6.12.16) we want to limit the injection time to some maximum value to be over-cautious.
-  // If the specified injection time is too long, cancel the injections by resetting all DDS chips and return
+  /* At the moment (6.12.16) we want to limit the injection time to some maximum value to be over-cautious.
+   If the specified injection time is too long, cancel the injections by resetting all DDS chips and return */
 
   if (on_time_milli > MAX_CAUTIOUS_INJECTION) {
     Serial.println("Injection time higher than maximum defined time. Turning off all DDS chips");
