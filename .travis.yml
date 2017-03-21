@@ -7,4 +7,4 @@ install:
   - git checkout development
   - cd src
   - make
-  - ./test_file
+  - ./run_tests
