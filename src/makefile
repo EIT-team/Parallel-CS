@@ -1,6 +1,6 @@
 CC=g++ 
 CFLAGS=-c -Wall
-ARDFLAGS=-x c++ # Flags when compiling Arduino .ino files
+ARDFLAGS=-x c++ # Flags when compiling Arduino files with .ino extension
 INC_ARD=-I./DDS_PCB/
 INC_TEST=-I./test/ 
 
