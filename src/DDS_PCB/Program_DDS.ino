@@ -74,7 +74,7 @@ int Set_AD9833_Frequency(long freq, int chan) {
 	
 	// Everything OK, print confirmation
 	char buffer[PRINT_BUFFER_SIZE];
-	snprintf(buffer, PRINT_BUFFER_SIZE, "Channel %d programmed with frequency %d", chan, freq);
+	snprintf(buffer, PRINT_BUFFER_SIZE, "Channel %d programmed with frequency %ld", chan, freq);
 	Serial.println(buffer);
 	return 1;
 }
