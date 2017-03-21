@@ -11,7 +11,7 @@
 //  RESET_Switch - Reset pin for switch. Active low, Resets all switches to default, open, position.
 // DIN_Switch - Send the values to open/close switches
 
-//Library for handling the SPI transfer
+// Library for handling the SPI transfer
 #include <SPI.h>
 
 #include "definitions.h"
@@ -27,9 +27,9 @@ void setup() {
   pinMode(SCLK_SPI_Pin, OUTPUT);
 
   digitalWrite(FSYNC_Pin, HIGH); //Set FSYNC High. FSYNC is active low
-  digitalWrite(SDATA_SPI_Pin, LOW); //Set SDATA Low
-  digitalWrite(SCLK_SPI_Pin, LOW); //Set SCLK Low
-
+  digitalWrite(SDATA_SPI_Pin, LOW); 
+  digitalWrite(SCLK_SPI_Pin, LOW);
+  
   //For Digital Switch
   pinMode(SCLK_SWITCH_Pin, OUTPUT);
   pinMode(SYNC_SWITCH_Pin, OUTPUT);
@@ -41,11 +41,11 @@ void setup() {
   digitalWrite( SYNC_SWITCH_Pin, HIGH );
   digitalWrite( RESET_SWITCH_Pin, HIGH );
 
-  //Arduino handles most of the underlying SPI transfer by itself, set it up here
-  SPI.begin();  //Enable SPI
-  SPI.setBitOrder(MSBFIRST);  //Send data Most significant bit first, this is necessary for the AD9833
-  SPI.setDataMode(SPI_MODE2);  //Set SPI Mode 2 (Data captured on falling edge of clock, clock inversion on)
-  SPI.setClockDivider(SPI_CLOCK_DIV128);    //  Set clock divider (optional)
+  // Arduino handles most of the underlying SPI transfer by itself, set it up here
+  SPI.begin();  // Enable SPI
+  SPI.setBitOrder(MSBFIRST);  // Send data Most significant bit first, this is necessary for the AD9833
+  SPI.setDataMode(SPI_MODE2);  // Set SPI Mode 2 (Data captured on falling edge of clock, clock inversion on)
+  SPI.setClockDivider(SPI_CLOCK_DIV128);    // Set clock divider (optional)
 }
 
 
@@ -53,8 +53,8 @@ void loop() {
 
   byte byteRead; // Serial read data
   int chan_to_program; //Channel number
-  int val_to_program; //Frequency (Hz) or phase (degrees) value
-  String what_to_program; //Freq or Phase
+  int val_to_program; // Frequency (Hz) or phase (degrees) value
+  String what_to_program; // Freq, Phase, All or Reset
 
   // Program DDS chips according to values in Freqs[].
   Program_Freqs (Freqs, NUM_CHANNELS);
@@ -113,13 +113,14 @@ void loop() {
 
 
 void Program_Freqs (long Freqs [], int n_chans) {
-  //Loop through each freq/chan pair and program the switches/DDS chip
+  // Loop through each freq/chan pair and program the switches/DDS chip
 
   for (int i = 0; i < n_chans; i++) {
     Set_AD9833_Frequency(Freqs[i], i + 1);
   }
 }
 
+// Additional functions that may be helpful
 
 void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
 
@@ -129,7 +130,6 @@ void Test_Single_Chan (int Freqs [], int n_freqs, int chan) {
     delay(ONE_SECOND_DELAY);
   }
 }
-
 
 
 void Program_Then_Turn_Off(long Freqs[], int n_chans, unsigned int on_time_milli) {

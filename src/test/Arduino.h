@@ -1,4 +1,4 @@
-/* Mock Arduino functions */
+/* Mock Arduino functions and constants when compiling stand along code for testing */
 
 #ifndef _ArduinoH
 #define _ArduinoH
@@ -14,6 +14,7 @@ void delay(int);
 void digitalWrite(int, int);
 
 // Declarations for my Arduino functions
+// Standard Arduino compiler ignores/doesn't need declarations
 void Set_ADG984(int);
 unsigned int Set_AD9833_Phase(int, int);
 int Set_AD9833_Frequency(long, int);

@@ -1,17 +1,19 @@
-/*Program the AD9833, see http://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf for more details
-Calculates register values needed to program specific frequency and then uses AD9833_SendWord function to actually program the chip using SPI*/
+/* Functions to Program the AD9833, see http://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf for more details on the algorithm and technical details.
+
+For a required frequency/phase value, a frequency/phase word is calculated which must be sent to the DDS chip over SPI */
+
 #include "definitions.h"
 #include "Arduino.h"
 
 void AD9833_SendWord(unsigned int data, int chan) {
-	/*SPI Data write
-	Can only send 8 bits at a time, so this splits up a 16 bit word and sends it as two parts
-	Add in several ms delay before/after SPI transfer to account for propagation delay differences between digital isolators and switching circuitry */
+	/* SPI Data write can only send 8 bits at a time, so this splits up a 16 bit word and sends it as two parts. Unsigned int is 32 bits long, only the 16MSB are used.
+	A few ms of delay are added before/after SPI transfer to account for propagation delay differences between digital isolators and switching circuitry */
 
 	// Set FSYNC pin on the DDS chip we want to program
 	Set_ADG984(chan);
 	delay(SWITCH_DELAY_TIME);
 
+	// SPI.transfer only sends 8 bits a a time
 	// Send 16 bit word as two 8 bit sections
 	SPI.transfer( (data >> 8) & SPI_BIT_MASK);
 	SPI.transfer(data & SPI_BIT_MASK);
@@ -23,23 +25,29 @@ void AD9833_SendWord(unsigned int data, int chan) {
 }
 
 unsigned long Get_Frequency_Word(long freq) {
-	// Calculate the frequency word
+	// Calculate the frequency word, which is 28 bits long.
 	unsigned long freq_word = (unsigned long)(DDS_PROGRAM_CONSTANT / DDS_CLOCK_FREQUENCY * freq);
 	return freq_word;
 }
+
+
 unsigned int Get_MSB(unsigned long freq_word) {
 	// Get the MSB of the frequency word
-	// 4 MSB of long data type aren't used, this gets the next 14 MSB
+	// The 4 MSB of the frequency word aren't used, this gets the next 14 MSB
 	unsigned int msb = freq_word >> 14;
 	return msb;
 }
+
 
 unsigned int Get_LSB(unsigned long freq_word) {
 	// Get the LSB of the frequency word
 	unsigned int lsb = freq_word & LSB_BIT_MASK;  // Gives the 14 LSB
 	return lsb;
 }
+
+
 int Set_AD9833_Frequency(long freq, int chan) {
+	/* Generate the frequency word, msb and lsb, and send to the DDS chips */
 	
 	// Abort if frequency is 0, negative or greater than 100kHz
 	if (freq <= 0 || freq > MAX_FREQUENCY) {
@@ -53,7 +61,7 @@ int Set_AD9833_Frequency(long freq, int chan) {
 	unsigned int msb = Get_MSB(freq_word); 
 	unsigned int lsb = Get_LSB(freq_word);
 
-	// Now we have two sets of 14 bits. Each word to be sent to the AD9833 should be 16 bits, with the 2 MSB indicating which register on the chip to send to
+	// Now we have two sets of 14 bits. Each word to be sent to the AD9833 should be 16 bits, with the 2 MSB indicating which register on the chip to send to.
 	msb = msb | FREQ_REG_MASK;
 	lsb = lsb | FREQ_REG_MASK;
 
@@ -106,13 +114,13 @@ on_time: how long to program each channel for (milliseconds) */
 
 
 void Reset_DDS(int chan) {
-// Reset single channel to midscale output (turns off AC output)
+/* Reset single channel to midscale output (turns off AC output) */
 	AD9833_SendWord(RESET_CONTROL_REGISTER, chan);
 }
 
 
 void Reset_All(int n_chans) {
-//Resets all channels to default output 
+/* Resets all channels to default output */
 	for (int j = 1; j <= n_chans  ; j++) {
 		Reset_DDS(j);
 	}
