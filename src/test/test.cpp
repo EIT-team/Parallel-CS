@@ -63,8 +63,8 @@ TEST_CASE("Set Frequency") {
 		unsigned int lsb = Get_LSB(freq_word);
 		
 		unsigned long expected_word = 0x68DB;
-		unsigned int expected_msb = 0x0001;
-		unsigned int expected_lsb = 0x28DB;
+		unsigned int expected_msb = 0x4001;
+		unsigned int expected_lsb = 0x68DB;
 		
 		CHECK(freq_word == expected_word);
 		CHECK(msb == expected_msb);

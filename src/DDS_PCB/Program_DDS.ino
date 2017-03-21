@@ -35,14 +35,18 @@ unsigned int Get_MSB(unsigned long freq_word) {
 	// Get the MSB of the frequency word
 	// The 4 MSB of the frequency word aren't used, this gets the next 14 MSB
 	unsigned int msb = freq_word >> 14;
-	return msb;
+	
+	// Set the two MSB to indiciate which DDS register data will be sent to.
+	return msb | FREQ_REG_MASK;;
 }
 
 
 unsigned int Get_LSB(unsigned long freq_word) {
 	// Get the LSB of the frequency word
 	unsigned int lsb = freq_word & LSB_BIT_MASK;  // Gives the 14 LSB
-	return lsb;
+	
+	// Set the two MSB to indiciate which DDS register data will be sent to.
+	return lsb | FREQ_REG_MASK;;
 }
 
 
@@ -60,10 +64,6 @@ int Set_AD9833_Frequency(long freq, int chan) {
 	unsigned long freq_word =  Get_Frequency_Word(freq);
 	unsigned int msb = Get_MSB(freq_word); 
 	unsigned int lsb = Get_LSB(freq_word);
-
-	// Now we have two sets of 14 bits. Each word to be sent to the AD9833 should be 16 bits, with the 2 MSB indicating which register on the chip to send to.
-	msb = msb | FREQ_REG_MASK;
-	lsb = lsb | FREQ_REG_MASK;
 
 	// Set control register, frequency register (in two parts LSB and MSB) and phase register
 	AD9833_SendWord(CONTROL_REGISTER_VALUE, chan);       // Control register
