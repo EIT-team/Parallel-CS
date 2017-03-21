@@ -1,10 +1,5 @@
 language: bash
 
-# safelist
-branches:
-  only:
-  - development
-
 install:
   - git clone https://github.com/EIT-team/Parallel-CS
 
