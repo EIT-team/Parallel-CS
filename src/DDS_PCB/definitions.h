@@ -39,8 +39,8 @@
 #define MAX_FREQUENCY 1e5
 
 // Bit masks and shifts
-#define LSB_BIT_MASK 0x3fff
-#define SPI_BIT_MASK 0xFF
+#define LSB_BIT_MASK 0x3fff // Gives the 14 LSB of an unsigned long
+#define SPI_BIT_MASK 0xFF // Gives 8 MSB of an unsigned int
 #define FREQ_REG_MASK 0x4000 	//Use Register 0 (set 2 MSB to 01). To use Register 1, set 2MSB to 10 (0x8000)
 
 

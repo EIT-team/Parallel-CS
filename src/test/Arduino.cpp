@@ -1,17 +1,10 @@
 /* Mock Arduino functions */
 
 #include "Arduino.h"
+#include <iostream>
 
-void analogWrite(int pin, int value) {
-	;
-}
-
-void digitalWrite(int pin, int value) {
-	;
-}
-
-int analogRead(int pin) {
-	return pin;
+int digitalWrite(int pin, int value) {
+	return value;
 }
 
 void delay(int delay_time) {
@@ -25,19 +18,19 @@ MockSerial::MockSerial() {
 }
 
 void MockSerial::print(char* buffer) {
-	;
+	std::cout << buffer;
 }
 
 void MockSerial::println(char* buffer) {
-	;
+	std::cout << buffer << "\n";
 }
 
 void MockSerial::print(int num) {
-	;
+	std::cout << num;
 }
 
 void MockSerial::println(int num) {
-	;
+	std::cout << num << "\n";
 }
 
 MockSerial Serial;

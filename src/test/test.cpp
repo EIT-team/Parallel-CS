@@ -31,18 +31,18 @@ TEST_CASE("Set Frequency") {
 	int chan = 1;
 	
 	SECTION ("Check rejection of invalid frequencies") {
-	
-	// Try and program a range of invalid frequency values (< 0, 0, > 100kHz)
-	
-	int invalid_freqs[] = {-1, 0, 100001};
-	int num_freqs = sizeof(invalid_freqs) / sizeof(int);
-	int expected = -1;
-	int i;
-	
-	for (i = 0; i < num_freqs; i++) {
-		int answer = Set_AD9833_Frequency(invalid_freqs[i], chan);
-		CHECK(answer == expected);	
-	}
+		
+		// Try and program a range of invalid frequency values (< 0, 0, > 100kHz)
+		
+		int invalid_freqs[] = {-1, 0, 100001};
+		int num_freqs = sizeof(invalid_freqs) / sizeof(int);
+		int expected = -1;
+		int i;
+		
+		for (i = 0; i < num_freqs; i++) {
+			int answer = Set_AD9833_Frequency(invalid_freqs[i], chan);
+			CHECK(answer == expected);	
+		}
 	}
 	
 	int valid_freq = 1000;
@@ -54,7 +54,7 @@ TEST_CASE("Set Frequency") {
 		int answer = Set_AD9833_Frequency(valid_freq, chan);
 		CHECK(answer == expected);
 	}
-	 
+	
 	SECTION("Check frequency word") {
 		
 		// Test that the correct frequency word, MSB and LSB are being generated.

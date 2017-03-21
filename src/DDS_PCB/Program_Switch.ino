@@ -1,8 +1,11 @@
+/* Function(s) for working with ADG984 digital switches */
+
 #include "definitions.h"
 #include "Arduino.h"
+#include <iostream>
 
 void Set_ADG984 (int channel_to_open) {
-/* Opens a single switch on the ADG984, to allow FSYNC to be routed to the appropriate DDS IC 
+	/* Opens a single switch on the ADG984, to allow FSYNC to be routed to the appropriate DDS IC 
 
 19.10.15 Using an unconventional way to set the FSYNC pin on the DDS chip. Because the output from the digital isolators is low by default, and FSYNC is an active low signal, we actually want them all to be high.
 Achieve this by sending an FSYNC signal from the microcontroller which is always high, then set a paricular DDS chip's pin high, by opening the corresponding switch on the ADG984, closing the switch will set it low.
@@ -14,7 +17,7 @@ Inputs  - channel_to_open, this is the channel we want to activate, i.e. set to 
 	digitalWrite(SYNC_SWITCH_Pin, LOW);
 
 	// Iterate once for each switch.
- // Do this in descending order as that it how they are clocked into the switch IC
+	// Do this in descending order as that it how they are clocked into the switch IC
 	for (int j = N_SWITCHES; j > 0; j--) {
 
 		// Sets the target channel to digital LOW, by open circuting the switch, causing the digital isolator to take its default value of digital LOW
@@ -36,5 +39,16 @@ Inputs  - channel_to_open, this is the channel we want to activate, i.e. set to 
 
 	// Set SYNC high to update switches
 	digitalWrite(SYNC_SWITCH_Pin, HIGH);
+	
+	// Print message stating which switch was opened, of if they were all closed
+	if (channel_to_open == CLOSE_ALL_SWITCHES) {
+		Serial.println("All switches closed");
+	}
+	
+	else {
+		char buffer[PRINT_BUFFER_SIZE];
+		snprintf(buffer, PRINT_BUFFER_SIZE, "Switch %d opened", channel_to_open);
+		Serial.println(buffer);
+	}
 }
 

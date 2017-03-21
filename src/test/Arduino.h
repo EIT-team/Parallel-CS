@@ -8,10 +8,8 @@
 #define LOW 0
 
 // Function declarations for built-in Arduino functions
-void analogWrite(int, int);
-int analogRead(int);
 void delay(int);
-void digitalWrite(int, int);
+int digitalWrite(int, int);
 
 // Declarations for my Arduino functions
 // Standard Arduino compiler ignores/doesn't need declarations

@@ -4,6 +4,7 @@ For a required frequency/phase value, a frequency/phase word is calculated which
 
 #include "definitions.h"
 #include "Arduino.h"
+#include <iostream>
 
 void AD9833_SendWord(unsigned int data, int chan) {
 	/* SPI Data write can only send 8 bits at a time, so this splits up a 16 bit word and sends it as two parts. Unsigned int is 32 bits long, only the 16MSB are used.
@@ -71,14 +72,17 @@ int Set_AD9833_Frequency(long freq, int chan) {
 	AD9833_SendWord(msb, chan);                         // Frequency Register part 2 (MSB)
 	AD9833_SendWord(PHASE_REGISTER_VALUE, chan);        // Phase regsister, don't need to change this at the moment, so set to 0 phase
 	
-	// Everything OK
+	// Everything OK, print confirmation
+	char buffer[PRINT_BUFFER_SIZE];
+	snprintf(buffer, PRINT_BUFFER_SIZE, "Channel %d programmed with frequency %d", chan, freq);
+	Serial.println(buffer);
 	return 1;
 }
 
 
 unsigned int Set_AD9833_Phase(int phase, int chan) {
-/* Function to set only the phase of a particular channel, frequency remains unchanged.
- Can be used to set particular phase difference between two channels */
+	/* Function to set only the phase of a particular channel, frequency remains unchanged.
+Can be used to set particular phase difference between two channels */
 	
 	// Check phase is between 0-360
 	if (phase < 0 || phase > 360) {
@@ -93,19 +97,23 @@ unsigned int Set_AD9833_Phase(int phase, int chan) {
 	// Set Phase register
 	AD9833_SendWord(phase_word, chan);        
 	
+	// Print confirmation
+	char buffer[PRINT_BUFFER_SIZE];
+	snprintf(buffer, PRINT_BUFFER_SIZE, "Channel %d programmed with phase %d", chan, phase);
+	Serial.println(buffer);
+	
 	return phase_word;
 }
 
 
-
 void Sweep_Freq (int freq_min, int freq_step, int freq_max, int chan, int on_time) {
-/* Sweeps the frequency output on a channel, with increment and max value set by user.
+	/* Sweeps the frequency output on a channel, with increment and max value set by user.
 freq_min: starting frequency (Hz)
 freq_step: increment (Hz)
 freq_max: Stopping frequency (Hz)
 chan: which channel to program
 on_time: how long to program each channel for (milliseconds) */
- 
+
 	for (int i = freq_min ; i <= freq_max; i = i + freq_step) {
 		Set_AD9833_Frequency(i, chan);
 		delay(on_time);
@@ -114,16 +122,17 @@ on_time: how long to program each channel for (milliseconds) */
 
 
 void Reset_DDS(int chan) {
-/* Reset single channel to midscale output (turns off AC output) */
+	/* Reset single channel to midscale output (turns off AC output) */
 	AD9833_SendWord(RESET_CONTROL_REGISTER, chan);
 }
 
 
 void Reset_All(int n_chans) {
-/* Resets all channels to default output */
+	/* Resets all channels to default output */
 	for (int j = 1; j <= n_chans  ; j++) {
 		Reset_DDS(j);
 	}
+	Serial.println("Resetting all channel");
 }
 
 
