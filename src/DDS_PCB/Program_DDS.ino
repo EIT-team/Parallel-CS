@@ -4,7 +4,7 @@ For a required frequency/phase value, a frequency/phase word is calculated which
 
 #include "definitions.h"
 #include "Arduino.h"
-#include <iostream>
+#include <stdio.h>
 
 void AD9833_SendWord(unsigned int data, int chan) {
 	/* SPI Data write can only send 8 bits at a time, so this splits up a 16 bit word and sends it as two parts. Unsigned int is 32 bits long, only the 16MSB are used.

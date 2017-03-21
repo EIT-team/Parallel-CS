@@ -16,6 +16,7 @@ Tom Dowrick 19.10.2015
 
 #include "definitions.h"
 #include "frequencies.h"
+#include <stdio.h>
 
 void setup() {
 
