@@ -1,7 +1,7 @@
 /* Mock Arduino functions and constants when compiling stand along code for testing */
 
-#ifndef _ArduinoH
-#define _ArduinoH
+#ifndef arduino_h
+#define arduino_h
 
 // Arduino HIGH and LOW logic levels
 #define HIGH 1
