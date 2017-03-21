@@ -1,15 +1,6 @@
 /* Code for programming the prototype Parallel CS board
-Tom Dowrick 19.10.2015
+Tom Dowrick 21.3.17
 */
-
-// Pin Descriptions:
-// SDATA_SPI - Data signal for SPI, used to program AD9833
-// SCLK_SPI - Clock signal for SPI, used to program AD9833
-//FSYNC - SYNC pin for SPI, used to program AD9833, but is routed by the ADG985 switch, where it is input to the DIN pin.
-//  SCLK_Switch - Clock for ADG984 switch
-// SYNC_Switch - Sync pin for switch. Active low, set low allows progamming of switches
-//  RESET_Switch - Reset pin for switch. Active low, Resets all switches to default, open, position.
-// DIN_Switch - Send the values to open/close switches
 
 // Library for handling the SPI transfer
 #include <SPI.h>

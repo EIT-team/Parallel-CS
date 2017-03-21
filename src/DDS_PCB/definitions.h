@@ -6,6 +6,15 @@
 /*								*/
 
 // Arduino pin numberings
+// Pin Descriptions:
+// SDATA_SPI - Data signal for SPI, used to program AD9833
+// SCLK_SPI - Clock signal for SPI, used to program AD9833
+// FSYNC - SYNC pin for SPI, used to program AD9833, but is routed by the ADG985 switch, where it is input to the DIN pin.
+// SCLK_Switch - Clock for ADG984 switch
+// SYNC_Switch - Sync pin for switch. Active low, set low allows progamming of switches
+// RESET_Switch - Reset pin for switch. Active low, Resets all switches to default, open, position.
+// DIN_Switch - Send the values to open/close switches
+
 #define FSYNC_Pin 5
 #define SDATA_SPI_Pin 11
 #define SCLK_SPI_Pin  13
@@ -14,9 +23,6 @@
 #define SYNC_SWITCH_Pin 2
 #define RESET_SWITCH_Pin 3
 #define DIN_SWITCH_Pin 4
-
-// Clock generator frequency, set by resistor R_SET on the PCB. This is used in the formula for setting the DDS sine wave frequency (Hz)
-#define DDS_CLOCK_FREQUENCY 10e6
 
 // Maximum value for injection when operating with limited length injections (milliseconds)
 #define MAX_CAUTIOUS_INJECTION 25000
@@ -28,6 +34,10 @@
 /*								*/
 /* Program_DDS Defintions 		*/
 /*								*/
+
+
+// Clock generator frequency, set by resistor R_SET on the PCB. This is used in the formula for setting the DDS sine wave frequency (Hz)
+#define DDS_CLOCK_FREQUENCY 10e6
 
 #define SWITCH_DELAY_TIME 5    // Time to delay after programming switches
 #define CONTROL_REGISTER_VALUE 0x2000    // Default value for control register of DDS chip
