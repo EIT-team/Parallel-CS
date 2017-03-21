@@ -25,8 +25,8 @@ class MockSerial {
 	// Mocks the Arduino Serial class
 public:
 	MockSerial();
-	void print(char*);
-	void println(char*);
+	void print(const char*);
+	void println(const char*);
 	void print(int);
 	void println(int);
 };

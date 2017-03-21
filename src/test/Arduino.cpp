@@ -17,11 +17,11 @@ MockSerial::MockSerial() {
 	;
 }
 
-void MockSerial::print(char* buffer) {
+void MockSerial::print(const char* buffer) {
 	std::cout << buffer;
 }
 
-void MockSerial::println(char* buffer) {
+void MockSerial::println(const char* buffer) {
 	std::cout << buffer << "\n";
 }
 
