@@ -1,9 +1,7 @@
 #ifndef definitions_h
 #define definitions_h
 
-/*								*/
 /* Main script definitions 		*/
-/*								*/
 
 // Arduino pin numberings
 // Pin Descriptions:
@@ -31,10 +29,9 @@
 #define SERIAL_BAUD_RATE 9600
 
 #define PRINT_BUFFER_SIZE 50
-/*								*/
-/* Program_DDS Defintions 		*/
-/*								*/
 
+
+/* Program_DDS Defintions 		*/
 
 // Clock generator frequency, set by resistor R_SET on the PCB. This is used in the formula for setting the DDS sine wave frequency (Hz)
 #define DDS_CLOCK_FREQUENCY 10e6
@@ -54,9 +51,7 @@
 #define FREQ_REG_MASK 0x4000 	//Use Register 0 (set 2 MSB to 01). To use Register 1, set 2MSB to 10 (0x8000)
 
 
-/*								*/
 /* Program_Switch Definitions 	*/
-/*								*/
 
 #define N_SWITCHES 8
 

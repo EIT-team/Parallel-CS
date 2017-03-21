@@ -1,15 +1,25 @@
-test_file: test.o Program_Switch.o Arduino.o Program_DDS.o
-	g++ -o test_file test.o Program_Switch.o Arduino.o Program_DDS.o
+CC=g++ 
+CFLAGS=-c -Wall
+ARDFLAGS=-x c++ # Flags when compiling Arduino .ino files
+INC_ARD=-I./DDS_PCB/
+INC_TEST=-I./test/ 
+
+all: main
+
+main: test.o Program_Switch.o Arduino.o Program_DDS.o
+	$(CC) -o test_file test.o Program_Switch.o Arduino.o Program_DDS.o
 
 Program_DDS.o: DDS_PCB/Program_DDS.ino Arduino.o Program_Switch.o test/Arduino.h
-	g++ -c -x c++ DDS_PCB/Program_DDS.ino -Itest/
+	$(CC) $(CFLAGS) $(ARDFLAGS) DDS_PCB/Program_DDS.ino $(INC_TEST)
 	
 Program_Switch.o: DDS_PCB/Program_Switch.ino Arduino.o test/Arduino.h
-	g++ -c -x c++ DDS_PCB/Program_Switch.ino -Itest/
+	$(CC) $(CFLAGS) $(ARDFLAGS) DDS_PCB/Program_Switch.ino $(INC_TEST)
 	
 test.o: test/test.cpp  DDS_PCB/definitions.h test/Arduino.h
-	g++ -c test/test.cpp -IDDS_PCB/
+	$(CC) $(CFLAGS) test/test.cpp $(INC_ARD)
 
 Arduino.o: test/Arduino.cpp
-	g++ -c test/Arduino.cpp
-	
+	$(CC) $(CFLAGS) test/Arduino.cpp
+
+clean:
+	rm test.o Program_Switch.o Arduino.o Program_DDS.o

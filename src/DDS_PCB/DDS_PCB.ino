@@ -1,5 +1,5 @@
 /* Code for programming the prototype Parallel CS board
-Tom Dowrick 21.3.17
+Updated by Tom Dowrick 21.3.17
 */
 
 // Library for handling the SPI transfer
