@@ -15,12 +15,12 @@
 #define FREQ_8 8000
 
 long Freqs[NUM_CHANNELS] = {	FREQ_1,
-								FREQ_2,
-								FREQ_3,
-								FREQ_4,
-								FREQ_5,
-								FREQ_6,
-								FREQ_7,
-								FREQ_8};
+				FREQ_2,
+				FREQ_3,
+				FREQ_4,
+				FREQ_5,
+				FREQ_6,
+				FREQ_7,
+				FREQ_8};
 
 #endif
