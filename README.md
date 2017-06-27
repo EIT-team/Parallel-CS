@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/EIT-team/Parallel-CS.svg?branch=master)](https://travis-ci.org/EIT-team/Parallel-CS)
 
 # Parallel-CS
-Parallel inject current source design
+Parallel inject current source schematic and programming code, using AD9833 DDS IC.
 
 Includes: Circuit schematics, PCB Layout, Arduino code for programming output frequency and/or phase of CS.
 
