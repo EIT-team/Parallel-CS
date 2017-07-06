@@ -1,15 +1,15 @@
 [![Build Status](https://travis-ci.org/EIT-team/Parallel-CS.svg?branch=master)](https://travis-ci.org/EIT-team/Parallel-CS)
 
 # Parallel-CS
-Parallel inject current source design
+Parallel inject current source schematic and programming code, using AD9833 DDS IC.
 
-Includes: Circuit schematics, PCB Layout, Arduino code for programming output frequency and/pr phase of CS.
+Includes: Circuit schematics, PCB Layout, Arduino code for programming output frequency and/or phase of CS.
 
 **Instructions for programming CS board**
 
-Connect mini-USB cable to Arduino.
-
-Open /src/DDS_PCB/DDS_PCB.ino and upload to Arduino.
+- Turn on power (Press both push button switches).
+- Connect mini-USB cable to Arduino.
+- Open /src/DDS_PCB/DDS_PCB.ino and upload to Arduino.
 
 Devices will be initially be programmed to default frequencies, specified in the src/frequencies.h file.
 
@@ -21,6 +21,8 @@ After programming, frequency and/or phase can be adjusted using serial monitor:
 - The terminal should echo a message confirming programming is happening.
 
 Once programmed, the USB cable can be unplugged.
+
+![board](https://cloud.githubusercontent.com/assets/6793395/24205980/d2a1ff98-0f14-11e7-816e-15b31f4d4450.png)
 
 
 
