@@ -1,0 +1,17 @@
+* C:\Users\Jimbles\Parallel-CS\schematics\Connector.Filter.Board\sim\eegfilt.asc
+XU1 Vin VDD VSS N001 AD8244
+C1 N002 N001 2.2µf
+R1 N002 0 750k
+XU2 Vin VDD VSS N001 AD8244
+XU3 N002 VDD VSS Vout AD8244
+V1 VDD 0 5
+V2 0 VSS 5
+V3 Vin 0 SINE(100mV 1 10)
+.include AD8244.cir
+#.include opamp2_ad8244.asy
+;op
+.tran 1
+.meas AVG(V(vout))
+.meas AVG(V(vin))
+.backanno
+.end
