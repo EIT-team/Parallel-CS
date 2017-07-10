@@ -9488,6 +9488,33 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <part name="C12" library="resistor" deviceset="C-EU" device="C0805"/>
 <part name="R4" library="resistor" deviceset="R-EU_" device="R0805"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
+<part name="U$4" library="AD8244" deviceset="AD8244" device=""/>
+<part name="U$5" library="AD8244" deviceset="AD8244" device=""/>
+<part name="C13" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="GND11" library="supply1" deviceset="GND" device=""/>
+<part name="C14" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="GND12" library="supply1" deviceset="GND" device=""/>
+<part name="C15" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="GND13" library="supply1" deviceset="GND" device=""/>
+<part name="C16" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="GND14" library="supply1" deviceset="GND" device=""/>
+<part name="U$6" library="AD8244" deviceset="AD8244" device=""/>
+<part name="C17" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="GND15" library="supply1" deviceset="GND" device=""/>
+<part name="C18" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="GND16" library="supply1" deviceset="GND" device=""/>
+<part name="C19" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="R5" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="GND17" library="supply1" deviceset="GND" device=""/>
+<part name="C20" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="R6" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="GND18" library="supply1" deviceset="GND" device=""/>
+<part name="C21" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="R7" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="GND19" library="supply1" deviceset="GND" device=""/>
+<part name="C22" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="R8" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="GND20" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9556,6 +9583,33 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <instance part="C12" gate="G$1" x="246.38" y="-167.64" rot="R90"/>
 <instance part="R4" gate="G$1" x="254" y="-177.8" rot="R90"/>
 <instance part="GND10" gate="1" x="254" y="-185.42"/>
+<instance part="U$4" gate="G$1" x="-22.86" y="-127"/>
+<instance part="U$5" gate="G$1" x="-22.86" y="-195.58"/>
+<instance part="C13" gate="G$1" x="-43.18" y="-93.98" rot="R90"/>
+<instance part="GND11" gate="1" x="-33.02" y="-99.06"/>
+<instance part="C14" gate="G$1" x="-43.18" y="-162.56" rot="R90"/>
+<instance part="GND12" gate="1" x="-33.02" y="-167.64"/>
+<instance part="C15" gate="G$1" x="-58.42" y="-215.9" rot="R270"/>
+<instance part="GND13" gate="1" x="-68.58" y="-218.44"/>
+<instance part="C16" gate="G$1" x="-60.96" y="-147.32" rot="R270"/>
+<instance part="GND14" gate="1" x="-71.12" y="-152.4"/>
+<instance part="U$6" gate="G$1" x="58.42" y="-124.46"/>
+<instance part="C17" gate="G$1" x="38.1" y="-91.44" rot="R90"/>
+<instance part="GND15" gate="1" x="48.26" y="-96.52"/>
+<instance part="C18" gate="G$1" x="20.32" y="-144.78" rot="R270"/>
+<instance part="GND16" gate="1" x="10.16" y="-149.86"/>
+<instance part="C19" gate="G$1" x="330.2" y="-66.04" rot="R90"/>
+<instance part="R5" gate="G$1" x="337.82" y="-76.2" rot="R90"/>
+<instance part="GND17" gate="1" x="337.82" y="-83.82"/>
+<instance part="C20" gate="G$1" x="330.2" y="-99.06" rot="R90"/>
+<instance part="R6" gate="G$1" x="337.82" y="-109.22" rot="R90"/>
+<instance part="GND18" gate="1" x="337.82" y="-116.84"/>
+<instance part="C21" gate="G$1" x="330.2" y="-134.62" rot="R90"/>
+<instance part="R7" gate="G$1" x="337.82" y="-144.78" rot="R90"/>
+<instance part="GND19" gate="1" x="337.82" y="-152.4"/>
+<instance part="C22" gate="G$1" x="330.2" y="-167.64" rot="R90"/>
+<instance part="R8" gate="G$1" x="337.82" y="-177.8" rot="R90"/>
+<instance part="GND20" gate="1" x="337.82" y="-185.42"/>
 </instances>
 <busses>
 </busses>
@@ -9667,6 +9721,57 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <pinref part="R4" gate="G$1" pin="1"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="C13" gate="G$1" pin="2"/>
+<wire x1="-38.1" y1="-93.98" x2="-33.02" y2="-93.98" width="0.1524" layer="91"/>
+<pinref part="GND11" gate="1" pin="GND"/>
+<wire x1="-33.02" y1="-93.98" x2="-33.02" y2="-96.52" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C14" gate="G$1" pin="2"/>
+<wire x1="-38.1" y1="-162.56" x2="-33.02" y2="-162.56" width="0.1524" layer="91"/>
+<pinref part="GND12" gate="1" pin="GND"/>
+<wire x1="-33.02" y1="-162.56" x2="-33.02" y2="-165.1" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C15" gate="G$1" pin="2"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+<wire x1="-63.5" y1="-215.9" x2="-68.58" y2="-215.9" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND14" gate="1" pin="GND"/>
+<wire x1="-71.12" y1="-149.86" x2="-71.12" y2="-147.32" width="0.1524" layer="91"/>
+<pinref part="C16" gate="G$1" pin="2"/>
+<wire x1="-71.12" y1="-147.32" x2="-66.04" y2="-147.32" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C17" gate="G$1" pin="2"/>
+<wire x1="43.18" y1="-91.44" x2="48.26" y2="-91.44" width="0.1524" layer="91"/>
+<pinref part="GND15" gate="1" pin="GND"/>
+<wire x1="48.26" y1="-91.44" x2="48.26" y2="-93.98" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND16" gate="1" pin="GND"/>
+<wire x1="10.16" y1="-147.32" x2="10.16" y2="-144.78" width="0.1524" layer="91"/>
+<pinref part="C18" gate="G$1" pin="2"/>
+<wire x1="10.16" y1="-144.78" x2="15.24" y2="-144.78" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="GND17" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R6" gate="G$1" pin="1"/>
+<pinref part="GND18" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R7" gate="G$1" pin="1"/>
+<pinref part="GND19" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R8" gate="G$1" pin="1"/>
+<pinref part="GND20" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="FILT1_BUF" class="0">
 <segment>
@@ -9757,6 +9862,16 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <wire x1="-170.18" y1="-78.74" x2="-162.56" y2="-78.74" width="0.1524" layer="91"/>
 <label x="-162.56" y="-78.74" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="IN_A"/>
+<wire x1="-68.58" y1="-109.22" x2="-76.2" y2="-109.22" width="0.1524" layer="91"/>
+<label x="-76.2" y="-109.22" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="IN_A"/>
+<wire x1="-68.58" y1="-177.8" x2="-78.74" y2="-177.8" width="0.1524" layer="91"/>
+<label x="-78.74" y="-177.8" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="PIN6" class="0">
 <segment>
@@ -9768,6 +9883,16 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <pinref part="TP6" gate="G$1" pin="TP"/>
 <wire x1="-170.18" y1="-83.82" x2="-162.56" y2="-83.82" width="0.1524" layer="91"/>
 <label x="-162.56" y="-83.82" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="IN_B"/>
+<wire x1="-68.58" y1="-116.84" x2="-76.2" y2="-116.84" width="0.1524" layer="91"/>
+<label x="-76.2" y="-116.84" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="IN_B"/>
+<wire x1="-68.58" y1="-185.42" x2="-78.74" y2="-185.42" width="0.1524" layer="91"/>
+<label x="-78.74" y="-185.42" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PIN7" class="0">
@@ -9781,6 +9906,16 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <wire x1="-170.18" y1="-88.9" x2="-162.56" y2="-88.9" width="0.1524" layer="91"/>
 <label x="-162.56" y="-88.9" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="IN_C"/>
+<wire x1="-68.58" y1="-193.04" x2="-78.74" y2="-193.04" width="0.1524" layer="91"/>
+<label x="-78.74" y="-193.04" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="IN_C"/>
+<wire x1="12.7" y1="-121.92" x2="2.54" y2="-121.92" width="0.1524" layer="91"/>
+<label x="2.54" y="-121.92" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="PIN8" class="0">
 <segment>
@@ -9792,6 +9927,16 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <pinref part="TP8" gate="G$1" pin="TP"/>
 <wire x1="-170.18" y1="-93.98" x2="-162.56" y2="-93.98" width="0.1524" layer="91"/>
 <label x="-162.56" y="-93.98" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="IN_D"/>
+<wire x1="-68.58" y1="-200.66" x2="-78.74" y2="-200.66" width="0.1524" layer="91"/>
+<label x="-78.74" y="-200.66" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="IN_D"/>
+<wire x1="12.7" y1="-129.54" x2="2.54" y2="-129.54" width="0.1524" layer="91"/>
+<label x="2.54" y="-129.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PIN9" class="0">
@@ -10157,12 +10302,22 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <wire x1="-210.82" y1="12.7" x2="-203.2" y2="12.7" width="0.1524" layer="91"/>
 <label x="-203.2" y="12.7" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="OUT_D"/>
+<wire x1="-35.56" y1="-132.08" x2="-30.48" y2="-132.08" width="0.1524" layer="91"/>
+<label x="-30.48" y="-132.08" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="FILT6_BUF" class="0">
 <segment>
 <pinref part="X2" gate="-1" pin="6"/>
 <wire x1="-210.82" y1="10.16" x2="-203.2" y2="10.16" width="0.1524" layer="91"/>
 <label x="-203.2" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="OUT_C"/>
+<wire x1="-35.56" y1="-124.46" x2="-30.48" y2="-124.46" width="0.1524" layer="91"/>
+<label x="-30.48" y="-124.46" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="FILT7_BUF" class="0">
@@ -10171,12 +10326,22 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <wire x1="-210.82" y1="7.62" x2="-203.2" y2="7.62" width="0.1524" layer="91"/>
 <label x="-203.2" y="7.62" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="OUT_A"/>
+<wire x1="45.72" y1="-106.68" x2="63.5" y2="-106.68" width="0.1524" layer="91"/>
+<label x="63.5" y="-106.68" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="FILT8_BUF" class="0">
 <segment>
 <pinref part="X2" gate="-1" pin="8"/>
 <wire x1="-210.82" y1="5.08" x2="-203.2" y2="5.08" width="0.1524" layer="91"/>
 <label x="-203.2" y="5.08" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="OUT_B"/>
+<wire x1="45.72" y1="-114.3" x2="63.5" y2="-114.3" width="0.1524" layer="91"/>
+<label x="63.5" y="-114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="FILT9_BUF" class="0">
@@ -10376,6 +10541,34 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <wire x1="40.64" y1="60.96" x2="33.02" y2="60.96" width="0.1524" layer="91"/>
 <junction x="33.02" y="60.96"/>
 </segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="V+"/>
+<wire x1="-53.34" y1="-96.52" x2="-53.34" y2="-93.98" width="0.1524" layer="91"/>
+<label x="-53.34" y="-88.9" size="1.778" layer="95"/>
+<pinref part="C13" gate="G$1" pin="1"/>
+<wire x1="-53.34" y1="-93.98" x2="-53.34" y2="-88.9" width="0.1524" layer="91"/>
+<wire x1="-45.72" y1="-93.98" x2="-53.34" y2="-93.98" width="0.1524" layer="91"/>
+<junction x="-53.34" y="-93.98"/>
+</segment>
+<segment>
+<pinref part="C14" gate="G$1" pin="1"/>
+<wire x1="-45.72" y1="-162.56" x2="-50.8" y2="-162.56" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="V+"/>
+<wire x1="-53.34" y1="-165.1" x2="-53.34" y2="-162.56" width="0.1524" layer="91"/>
+<label x="-53.34" y="-160.02" size="1.778" layer="95"/>
+<wire x1="-53.34" y1="-162.56" x2="-53.34" y2="-160.02" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="-162.56" x2="-53.34" y2="-162.56" width="0.1524" layer="91"/>
+<junction x="-53.34" y="-162.56"/>
+</segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="V+"/>
+<wire x1="27.94" y1="-93.98" x2="27.94" y2="-91.44" width="0.1524" layer="91"/>
+<label x="27.94" y="-86.36" size="1.778" layer="95"/>
+<pinref part="C17" gate="G$1" pin="1"/>
+<wire x1="27.94" y1="-91.44" x2="27.94" y2="-86.36" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="-91.44" x2="27.94" y2="-91.44" width="0.1524" layer="91"/>
+<junction x="27.94" y="-91.44"/>
+</segment>
 </net>
 <net name="VDD" class="0">
 <segment>
@@ -10404,6 +10597,33 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <wire x1="33.02" y1="7.62" x2="33.02" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="7.62" x2="33.02" y2="7.62" width="0.1524" layer="91"/>
 <junction x="33.02" y="7.62"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="V-"/>
+<wire x1="-53.34" y1="-144.78" x2="-53.34" y2="-147.32" width="0.1524" layer="91"/>
+<label x="-53.34" y="-149.86" size="1.778" layer="95"/>
+<pinref part="C16" gate="G$1" pin="1"/>
+<wire x1="-53.34" y1="-147.32" x2="-53.34" y2="-149.86" width="0.1524" layer="91"/>
+<wire x1="-58.42" y1="-147.32" x2="-53.34" y2="-147.32" width="0.1524" layer="91"/>
+<junction x="-53.34" y="-147.32"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="V-"/>
+<wire x1="-53.34" y1="-213.36" x2="-53.34" y2="-215.9" width="0.1524" layer="91"/>
+<label x="-50.8" y="-218.44" size="1.778" layer="95"/>
+<pinref part="C15" gate="G$1" pin="1"/>
+<wire x1="-53.34" y1="-215.9" x2="-53.34" y2="-218.44" width="0.1524" layer="91"/>
+<wire x1="-55.88" y1="-215.9" x2="-53.34" y2="-215.9" width="0.1524" layer="91"/>
+<junction x="-53.34" y="-215.9"/>
+</segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="V-"/>
+<wire x1="27.94" y1="-142.24" x2="27.94" y2="-144.78" width="0.1524" layer="91"/>
+<label x="27.94" y="-147.32" size="1.778" layer="95"/>
+<pinref part="C18" gate="G$1" pin="1"/>
+<wire x1="27.94" y1="-144.78" x2="27.94" y2="-147.32" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-144.78" x2="27.94" y2="-144.78" width="0.1524" layer="91"/>
+<junction x="27.94" y="-144.78"/>
 </segment>
 </net>
 <net name="BUF3" class="0">
@@ -10471,6 +10691,138 @@ Source: ERNI-D-Sub-Conmnectors-d.pdf / www.erni.com</description>
 <pinref part="U$3" gate="G$1" pin="IN_A"/>
 <wire x1="17.78" y1="45.72" x2="7.62" y2="45.72" width="0.1524" layer="91"/>
 <label x="7.62" y="45.72" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="BUF5" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="OUT_A"/>
+<wire x1="-35.56" y1="-109.22" x2="-30.48" y2="-109.22" width="0.1524" layer="91"/>
+<label x="-30.48" y="-109.22" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="OUT_A"/>
+<wire x1="-35.56" y1="-177.8" x2="-27.94" y2="-177.8" width="0.1524" layer="91"/>
+<label x="-27.94" y="-177.8" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C19" gate="G$1" pin="1"/>
+<wire x1="327.66" y1="-66.04" x2="309.88" y2="-66.04" width="0.1524" layer="91"/>
+<label x="309.88" y="-63.5" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="BUF6" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="OUT_B"/>
+<wire x1="-35.56" y1="-116.84" x2="-30.48" y2="-116.84" width="0.1524" layer="91"/>
+<label x="-30.48" y="-116.84" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="OUT_B"/>
+<wire x1="-35.56" y1="-185.42" x2="-27.94" y2="-185.42" width="0.1524" layer="91"/>
+<label x="-27.94" y="-185.42" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C20" gate="G$1" pin="1"/>
+<wire x1="327.66" y1="-99.06" x2="312.42" y2="-99.06" width="0.1524" layer="91"/>
+<label x="312.42" y="-99.06" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="FILT6_OUT" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="IN_C"/>
+<wire x1="-68.58" y1="-124.46" x2="-76.2" y2="-124.46" width="0.1524" layer="91"/>
+<label x="-83.82" y="-124.46" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C20" gate="G$1" pin="2"/>
+<pinref part="R6" gate="G$1" pin="2"/>
+<wire x1="335.28" y1="-99.06" x2="337.82" y2="-99.06" width="0.1524" layer="91"/>
+<wire x1="337.82" y1="-99.06" x2="337.82" y2="-104.14" width="0.1524" layer="91"/>
+<wire x1="337.82" y1="-99.06" x2="350.52" y2="-99.06" width="0.1524" layer="91"/>
+<junction x="337.82" y="-99.06"/>
+<label x="350.52" y="-99.06" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="BUF7" class="0">
+<segment>
+<pinref part="U$5" gate="G$1" pin="OUT_C"/>
+<wire x1="-35.56" y1="-193.04" x2="-27.94" y2="-193.04" width="0.1524" layer="91"/>
+<label x="-27.94" y="-193.04" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="OUT_C"/>
+<wire x1="45.72" y1="-121.92" x2="60.96" y2="-121.92" width="0.1524" layer="91"/>
+<label x="60.96" y="-121.92" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C21" gate="G$1" pin="1"/>
+<wire x1="327.66" y1="-134.62" x2="312.42" y2="-134.62" width="0.1524" layer="91"/>
+<label x="312.42" y="-134.62" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="BUF8" class="0">
+<segment>
+<pinref part="U$5" gate="G$1" pin="OUT_D"/>
+<wire x1="-35.56" y1="-200.66" x2="-27.94" y2="-200.66" width="0.1524" layer="91"/>
+<label x="-27.94" y="-200.66" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="OUT_D"/>
+<wire x1="45.72" y1="-129.54" x2="63.5" y2="-129.54" width="0.1524" layer="91"/>
+<label x="63.5" y="-129.54" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C22" gate="G$1" pin="1"/>
+<wire x1="327.66" y1="-167.64" x2="312.42" y2="-167.64" width="0.1524" layer="91"/>
+<label x="312.42" y="-167.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="FILT8_OUT" class="0">
+<segment>
+<pinref part="U$6" gate="G$1" pin="IN_B"/>
+<wire x1="12.7" y1="-114.3" x2="0" y2="-114.3" width="0.1524" layer="91"/>
+<label x="0" y="-114.3" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C22" gate="G$1" pin="2"/>
+<wire x1="335.28" y1="-167.64" x2="337.82" y2="-167.64" width="0.1524" layer="91"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="337.82" y1="-167.64" x2="337.82" y2="-172.72" width="0.1524" layer="91"/>
+<wire x1="337.82" y1="-167.64" x2="350.52" y2="-167.64" width="0.1524" layer="91"/>
+<junction x="337.82" y="-167.64"/>
+<label x="350.52" y="-167.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="FILT7_OUT" class="0">
+<segment>
+<pinref part="U$6" gate="G$1" pin="IN_A"/>
+<wire x1="12.7" y1="-106.68" x2="0" y2="-106.68" width="0.1524" layer="91"/>
+<label x="0" y="-106.68" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C21" gate="G$1" pin="2"/>
+<wire x1="335.28" y1="-134.62" x2="337.82" y2="-134.62" width="0.1524" layer="91"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<wire x1="337.82" y1="-134.62" x2="337.82" y2="-139.7" width="0.1524" layer="91"/>
+<wire x1="337.82" y1="-134.62" x2="350.52" y2="-134.62" width="0.1524" layer="91"/>
+<junction x="337.82" y="-134.62"/>
+<label x="350.52" y="-134.62" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="FILT5_OUT" class="0">
+<segment>
+<pinref part="C19" gate="G$1" pin="2"/>
+<wire x1="335.28" y1="-66.04" x2="337.82" y2="-66.04" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="337.82" y1="-66.04" x2="337.82" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="337.82" y1="-66.04" x2="347.98" y2="-66.04" width="0.1524" layer="91"/>
+<junction x="337.82" y="-66.04"/>
+<label x="347.98" y="-66.04" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="IN_D"/>
+<wire x1="-68.58" y1="-132.08" x2="-76.2" y2="-132.08" width="0.1524" layer="91"/>
+<label x="-83.82" y="-132.08" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
