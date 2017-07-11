@@ -1293,8 +1293,8 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <library name="connector_board_lib">
 <packages>
 <package name="TOUCHPROOF_PIN">
-<circle x="0" y="0" radius="1.3" width="0.5" layer="51"/>
-<pad name="TP" x="0" y="0" drill="2" diameter="5"/>
+<circle x="0" y="0" radius="1.8" width="0.5" layer="51"/>
+<pad name="TP" x="0" y="0" drill="2.5" diameter="5"/>
 <text x="-1.016" y="2.54" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
 <text x="1.27" y="-1.27" size="1" layer="37">&gt;TP_SIGNAL_NAME</text>
@@ -3948,6 +3948,33 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <via x="133.223" y="26.543" extent="1-16" drill="0.4"/>
 <wire x1="133.223" y1="26.543" x2="136.845" y2="26.543" width="0.2" layer="16"/>
 <wire x1="136.845" y1="26.543" x2="136.906" y2="26.482" width="0.2" layer="16"/>
+</signal>
+<signal name="N$1">
+<via x="27.559" y="24.638" extent="1-16" drill="2"/>
+</signal>
+<signal name="N$2">
+<via x="31.877" y="24.638" extent="1-16" drill="2.1"/>
+</signal>
+<signal name="N$3">
+<via x="36.449" y="24.638" extent="1-16" drill="2.2"/>
+</signal>
+<signal name="N$4">
+<via x="41.021" y="24.511" extent="1-16" drill="2.3"/>
+</signal>
+<signal name="N$5">
+<via x="45.466" y="24.511" extent="1-16" drill="2.4"/>
+</signal>
+<signal name="N$6">
+<via x="49.911" y="24.638" extent="1-16" drill="2.5"/>
+</signal>
+<signal name="N$10">
+<via x="54.483" y="24.638" extent="1-16" drill="2.6"/>
+</signal>
+<signal name="N$7">
+<via x="58.801" y="24.384" extent="1-16" drill="2.7"/>
+</signal>
+<signal name="N$8">
+<via x="63.881" y="24.511" extent="1-16" drill="2.8"/>
 </signal>
 </signals>
 </board>

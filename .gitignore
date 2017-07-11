@@ -21,3 +21,5 @@
 *.job
 *.exe
 *.o
+*lib.l*
+*.epf
