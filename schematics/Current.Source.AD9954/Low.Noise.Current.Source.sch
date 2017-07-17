@@ -8098,7 +8098,6 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 <text x="43.688" y="4.5974" size="1.016" layer="21" font="vector" ratio="15" rot="R90">GND</text>
 <text x="46.228" y="4.5974" size="1.016" layer="21" font="vector" ratio="15" rot="R90">Vin</text>
 <text x="25.654" y="49.022" size="1.4224" layer="21" font="vector" ratio="15" rot="R270">GND</text>
-<text x="23.241" y="49.022" size="1.4224" layer="21" font="vector" ratio="15" rot="R270">AREF</text>
 <rectangle x1="38.862" y1="50.546" x2="39.37" y2="51.054" layer="51"/>
 <rectangle x1="36.322" y1="50.546" x2="36.83" y2="51.054" layer="51"/>
 <rectangle x1="33.782" y1="50.546" x2="34.29" y2="51.054" layer="51"/>
@@ -8148,7 +8147,6 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 <pad name="N/C" x="27.94" y="2.54" drill="1.016" diameter="1.8796" rot="R90"/>
 <rectangle x1="27.686" y1="2.286" x2="28.194" y2="2.794" layer="51"/>
 <circle x="62.103" y="32.004" radius="0.127" width="0.127" layer="21"/>
-<text x="27.94" y="26.67" size="2.54" layer="21">ARDUINO DUE</text>
 <wire x1="66.675" y1="24.13" x2="67.31" y2="24.765" width="0.1524" layer="21"/>
 <wire x1="67.31" y1="26.035" x2="66.675" y2="26.67" width="0.1524" layer="21"/>
 <wire x1="66.675" y1="26.67" x2="67.31" y2="27.305" width="0.1524" layer="21"/>
@@ -8357,8 +8355,8 @@ More EAGLE documentation at: http://www.element14.com/community/community/knode/
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="TP5" library="testpad" deviceset="PTR1" device="PAD1-13"/>
-<part name="TP6" library="testpad" deviceset="PTR1" device="PAD1-13"/>
-<part name="TP7" library="testpad" deviceset="PTR1" device="PAD1-13"/>
+<part name="IOUT+" library="testpad" deviceset="PTR1" device="PAD1-13"/>
+<part name="IOUT-" library="testpad" deviceset="PTR1" device="PAD1-13"/>
 <part name="VIN_POS" library="testpad" deviceset="PTR1" device="PAD1-13"/>
 <part name="VIN_NEG" library="testpad" deviceset="PTR1" device="PAD1-13"/>
 <part name="3V3" library="testpad" deviceset="PTR1" device="PAD1-13"/>
@@ -8400,7 +8398,6 @@ or two batteries can supply +/-.
 
 Switch selects between the two.</text>
 <text x="121.92" y="246.38" size="1.778" layer="91">Battery Connectors</text>
-<text x="15.24" y="76.2" size="1.778" layer="91">TODO: Is a 3.3V regulator needed for DVDD_I/O?</text>
 <text x="160.02" y="182.88" size="1.778" layer="91">All other voltages supplied by Arduino/regulators</text>
 </plain>
 <instances>
@@ -8773,8 +8770,6 @@ Switch selects between the two.</text>
 <plain>
 <text x="-134.62" y="96.52" size="1.778" layer="91">Set CLKMODESELECT low to enable
 external clock input on REFCLK</text>
-<text x="-134.62" y="22.86" size="1.778" layer="91">TODO: EPAD is the ICB bottom paddle.
-Needs to be connected to AGND</text>
 <text x="-134.62" y="60.96" size="1.778" layer="91">DAC output current set by:
 
 R_SET = 39.19/I_OUT
@@ -8860,8 +8855,8 @@ used for current output stage</text>
 <instance part="GND20" gate="1" x="55.88" y="76.2" rot="R270"/>
 <instance part="GND21" gate="1" x="157.48" y="81.28"/>
 <instance part="TP5" gate="G$1" x="99.06" y="134.62" rot="R180"/>
-<instance part="TP6" gate="G$1" x="165.1" y="119.38" rot="R180"/>
-<instance part="TP7" gate="G$1" x="165.1" y="99.06" rot="R180"/>
+<instance part="IOUT+" gate="G$1" x="165.1" y="119.38" rot="R180"/>
+<instance part="IOUT-" gate="G$1" x="165.1" y="99.06" rot="R180"/>
 <instance part="C34" gate="G$1" x="208.28" y="-20.32" rot="R180"/>
 <instance part="C38" gate="G$1" x="208.28" y="-43.18" rot="R180"/>
 <instance part="GND5" gate="1" x="-68.58" y="33.02" rot="R270"/>
@@ -9124,7 +9119,7 @@ used for current output stage</text>
 <wire x1="157.48" y1="96.52" x2="157.48" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="96.52" x2="157.48" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="GND21" gate="1" pin="GND"/>
-<pinref part="TP7" gate="G$1" pin="TP"/>
+<pinref part="IOUT-" gate="G$1" pin="TP"/>
 <junction x="157.48" y="96.52"/>
 </segment>
 <segment>
@@ -9495,7 +9490,7 @@ used for current output stage</text>
 <wire x1="139.7" y1="116.84" x2="157.48" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="116.84" x2="165.1" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="116.84" x2="157.48" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="TP6" gate="G$1" pin="TP"/>
+<pinref part="IOUT+" gate="G$1" pin="TP"/>
 <junction x="157.48" y="116.84"/>
 <junction x="139.7" y="116.84"/>
 <junction x="137.16" y="116.84"/>
