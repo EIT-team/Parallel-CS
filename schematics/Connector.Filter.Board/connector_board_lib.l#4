@@ -119,7 +119,9 @@
 <connect gate="G$1" pin="TP" pad="TP"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="TP_SIGNAL_NAME" value="" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>

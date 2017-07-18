@@ -109,6 +109,7 @@
 </symbols>
 <devicesets>
 <deviceset name="TOUCHPROOF">
+<description>&lt;b&gt; Description&lt;/b&gt; Big hole for touch proof pins</description>
 <gates>
 <gate name="G$1" symbol="TOUCHPROOF_1PIN" x="0" y="0"/>
 </gates>

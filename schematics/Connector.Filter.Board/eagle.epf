@@ -392,6 +392,7 @@ UsedLibrary="C:/SPB_Data/external_lbrs/WE-PD@E/WE-PD.lbr"
 UsedLibrary="C:/SPB_Data/external_lbrs/Molex-47346-0001@E/Molex-47346-0001.lbr"
 UsedLibrary="C:/Users/Jimbles/ScouseTom/lib/eagle/ScouseTomLib.lbr"
 UsedLibrary="connector_board_lib.lbr"
+UsedLibrary="AD8244.lbr"
 
 [Win_1]
 Type="CAM Processor"
@@ -402,12 +403,18 @@ File="Connector.Board.brd"
 Job="C:/EAGLE-7.2.0/SparkFun_Eagle_Settings.git/cam/sfe-gerb274x-4layer.cam"
 
 [Win_2]
+Type="Control Panel"
+Loc="-949 281 -93 887"
+State=2
+Number=0
+
+[Win_3]
 Type="Schematic Editor"
 Loc="652 321 1251 720"
-State=0
+State=3
 Number=2
 File="Connector.Board.sch"
-View="-255.532 -375.593 453.711 78.4127"
+View="-244.824 -41.1025 -107.368 46.8868"
 WireWidths=" 0 0.3048 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064 0.1524"
 PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
 PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
@@ -446,13 +453,8 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=91
+Views=" 1: -244.824 -41.1025 -107.368 46.8868 2: -138.423 29.6129 109.257 156.175"
 Sheet="1"
-
-[Win_3]
-Type="Control Panel"
-Loc="-949 281 -93 887"
-State=2
-Number=0
 
 [Desktop]
 Screen="4920 1920"
