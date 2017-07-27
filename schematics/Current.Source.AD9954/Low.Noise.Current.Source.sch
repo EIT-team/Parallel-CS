@@ -8313,7 +8313,7 @@ More EAGLE documentation at: http://www.element14.com/community/community/knode/
 <part name="C26" library="resistor" deviceset="C-EU" device="C0603" value="10uF"/>
 <part name="C27" library="resistor" deviceset="C-EU" device="C0603" value="0.1uF"/>
 <part name="C28" library="resistor" deviceset="C-EU" device="C0603" value="10uF"/>
-<part name="R_SET1_0.1%" library="adafruit" deviceset="R-US_" device="R0805" value="7.838k"/>
+<part name="R_SET1_0.1%" library="adafruit" deviceset="R-US_" device="R0805" value="7.87k"/>
 <part name="RX_DAC_1%" library="adafruit" deviceset="R-US_" device="R0805" value="287"/>
 <part name="R4_DAC_1%" library="adafruit" deviceset="R-US_" device="R0805" value="1150"/>
 <part name="U2" library="LTC6900" deviceset="LTC69000" device=""/>
@@ -8773,7 +8773,8 @@ external clock input on REFCLK</text>
 <text x="-134.62" y="60.96" size="1.778" layer="91">DAC output current set by:
 
 R_SET = 39.19/I_OUT
-7.838k = 5mA
+7.838k = 5mA (Using 7.87k,
+closest standard value)
 
 Iout affects the resistor values
 needed for the DAC output stage
