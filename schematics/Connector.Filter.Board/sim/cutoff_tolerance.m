@@ -13,7 +13,7 @@ figure; hist(Fc,100)
 title(['R = ' num2str(R) 'and C= ' num2str(C)]);
 
 
-R=330000;
+R=1.5e6;
 C=1e-6;
 Rv= R * (1+ 0.001*randn(10000,1));
 Cv= C * (1+ 0.05*randn(10000,1));

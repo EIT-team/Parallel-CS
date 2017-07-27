@@ -13211,8 +13211,8 @@ Source: www.kingbright.com</description>
 <parts>
 <part name="U5" library="AD8244" deviceset="AD8244" device=""/>
 <part name="U6" library="AD8244" deviceset="AD8244" device=""/>
-<part name="C19" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R33" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C19" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R33" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND51" library="supply1" deviceset="GND" device=""/>
 <part name="X2" library="con-subd" deviceset="F37" device="HP" value="EITCON"/>
 <part name="TP1" library="connector_board_lib" deviceset="TOUCHPROOF" device=""/>
@@ -13249,14 +13249,14 @@ Source: www.kingbright.com</description>
 <part name="TP32" library="connector_board_lib" deviceset="TOUCHPROOF" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X2" device=""/>
 <part name="JP2" library="pinhead" deviceset="PINHD-1X2" device=""/>
-<part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
-<part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
-<part name="C83" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
-<part name="C84" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
-<part name="C20" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R34" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C83" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
+<part name="C84" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
+<part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
+<part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>
+<part name="C20" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R34" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND52" library="supply1" deviceset="GND" device=""/>
 <part name="X1" library="con-subd" deviceset="M37" device="HP" value="EEGCON"/>
 <part name="C11" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
@@ -13272,11 +13272,11 @@ Source: www.kingbright.com</description>
 <part name="GND50" library="supply1" deviceset="GND" device=""/>
 <part name="C15" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
 <part name="GND47" library="supply1" deviceset="GND" device=""/>
-<part name="C21" library="resistor" deviceset="C-EU" device="C0805" value="0.1uF"/>
-<part name="R35" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C21" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R35" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND53" library="supply1" deviceset="GND" device=""/>
-<part name="C22" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R36" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C22" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R36" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND54" library="supply1" deviceset="GND" device=""/>
 <part name="U1" library="AD8244" deviceset="AD8244" device=""/>
 <part name="U2" library="AD8244" deviceset="AD8244" device=""/>
@@ -13293,39 +13293,39 @@ Source: www.kingbright.com</description>
 <part name="GND48" library="supply1" deviceset="GND" device=""/>
 <part name="C13" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
 <part name="GND45" library="supply1" deviceset="GND" device=""/>
-<part name="C23" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R37" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C23" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R37" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND55" library="supply1" deviceset="GND" device=""/>
-<part name="C24" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R38" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C24" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R38" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND56" library="supply1" deviceset="GND" device=""/>
-<part name="C25" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R39" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C25" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R39" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND57" library="supply1" deviceset="GND" device=""/>
-<part name="C26" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R40" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C26" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R40" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND58" library="supply1" deviceset="GND" device=""/>
 <part name="D1" library="diode" deviceset="DIODE-" device="SOD123" value="1N4148W-7-F"/>
 <part name="D2" library="diode" deviceset="DIODE-" device="SOD123" value="1N4148W-7-F"/>
 <part name="P+1" library="supply1" deviceset="V+" device=""/>
 <part name="P-1" library="supply1" deviceset="V-" device=""/>
-<part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
-<part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>
+<part name="SUPPLY7" library="supply2" deviceset="GND" device=""/>
+<part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
 <part name="C85" library="resistor" deviceset="C-EU" device="C0402" value="10nF"/>
 <part name="C81" library="resistor" deviceset="C-EU" device="C0805" value="2.2uF"/>
 <part name="C82" library="resistor" deviceset="C-EU" device="C0805" value="2.2uF"/>
 <part name="C86" library="resistor" deviceset="C-EU" device="C0402" value="10nF"/>
-<part name="C27" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R41" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C27" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R41" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND59" library="supply1" deviceset="GND" device=""/>
-<part name="C28" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R42" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C28" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R42" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND60" library="supply1" deviceset="GND" device=""/>
-<part name="C29" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R43" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C29" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R43" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND61" library="supply1" deviceset="GND" device=""/>
-<part name="C30" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R44" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C30" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R44" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND62" library="supply1" deviceset="GND" device=""/>
 <part name="U3" library="AD8244" deviceset="AD8244" device=""/>
 <part name="U4" library="AD8244" deviceset="AD8244" device=""/>
@@ -13344,11 +13344,11 @@ Source: www.kingbright.com</description>
 <part name="GND46" library="supply1" deviceset="GND" device=""/>
 <part name="U14" library="AD8244" deviceset="AD8244" device=""/>
 <part name="U15" library="AD8244" deviceset="AD8244" device=""/>
-<part name="C49" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R45" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C49" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R45" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND81" library="supply1" deviceset="GND" device=""/>
-<part name="C50" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R46" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C50" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R46" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND82" library="supply1" deviceset="GND" device=""/>
 <part name="C41" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
 <part name="GND73" library="supply1" deviceset="GND" device=""/>
@@ -13363,11 +13363,11 @@ Source: www.kingbright.com</description>
 <part name="GND80" library="supply1" deviceset="GND" device=""/>
 <part name="C45" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
 <part name="GND77" library="supply1" deviceset="GND" device=""/>
-<part name="C51" library="resistor" deviceset="C-EU" device="C0805" value="0.1uF"/>
-<part name="R47" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C51" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R47" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND83" library="supply1" deviceset="GND" device=""/>
-<part name="C52" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R48" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C52" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R48" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND84" library="supply1" deviceset="GND" device=""/>
 <part name="U10" library="AD8244" deviceset="AD8244" device=""/>
 <part name="U11" library="AD8244" deviceset="AD8244" device=""/>
@@ -13384,29 +13384,29 @@ Source: www.kingbright.com</description>
 <part name="GND78" library="supply1" deviceset="GND" device=""/>
 <part name="C43" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
 <part name="GND75" library="supply1" deviceset="GND" device=""/>
-<part name="C53" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R49" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C53" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R49" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND85" library="supply1" deviceset="GND" device=""/>
-<part name="C54" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R50" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C54" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R50" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND86" library="supply1" deviceset="GND" device=""/>
-<part name="C55" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R51" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C55" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R51" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND87" library="supply1" deviceset="GND" device=""/>
-<part name="C56" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R52" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C56" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R52" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND88" library="supply1" deviceset="GND" device=""/>
-<part name="C57" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R53" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C57" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R53" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND89" library="supply1" deviceset="GND" device=""/>
-<part name="C58" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R54" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C58" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R54" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND90" library="supply1" deviceset="GND" device=""/>
-<part name="C59" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R55" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C59" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R55" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND91" library="supply1" deviceset="GND" device=""/>
-<part name="C60" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R56" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C60" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R56" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND92" library="supply1" deviceset="GND" device=""/>
 <part name="U12" library="AD8244" deviceset="AD8244" device=""/>
 <part name="U13" library="AD8244" deviceset="AD8244" device=""/>
@@ -13425,11 +13425,11 @@ Source: www.kingbright.com</description>
 <part name="GND76" library="supply1" deviceset="GND" device=""/>
 <part name="U21" library="AD8244" deviceset="AD8244" device=""/>
 <part name="U22" library="AD8244" deviceset="AD8244" device=""/>
-<part name="C73" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R57" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C73" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R57" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND105" library="supply1" deviceset="GND" device=""/>
-<part name="C74" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R58" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C74" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R58" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND106" library="supply1" deviceset="GND" device=""/>
 <part name="C67" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
 <part name="GND99" library="supply1" deviceset="GND" device=""/>
@@ -13444,11 +13444,11 @@ Source: www.kingbright.com</description>
 <part name="GND104" library="supply1" deviceset="GND" device=""/>
 <part name="C70" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
 <part name="GND102" library="supply1" deviceset="GND" device=""/>
-<part name="C75" library="resistor" deviceset="C-EU" device="C0805" value="0.1uF"/>
-<part name="R59" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C75" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R59" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND107" library="supply1" deviceset="GND" device=""/>
-<part name="C76" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R60" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C76" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R60" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND108" library="supply1" deviceset="GND" device=""/>
 <part name="U19" library="AD8244" deviceset="AD8244" device=""/>
 <part name="U20" library="AD8244" deviceset="AD8244" device=""/>
@@ -13465,92 +13465,92 @@ Source: www.kingbright.com</description>
 <part name="GND103" library="supply1" deviceset="GND" device=""/>
 <part name="C69" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
 <part name="GND101" library="supply1" deviceset="GND" device=""/>
-<part name="C77" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R61" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C77" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R61" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND109" library="supply1" deviceset="GND" device=""/>
-<part name="C78" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R62" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C78" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R62" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND110" library="supply1" deviceset="GND" device=""/>
-<part name="C79" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R63" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C79" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R63" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND111" library="supply1" deviceset="GND" device=""/>
-<part name="C80" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="R64" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="C80" library="resistor" deviceset="C-EU" device="C0805" value="1uf"/>
+<part name="R64" library="resistor" deviceset="R-EU_" device="R0805" value="1.6M"/>
 <part name="GND112" library="supply1" deviceset="GND" device=""/>
-<part name="R25" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R25" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND25" library="supply1" deviceset="GND" device=""/>
-<part name="R1" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R1" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
-<part name="R9" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R9" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
-<part name="R17" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R17" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
-<part name="R26" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R26" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND26" library="supply1" deviceset="GND" device=""/>
-<part name="R2" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R2" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="R10" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R10" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
-<part name="R18" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R18" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
-<part name="R27" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R27" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND27" library="supply1" deviceset="GND" device=""/>
-<part name="R3" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R3" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
-<part name="R11" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R11" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
-<part name="R19" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R19" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
-<part name="R28" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R28" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND28" library="supply1" deviceset="GND" device=""/>
-<part name="R4" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R4" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
-<part name="R12" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R12" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="R20" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R20" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
-<part name="R29" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R29" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND29" library="supply1" deviceset="GND" device=""/>
-<part name="R5" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R5" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
-<part name="R13" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R13" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="R21" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R21" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
-<part name="R30" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R30" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND30" library="supply1" deviceset="GND" device=""/>
-<part name="R6" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R6" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="R14" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R14" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
-<part name="R22" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R22" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
-<part name="R31" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R31" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND31" library="supply1" deviceset="GND" device=""/>
-<part name="R7" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R7" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
-<part name="R15" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R15" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
-<part name="R23" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R23" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND23" library="supply1" deviceset="GND" device=""/>
-<part name="R32" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R32" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND32" library="supply1" deviceset="GND" device=""/>
-<part name="R8" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R8" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
-<part name="R16" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R16" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
-<part name="R24" library="resistor" deviceset="R-EU_" device="R0402"/>
+<part name="R24" library="resistor" deviceset="R-EU_" device="R0402" value="1M"/>
 <part name="GND24" library="supply1" deviceset="GND" device=""/>
 <part name="J1" library="SparkFun-Connectors" deviceset="JST_2MM_MALE" device=""/>
 <part name="J2" library="SparkFun-Connectors" deviceset="JST_2MM_MALE" device=""/>
-<part name="JP3" library="pinhead" deviceset="PINHD-2X2" device=""/>
 <part name="JP4" library="pinhead" deviceset="PINHD-2X2" device=""/>
+<part name="JP3" library="pinhead" deviceset="PINHD-2X2" device=""/>
 <part name="LED1" library="led" deviceset="LED" device="SML0805"/>
 <part name="LED2" library="led" deviceset="LED" device="SML0805"/>
-<part name="R65" library="resistor" deviceset="R-EU_" device="R0402"/>
-<part name="SUPPLY7" library="supply2" deviceset="GND" device=""/>
-<part name="R66" library="resistor" deviceset="R-EU_" device="R0402"/>
-<part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
+<part name="R65" library="resistor" deviceset="R-EU_" device="R0402" value="1k"/>
+<part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
+<part name="R66" library="resistor" deviceset="R-EU_" device="R0402" value="1k"/>
+<part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17165,32 +17165,32 @@ Source: www.kingbright.com</description>
 <instances>
 <instance part="JP1" gate="G$1" x="-101.6" y="109.22"/>
 <instance part="JP2" gate="G$1" x="-101.6" y="96.52"/>
-<instance part="SUPPLY2" gate="GND" x="-76.2" y="101.6" rot="R180"/>
-<instance part="SUPPLY1" gate="GND" x="-60.96" y="104.14"/>
+<instance part="SUPPLY3" gate="GND" x="-76.2" y="101.6" rot="R180"/>
+<instance part="SUPPLY4" gate="GND" x="-60.96" y="104.14"/>
 <instance part="C83" gate="G$1" x="-30.48" y="116.84"/>
 <instance part="C84" gate="G$1" x="-30.48" y="88.9"/>
-<instance part="SUPPLY3" gate="GND" x="-30.48" y="104.14"/>
-<instance part="SUPPLY4" gate="GND" x="-30.48" y="76.2"/>
+<instance part="SUPPLY5" gate="GND" x="-30.48" y="104.14"/>
+<instance part="SUPPLY6" gate="GND" x="-30.48" y="76.2"/>
 <instance part="D1" gate="G$1" x="17.78" y="111.76" rot="R90"/>
 <instance part="D2" gate="G$1" x="27.94" y="111.76" rot="R270"/>
 <instance part="P+1" gate="1" x="17.78" y="121.92"/>
 <instance part="P-1" gate="1" x="27.94" y="121.92" rot="R180"/>
-<instance part="SUPPLY5" gate="GND" x="17.78" y="104.14"/>
-<instance part="SUPPLY6" gate="GND" x="27.94" y="104.14"/>
+<instance part="SUPPLY7" gate="GND" x="17.78" y="104.14"/>
+<instance part="SUPPLY8" gate="GND" x="27.94" y="104.14"/>
 <instance part="C85" gate="G$1" x="-22.86" y="116.84"/>
 <instance part="C81" gate="G$1" x="-38.1" y="116.84"/>
 <instance part="C82" gate="G$1" x="-38.1" y="88.9"/>
 <instance part="C86" gate="G$1" x="-22.86" y="88.9"/>
 <instance part="J1" gate="G$1" x="-121.92" y="109.22" rot="R90"/>
 <instance part="J2" gate="G$1" x="-121.92" y="96.52" rot="R90"/>
-<instance part="JP3" gate="A" x="-71.12" y="109.22"/>
-<instance part="JP4" gate="A" x="-86.36" y="96.52"/>
+<instance part="JP4" gate="A" x="-71.12" y="109.22"/>
+<instance part="JP3" gate="A" x="-86.36" y="96.52"/>
 <instance part="LED1" gate="G$1" x="-99.06" y="78.74"/>
 <instance part="LED2" gate="G$1" x="-86.36" y="66.04" rot="R180"/>
 <instance part="R65" gate="G$1" x="-99.06" y="66.04" rot="R90"/>
-<instance part="SUPPLY7" gate="GND" x="-99.06" y="58.42"/>
+<instance part="SUPPLY1" gate="GND" x="-99.06" y="58.42"/>
 <instance part="R66" gate="G$1" x="-86.36" y="78.74" rot="R90"/>
-<instance part="SUPPLY8" gate="GND" x="-86.36" y="86.36" rot="R180"/>
+<instance part="SUPPLY2" gate="GND" x="-86.36" y="86.36" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -17199,7 +17199,7 @@ Source: www.kingbright.com</description>
 <segment>
 <wire x1="-76.2" y1="96.52" x2="-76.2" y2="93.98" width="0.1524" layer="91"/>
 <label x="-76.2" y="93.98" size="1.778" layer="95"/>
-<pinref part="JP4" gate="A" pin="4"/>
+<pinref part="JP3" gate="A" pin="4"/>
 <wire x1="-83.82" y1="96.52" x2="-76.2" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -17227,7 +17227,7 @@ Source: www.kingbright.com</description>
 <segment>
 <wire x1="-60.96" y1="111.76" x2="-60.96" y2="114.3" width="0.1524" layer="91"/>
 <label x="-60.96" y="114.3" size="1.778" layer="95"/>
-<pinref part="JP3" gate="A" pin="2"/>
+<pinref part="JP4" gate="A" pin="2"/>
 <wire x1="-68.58" y1="111.76" x2="-60.96" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -17255,7 +17255,7 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="C84" gate="G$1" pin="2"/>
 <wire x1="-30.48" y1="83.82" x2="-30.48" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="SUPPLY4" gate="GND" pin="GND"/>
+<pinref part="SUPPLY6" gate="GND" pin="GND"/>
 <pinref part="C82" gate="G$1" pin="2"/>
 <wire x1="-30.48" y1="83.82" x2="-38.1" y2="83.82" width="0.1524" layer="91"/>
 <junction x="-30.48" y="83.82"/>
@@ -17264,7 +17264,7 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="C83" gate="G$1" pin="2"/>
-<pinref part="SUPPLY3" gate="GND" pin="GND"/>
+<pinref part="SUPPLY5" gate="GND" pin="GND"/>
 <wire x1="-30.48" y1="111.76" x2="-30.48" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="C81" gate="G$1" pin="2"/>
 <wire x1="-30.48" y1="111.76" x2="-38.1" y2="111.76" width="0.1524" layer="91"/>
@@ -17275,32 +17275,32 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="D1" gate="G$1" pin="A"/>
 <wire x1="17.78" y1="109.22" x2="17.78" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="SUPPLY5" gate="GND" pin="GND"/>
+<pinref part="SUPPLY7" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="D2" gate="G$1" pin="C"/>
 <wire x1="27.94" y1="109.22" x2="27.94" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="SUPPLY6" gate="GND" pin="GND"/>
+<pinref part="SUPPLY8" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <wire x1="-66.04" y1="109.22" x2="-60.96" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="SUPPLY1" gate="GND" pin="GND"/>
+<pinref part="SUPPLY4" gate="GND" pin="GND"/>
 <wire x1="-60.96" y1="109.22" x2="-60.96" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="JP3" gate="A" pin="4"/>
+<pinref part="JP4" gate="A" pin="4"/>
 <wire x1="-66.04" y1="109.22" x2="-68.58" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP4" gate="A" pin="2"/>
-<pinref part="SUPPLY2" gate="GND" pin="GND"/>
+<pinref part="JP3" gate="A" pin="2"/>
+<pinref part="SUPPLY3" gate="GND" pin="GND"/>
 <wire x1="-83.82" y1="99.06" x2="-76.2" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R65" gate="G$1" pin="1"/>
-<pinref part="SUPPLY7" gate="GND" pin="GND"/>
+<pinref part="SUPPLY1" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="R66" gate="G$1" pin="2"/>
-<pinref part="SUPPLY8" gate="GND" pin="GND"/>
+<pinref part="SUPPLY2" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="B1+" class="0">
@@ -17309,7 +17309,7 @@ Source: www.kingbright.com</description>
 <pinref part="JP1" gate="G$1" pin="1"/>
 <wire x1="-116.84" y1="111.76" x2="-104.14" y2="111.76" width="0.1524" layer="91"/>
 <label x="-116.84" y="111.76" size="1.778" layer="95"/>
-<pinref part="JP3" gate="A" pin="1"/>
+<pinref part="JP4" gate="A" pin="1"/>
 <wire x1="-104.14" y1="111.76" x2="-76.2" y2="111.76" width="0.1524" layer="91"/>
 <junction x="-104.14" y="111.76"/>
 </segment>
@@ -17320,7 +17320,7 @@ Source: www.kingbright.com</description>
 <pinref part="JP1" gate="G$1" pin="2"/>
 <wire x1="-116.84" y1="109.22" x2="-104.14" y2="109.22" width="0.1524" layer="91"/>
 <label x="-116.84" y="109.22" size="1.778" layer="95"/>
-<pinref part="JP3" gate="A" pin="3"/>
+<pinref part="JP4" gate="A" pin="3"/>
 <wire x1="-104.14" y1="109.22" x2="-76.2" y2="109.22" width="0.1524" layer="91"/>
 <junction x="-104.14" y="109.22"/>
 </segment>
@@ -17331,7 +17331,7 @@ Source: www.kingbright.com</description>
 <pinref part="JP2" gate="G$1" pin="1"/>
 <wire x1="-116.84" y1="99.06" x2="-104.14" y2="99.06" width="0.1524" layer="91"/>
 <label x="-116.84" y="99.06" size="1.778" layer="95"/>
-<pinref part="JP4" gate="A" pin="1"/>
+<pinref part="JP3" gate="A" pin="1"/>
 <wire x1="-104.14" y1="99.06" x2="-91.44" y2="99.06" width="0.1524" layer="91"/>
 <junction x="-104.14" y="99.06"/>
 </segment>
@@ -17342,7 +17342,7 @@ Source: www.kingbright.com</description>
 <pinref part="JP2" gate="G$1" pin="2"/>
 <wire x1="-116.84" y1="96.52" x2="-104.14" y2="96.52" width="0.1524" layer="91"/>
 <label x="-116.84" y="96.52" size="1.778" layer="95"/>
-<pinref part="JP4" gate="A" pin="3"/>
+<pinref part="JP3" gate="A" pin="3"/>
 <wire x1="-104.14" y1="96.52" x2="-91.44" y2="96.52" width="0.1524" layer="91"/>
 <junction x="-104.14" y="96.52"/>
 </segment>
