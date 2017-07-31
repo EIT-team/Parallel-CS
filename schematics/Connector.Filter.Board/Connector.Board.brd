@@ -2805,7 +2805,7 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <attribute name="VALUE" x="152.654" y="61.849" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 </element>
 <element name="U11" library="AD8244" package="MSOP10" value="AD8244" x="150.114" y="54.864" smashed="yes" rot="MR180">
-<attribute name="NAME" x="148.209" y="54.864" size="0.6096" layer="26" font="vector" ratio="20" rot="MR270" align="bottom-center"/>
+<attribute name="NAME" x="152.654" y="54.991" size="0.6096" layer="26" font="vector" ratio="20" rot="MR270" align="bottom-center"/>
 <attribute name="VALUE" x="152.654" y="54.864" size="0.6096" layer="28" font="vector" ratio="20" rot="MR270" align="bottom-center"/>
 </element>
 <element name="C54" library="resistor" package="C0805" value="1uf" x="153.924" y="61.849" smashed="yes" rot="MR90">
