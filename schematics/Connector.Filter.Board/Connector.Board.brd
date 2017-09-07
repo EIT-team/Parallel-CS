@@ -54,7 +54,7 @@
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
@@ -285,6 +285,12 @@ ON</text>
 <text x="85.471" y="22.606" size="1.27" layer="22" rot="MR90">V+</text>
 <text x="118.364" y="32.004" size="1.27" layer="22" rot="MR270">V-</text>
 <text x="117.221" y="32.004" size="1.27" layer="21" rot="R270">V-</text>
+<dimension x1="32.893" y1="78.486" x2="45.593" y2="78.486" x3="39.243" y3="88.773" textsize="1.778" layer="47"/>
+<dimension x1="32.893" y1="78.486" x2="32.893" y2="65.786" x3="37.465" y3="72.136" textsize="1.778" layer="47" dtype="vertical"/>
+<dimension x1="3.937" y1="91.948" x2="4.699" y2="90.424" x3="-16.637" y3="91.186" textsize="1.778" layer="47" dtype="vertical"/>
+<dimension x1="7.493" y1="20.828" x2="8.128" y2="90.424" x3="-6.35" y3="55.626" textsize="1.778" layer="47" dtype="vertical"/>
+<dimension x1="-2.159" y1="82.296" x2="18.923" y2="86.487" x3="8.382" y3="95.885" textsize="1.778" layer="47" dtype="horizontal"/>
+<dimension x1="3.937" y1="91.948" x2="18.923" y2="89.916" x3="11.43" y3="99.695" textsize="1.778" layer="47" dtype="horizontal"/>
 </plain>
 <libraries>
 <library name="resistor">
@@ -3148,9 +3154,9 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <attribute name="NAME" x="87.265" y="20.471" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="90.392" y="20.471" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="LED2" library="led" package="SML0805" value="RED" x="121.031" y="21.717" smashed="yes" rot="R90">
-<attribute name="NAME" x="123.333" y="19.836" size="1.016" layer="25" rot="R90"/>
-<attribute name="VALUE" x="123.031" y="20.217" size="1.27" layer="27" rot="R90"/>
+<element name="LED2" library="led" package="SML0805" value="RED" x="121.412" y="22.098" smashed="yes" rot="R270">
+<attribute name="NAME" x="119.11" y="23.979" size="1.016" layer="25" rot="R270"/>
+<attribute name="VALUE" x="119.412" y="23.598" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="R65" library="resistor" package="R0402" value="1k" x="90.043" y="21.971" smashed="yes" rot="R270">
 <attribute name="NAME" x="90.932" y="23.495" size="1.016" layer="25" rot="R270"/>
@@ -3995,8 +4001,6 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <wire x1="125.603" y1="48.768" x2="125.984" y2="49.149" width="0.2" layer="2"/>
 <wire x1="125.984" y1="49.149" x2="127.254" y2="49.149" width="0.2" layer="2"/>
 <contactref element="JP3" pad="4"/>
-<contactref element="LED2" pad="A"/>
-<wire x1="121.031" y1="22.767" x2="121.031" y2="28.316" width="0.2" layer="1"/>
 <via x="124.079" y="28.194" extent="1-16" drill="0.4"/>
 <wire x1="124.079" y1="28.194" x2="130.048" y2="28.194" width="0.4064" layer="2"/>
 <wire x1="130.048" y1="28.194" x2="131.699" y2="29.845" width="0.4064" layer="2"/>
@@ -4010,6 +4014,9 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <wire x1="121.031" y1="28.316" x2="119.888" y2="29.459" width="0.2" layer="1"/>
 <wire x1="122.936" y1="28.209" x2="124.064" y2="28.209" width="0.2" layer="16"/>
 <wire x1="124.064" y1="28.209" x2="124.079" y2="28.194" width="0.2" layer="16"/>
+<contactref element="LED2" pad="C"/>
+<wire x1="121.412" y1="23.148" x2="121.412" y2="27.935" width="0.2" layer="1"/>
+<wire x1="121.412" y1="27.935" x2="121.031" y2="28.316" width="0.2" layer="1"/>
 </signal>
 <signal name="V+">
 <contactref element="C83" pad="1"/>
@@ -7178,11 +7185,11 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <wire x1="88.392" y1="20.921" x2="89.643" y2="20.921" width="0.2" layer="1"/>
 <wire x1="89.643" y1="20.921" x2="90.043" y2="21.321" width="0.2" layer="1"/>
 </signal>
-<signal name="N$11">
+<signal name="N$1">
 <contactref element="R66" pad="1"/>
-<contactref element="LED2" pad="C"/>
-<wire x1="121.031" y1="20.667" x2="119.78" y2="20.667" width="0.2" layer="1"/>
-<wire x1="119.78" y1="20.667" x2="119.38" y2="21.067" width="0.2" layer="1"/>
+<contactref element="LED2" pad="A"/>
+<wire x1="119.38" y1="21.067" x2="121.412" y2="21.067" width="0.2" layer="1"/>
+<wire x1="121.412" y1="21.067" x2="121.412" y2="21.048" width="0.2" layer="1"/>
 </signal>
 </signals>
 </board>
