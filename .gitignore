@@ -24,3 +24,4 @@
 *lib.l*
 *.epf
 *~*.xlsx
+**~$*.sldprt

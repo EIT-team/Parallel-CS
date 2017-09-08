@@ -291,6 +291,11 @@ ON</text>
 <dimension x1="7.493" y1="20.828" x2="8.128" y2="90.424" x3="-6.35" y3="55.626" textsize="1.778" layer="47" dtype="vertical"/>
 <dimension x1="-2.159" y1="82.296" x2="18.923" y2="86.487" x3="8.382" y3="95.885" textsize="1.778" layer="47" dtype="horizontal"/>
 <dimension x1="3.937" y1="91.948" x2="18.923" y2="89.916" x3="11.43" y3="99.695" textsize="1.778" layer="47" dtype="horizontal"/>
+<dimension x1="88.392" y1="21.971" x2="3.937" y2="19.685" x3="46.1645" y3="11.557" textsize="1.778" layer="47" dtype="horizontal"/>
+<dimension x1="121.412" y1="22.098" x2="88.392" y2="21.971" x3="104.902" y3="14.097" textsize="1.778" layer="47" dtype="horizontal"/>
+<dimension x1="121.412" y1="22.098" x2="122.047" y2="18.923" x3="108.331" y3="20.5105" textsize="1.778" layer="47" dtype="vertical"/>
+<dimension x1="32.893" y1="78.486" x2="30.226" y2="91.948" x3="51.054" y3="85.217" textsize="1.778" layer="47" dtype="vertical"/>
+<dimension x1="32.893" y1="78.486" x2="3.937" y2="91.948" x3="18.415" y3="92.964" textsize="1.778" layer="47" dtype="horizontal"/>
 </plain>
 <libraries>
 <library name="resistor">
