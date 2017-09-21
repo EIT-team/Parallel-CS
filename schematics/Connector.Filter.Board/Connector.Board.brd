@@ -296,6 +296,8 @@ ON</text>
 <dimension x1="121.412" y1="22.098" x2="122.047" y2="18.923" x3="108.331" y3="20.5105" textsize="1.778" layer="47" dtype="vertical"/>
 <dimension x1="32.893" y1="78.486" x2="30.226" y2="91.948" x3="51.054" y3="85.217" textsize="1.778" layer="47" dtype="vertical"/>
 <dimension x1="32.893" y1="78.486" x2="3.937" y2="91.948" x3="18.415" y3="92.964" textsize="1.778" layer="47" dtype="horizontal"/>
+<dimension x1="88.392" y1="21.971" x2="83.693" y2="40.386" x3="79.375" y3="31.1785" textsize="1.778" layer="47" dtype="vertical"/>
+<dimension x1="121.666" y1="40.386" x2="121.412" y2="22.098" x3="121.539" y3="16.129" textsize="1.778" layer="47" dtype="horizontal"/>
 </plain>
 <libraries>
 <library name="resistor">
@@ -3171,6 +3173,18 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <attribute name="NAME" x="118.491" y="20.447" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="121.285" y="21.082" size="1.27" layer="27" rot="R90"/>
 </element>
+<element name="U25" library="AD8244" package="MSOP10" value="AD8244" x="64.262" y="28.829"/>
+<element name="C87" library="resistor" package="C0402" value="0.1uF" x="-18.034" y="1.905"/>
+<element name="C88" library="resistor" package="C0402" value="0.1uF" x="-18.034" y="-2.921"/>
+<element name="PAT_GND" library="connector_board_lib" package="TOUCHPROOF_PIN" value="TOUCHPROOF" x="38.862" y="29.464">
+<attribute name="TP_SIGNAL_NAME" value="" x="38.862" y="29.464" size="1.778" layer="27" display="off"/>
+</element>
+<element name="PAT_GND2" library="connector_board_lib" package="TOUCHPROOF_PIN" value="TOUCHPROOF" x="52.324" y="29.591">
+<attribute name="TP_SIGNAL_NAME" value="" x="52.324" y="29.591" size="1.778" layer="27" display="off"/>
+</element>
+<element name="U26" library="AD8244" package="MSOP10" value="AD8244" x="-16.764" y="-36.83"/>
+<element name="C89" library="resistor" package="C0402" value="0.1uF" x="-18.034" y="-41.783"/>
+<element name="C90" library="resistor" package="C0402" value="0.1uF" x="-18.034" y="-46.609"/>
 </elements>
 <signals>
 <signal name="PIN1">
@@ -3643,6 +3657,30 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <wire x1="120.315" y1="26.909" x2="120.142" y2="26.736" width="0.2" layer="16"/>
 <wire x1="145.019" y1="79.883" x2="145.019" y2="79.98" width="0.2" layer="16"/>
 <wire x1="145.019" y1="79.98" x2="146.558" y2="81.519" width="0.2" layer="16"/>
+<contactref element="C87" pad="2"/>
+<contactref element="C88" pad="2"/>
+<contactref element="U25" pad="1"/>
+<contactref element="U25" pad="5"/>
+<contactref element="U25" pad="10"/>
+<contactref element="U25" pad="6"/>
+<contactref element="C89" pad="2"/>
+<contactref element="C90" pad="2"/>
+<contactref element="U26" pad="1"/>
+<contactref element="U26" pad="5"/>
+<contactref element="U26" pad="10"/>
+<contactref element="U26" pad="6"/>
+<wire x1="63.262" y1="30.879" x2="65.262" y2="30.879" width="0" layer="19" extent="1-1"/>
+<wire x1="65.262" y1="26.779" x2="65.262" y2="30.879" width="0" layer="19" extent="1-1"/>
+<wire x1="63.262" y1="26.779" x2="65.262" y2="26.779" width="0" layer="19" extent="1-1"/>
+<wire x1="69.977" y1="32.385" x2="65.262" y2="30.879" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.384" y1="1.905" x2="63.262" y2="26.779" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.384" y1="-2.921" x2="-17.384" y2="1.905" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.764" y1="-34.78" x2="-17.384" y2="-2.921" width="0" layer="19" extent="1-1"/>
+<wire x1="-15.764" y1="-34.78" x2="-17.764" y2="-34.78" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.764" y1="-38.88" x2="-17.764" y2="-34.78" width="0" layer="19" extent="1-1"/>
+<wire x1="-15.764" y1="-38.88" x2="-17.764" y2="-38.88" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.384" y1="-41.783" x2="-17.764" y2="-38.88" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.384" y1="-46.609" x2="-17.384" y2="-41.783" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="V-">
 <contactref element="C84" pad="1"/>
@@ -4022,6 +4060,14 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <contactref element="LED2" pad="C"/>
 <wire x1="121.412" y1="23.148" x2="121.412" y2="27.935" width="0.2" layer="1"/>
 <wire x1="121.412" y1="27.935" x2="121.031" y2="28.316" width="0.2" layer="1"/>
+<contactref element="U25" pad="8"/>
+<contactref element="C88" pad="1"/>
+<contactref element="U26" pad="8"/>
+<contactref element="C90" pad="1"/>
+<wire x1="117.729" y1="28.829" x2="64.262" y2="30.879" width="0" layer="19" extent="1-16"/>
+<wire x1="-18.684" y1="-2.921" x2="64.262" y2="30.879" width="0" layer="19" extent="1-1"/>
+<wire x1="-16.764" y1="-34.78" x2="-18.684" y2="-2.921" width="0" layer="19" extent="1-1"/>
+<wire x1="-18.684" y1="-46.609" x2="-16.764" y2="-34.78" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="V+">
 <contactref element="C83" pad="1"/>
@@ -4380,6 +4426,14 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <wire x1="86.172" y1="26.355" x2="85.979" y2="26.162" width="0.4064" layer="16"/>
 <wire x1="91.313" y1="26.655" x2="92.441" y2="26.655" width="0.2" layer="16"/>
 <wire x1="92.441" y1="26.655" x2="92.456" y2="26.67" width="0.2" layer="16"/>
+<contactref element="U25" pad="3"/>
+<contactref element="C87" pad="1"/>
+<contactref element="U26" pad="3"/>
+<contactref element="C89" pad="1"/>
+<wire x1="85.979" y1="26.162" x2="64.262" y2="26.779" width="0" layer="19" extent="1-1"/>
+<wire x1="-18.684" y1="1.905" x2="64.262" y2="26.779" width="0" layer="19" extent="1-1"/>
+<wire x1="-16.764" y1="-38.88" x2="-18.684" y2="1.905" width="0" layer="19" extent="1-1"/>
+<wire x1="-18.684" y1="-41.783" x2="-16.764" y2="-38.88" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FILT1_BUF">
 <contactref element="X1" pad="1"/>
@@ -7195,6 +7249,27 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <contactref element="LED2" pad="A"/>
 <wire x1="119.38" y1="21.067" x2="121.412" y2="21.067" width="0.2" layer="1"/>
 <wire x1="121.412" y1="21.067" x2="121.412" y2="21.048" width="0.2" layer="1"/>
+</signal>
+<signal name="PAT_GND">
+<contactref element="U25" pad="2"/>
+<contactref element="U25" pad="4"/>
+<contactref element="U25" pad="9"/>
+<contactref element="U25" pad="7"/>
+<contactref element="U26" pad="2"/>
+<contactref element="U26" pad="4"/>
+<contactref element="U26" pad="9"/>
+<contactref element="U26" pad="7"/>
+<contactref element="PAT_GND" pad="TP"/>
+<contactref element="PAT_GND2" pad="TP"/>
+<wire x1="64.762" y1="30.879" x2="63.762" y2="30.879" width="0" layer="19" extent="1-1"/>
+<wire x1="63.762" y1="26.779" x2="63.762" y2="30.879" width="0" layer="19" extent="1-1"/>
+<wire x1="64.762" y1="26.779" x2="63.762" y2="26.779" width="0" layer="19" extent="1-1"/>
+<wire x1="52.324" y1="29.591" x2="63.762" y2="30.879" width="0" layer="19" extent="1-1"/>
+<wire x1="38.862" y1="29.464" x2="52.324" y2="29.591" width="0" layer="19" extent="1-1"/>
+<wire x1="-16.264" y1="-34.78" x2="38.862" y2="29.464" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.264" y1="-34.78" x2="-16.264" y2="-34.78" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.264" y1="-38.88" x2="-17.264" y2="-34.78" width="0" layer="19" extent="1-1"/>
+<wire x1="-16.264" y1="-38.88" x2="-17.264" y2="-38.88" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
