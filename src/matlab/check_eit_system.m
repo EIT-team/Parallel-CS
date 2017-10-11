@@ -1,4 +1,4 @@
-function check_eit_system(fname)
+function [HDR,V]=check_eit_system(fname)
 % check_eit_system
 %
 %   Plots some sanity checks for the parallel EIT system
@@ -54,9 +54,9 @@ fprintf('Recorded %d channels %d-%d, with reference %d\n',Chn_total,min(Chn_labe
 
 Vave=mean(V);
 V_Max=4e5;
-V_Rec=1e3;
+V_Rec=2e3;
 % Classify channels
-%Each impedance is either good bad or ok
+%Each impedance is eithenr good bad or ok
 bad_idx = find(abs(Vave) > V_Max);
 ok_idx=find(abs(Vave) > V_Rec & abs(Vave) < V_Max);
 good_idx =find(abs(Vave) < V_Rec);
@@ -123,6 +123,7 @@ if PlotFlag
     
     %make plot wider
     set(gcf,'units','normalized','outerposition',[0 0 1 1])
+    drawnow
 end
 
 %% Check injection channels
