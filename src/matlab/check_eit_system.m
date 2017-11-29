@@ -142,12 +142,19 @@ STD_inj=BV_inj;
 
 for iFreq = 1:N_freqs
     fprintf('Processing freq %d\n',iFreq);
-    [cur_trim_demod,cur_Filt,cur_Fc]=ScouseTom_data_GetFilterTrim(V(:,Injs(iFreq,1)),Fs,BW,FilterLength,Freqs(iFreq) );
+%     [cur_trim_demod,cur_Filt,cur_Fc]=ScouseTom_data_GetFilterTrim(V(:,Injs(iFreq,1)),Fs,BW,FilterLength,Freqs(iFreq) );
+    
+    cur_Filt =designfilt('bandpassiir', 'FilterOrder', 4, ...
+                'HalfpowerFrequency1',Freqs(iFreq)-BW/2 ,...
+                'HalfpowerFrequency2',Freqs(iFreq)+BW/2,...
+                'DesignMethod','butter',...
+                'SampleRate', Fs);
+    
     
     %make it consistent with multifreq bits, which are all cells
     Filt{iFreq}=cur_Filt;
-    TrimDemod{iFreq}=cur_trim_demod;
-    Fc{iFreq}=cur_Fc;
+    TrimDemod{iFreq}=FilterLength;
+    Fc{iFreq}=Freqs(iFreq);
     
     [Vdemod,Pdemod]=ScouseTom_data_DemodHilbert(V,cur_Filt);
     vidx=(iFreq-1)*Chn_total + 1:(iFreq)*Chn_total;
