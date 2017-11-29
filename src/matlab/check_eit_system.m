@@ -82,10 +82,9 @@ if numbad
 end
 
 fprintf('%d warning electrodes\n',numok);
-
 if numbad
     fprintf(2,'BAD ELECS : ');
-    fprintf(2,'%d,',bad_idx);
+    fprintf(2,'%d,',Chn_labels(bad_idx));
     fprintf(2,'\n');
 end
 
