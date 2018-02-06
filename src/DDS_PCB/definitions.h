@@ -10,10 +10,16 @@
 #define SDATA_SPI_Pin 11
 #define SCLK_SPI_Pin  13
 
-#define SCLK_SWITCH_Pin 9
-#define SYNC_SWITCH_Pin 2
-#define RESET_SWITCH_Pin 3
-#define DIN_SWITCH_Pin 4
+#define SYNC1_Pin 3
+#define SYNC2_Pin 2
+
+// Parallel CS FSYNC Pins for Pro Mini
+#define FSYNC1_Pin 2
+#define FSYNC2_Pin 3
+#define FSYNC3_Pin 4
+#define FSYNC4_Pin 15
+#define FSYNC5_Pin 16
+#define FSYNC6_Pin 17
 
 // Clock generator frequency, set by resistor R_SET on the PCB. This is used in the formula for setting the DDS sine wave frequency (Hz)
 #define DDS_CLOCK_FREQUENCY 10e6
@@ -29,7 +35,7 @@
 /* Program_DDS Defintions 		*/
 /*								*/
 
-#define SWITCH_DELAY_TIME 5    // Time to delay after programming switches
+#define SWITCH_DELAY_TIME 2    // Time to delay after programming switches
 #define CONTROL_REGISTER_VALUE 0x2000    // Default value for control register of DDS chip
 #define PHASE_REGISTER_VALUE 0xC000      // Default value for phase register of DDS chip
 #define RESET_CONTROL_REGISTER 0x2100    // Reset control register of DDS to produce midscale output
@@ -44,10 +50,10 @@
 #define FREQ_REG_MASK 0x4000 	//Use Register 0 (set 2 MSB to 01). To use Register 1, set 2MSB to 10 (0x8000)
 
 
-/*								*/
-/* Program_Switch Definitions 	*/
-/*								*/
-
-#define N_SWITCHES 8
+/*
+ * Switches definitions
+ * 
+  */
+#define ADG731_ENABLE_MASK 0x00000000 // Sets EN and CSA bits low
 
 #endif
