@@ -1,4 +1,4 @@
-function check_eit_system(fname)
+function [HDR,V]=check_eit_system(fname)
 % check_eit_system
 %
 %   Plots some sanity checks for the parallel EIT system
@@ -54,9 +54,9 @@ fprintf('Recorded %d channels %d-%d, with reference %d\n',Chn_total,min(Chn_labe
 
 Vave=mean(V);
 V_Max=4e5;
-V_Rec=1e3;
+V_Rec=2e3;
 % Classify channels
-%Each impedance is either good bad or ok
+%Each impedance is eithenr good bad or ok
 bad_idx = find(abs(Vave) > V_Max);
 ok_idx=find(abs(Vave) > V_Rec & abs(Vave) < V_Max);
 good_idx =find(abs(Vave) < V_Rec);
@@ -82,10 +82,9 @@ if numbad
 end
 
 fprintf('%d warning electrodes\n',numok);
-
 if numbad
     fprintf(2,'BAD ELECS : ');
-    fprintf(2,'%d,',bad_idx);
+    fprintf(2,'%d,',Chn_labels(bad_idx));
     fprintf(2,'\n');
 end
 
@@ -123,6 +122,7 @@ if PlotFlag
     
     %make plot wider
     set(gcf,'units','normalized','outerposition',[0 0 1 1])
+    drawnow
 end
 
 %% Check injection channels
@@ -142,12 +142,19 @@ STD_inj=BV_inj;
 
 for iFreq = 1:N_freqs
     fprintf('Processing freq %d\n',iFreq);
-    [cur_trim_demod,cur_Filt,cur_Fc]=ScouseTom_data_GetFilterTrim(V(:,Injs(iFreq,1)),Fs,BW,FilterLength,Freqs(iFreq) );
+%     [cur_trim_demod,cur_Filt,cur_Fc]=ScouseTom_data_GetFilterTrim(V(:,Injs(iFreq,1)),Fs,BW,FilterLength,Freqs(iFreq) );
+    
+    cur_Filt =designfilt('bandpassiir', 'FilterOrder', 4, ...
+                'HalfpowerFrequency1',Freqs(iFreq)-BW/2 ,...
+                'HalfpowerFrequency2',Freqs(iFreq)+BW/2,...
+                'DesignMethod','butter',...
+                'SampleRate', Fs);
+    
     
     %make it consistent with multifreq bits, which are all cells
     Filt{iFreq}=cur_Filt;
-    TrimDemod{iFreq}=cur_trim_demod;
-    Fc{iFreq}=cur_Fc;
+    TrimDemod{iFreq}=FilterLength;
+    Fc{iFreq}=Freqs(iFreq);
     
     [Vdemod,Pdemod]=ScouseTom_data_DemodHilbert(V,cur_Filt);
     vidx=(iFreq-1)*Chn_total + 1:(iFreq)*Chn_total;
