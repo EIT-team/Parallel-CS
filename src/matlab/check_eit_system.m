@@ -21,7 +21,7 @@ SecondsToLoad=min([MaxLength SecondsToLoad]);
 V=sread(HDR,SecondsToLoad,0);
 Fs=HDR.SampleRate;
 t=(0:(length(V)-1))/Fs;
-
+\
 %%
 %normally we want to plot
 if exist('PlotFlag','var') ==0 || isempty(PlotFlag)
