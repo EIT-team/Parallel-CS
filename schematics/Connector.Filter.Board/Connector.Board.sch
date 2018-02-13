@@ -13565,6 +13565,7 @@ Source: www.kingbright.com</description>
 <part name="C90" library="resistor" deviceset="C-EU" device="C0402" value="0.1uF"/>
 <part name="GND116" library="supply1" deviceset="GND" device=""/>
 <part name="GND118" library="supply1" deviceset="GND" device=""/>
+<part name="PAT_GND1" library="connector_board_lib" deviceset="TOUCHPROOF" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17397,6 +17398,7 @@ Source: www.kingbright.com</description>
 <instance part="C90" gate="G$1" x="35.56" y="-45.72" rot="R270"/>
 <instance part="GND116" gate="1" x="25.4" y="-50.8"/>
 <instance part="GND118" gate="1" x="0" y="-20.32"/>
+<instance part="PAT_GND1" gate="G$1" x="154.94" y="48.26" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -17552,6 +17554,10 @@ Source: www.kingbright.com</description>
 <wire x1="172.72" y1="55.88" x2="172.72" y2="58.42" width="0.1524" layer="91"/>
 <junction x="172.72" y="58.42"/>
 <label x="180.34" y="58.42" size="1.778" layer="95"/>
+<pinref part="PAT_GND1" gate="G$1" pin="TP"/>
+<wire x1="160.02" y1="48.26" x2="172.72" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="48.26" x2="172.72" y2="55.88" width="0.1524" layer="91"/>
+<junction x="172.72" y="55.88"/>
 </segment>
 </net>
 </nets>
