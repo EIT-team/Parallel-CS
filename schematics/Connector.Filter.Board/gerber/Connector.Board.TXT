@@ -1,238 +1,449 @@
-Part     Value                  Device                 Package                    Description                                                                             AVAILABILITY DESCRIPTION                      MF                MP              MPN        OC_FARNELL OC_NEWARK PACKAGE                PRICE    PROD_ID  SUPPLIER TP_SIGNAL_NAME
-C1       0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C2       0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C3       0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C4       0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C5       0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C6       0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C7       0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C8       0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C9       0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C10      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C11      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C12      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C13      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C14      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C15      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C16      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C17      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C18      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C19      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C20      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C21      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C22      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C23      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C24      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C25      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C26      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C27      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C28      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C29      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C30      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C31      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C32      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C33      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C34      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C35      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C36      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C37      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C38      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C39      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C40      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C41      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C42      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C43      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C44      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C45      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C46      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C47      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C48      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C49      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C50      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C51      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C52      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C53      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C54      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C55      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C56      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C57      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C58      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C59      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C60      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C61      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C62      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C63      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C64      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C65      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C66      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C67      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C68      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C69      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C70      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C71      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C72      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C73      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C74      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C75      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C76      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C77      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C78      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C79      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C80      1uf                    C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C81      2.2uF                  C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C82      2.2uF                  C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C83      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C84      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C85      10nF                   C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C86      10nF                   C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C87      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C88      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C89      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C90      0.1uF                  C-EUC0402              C0402                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C92      10uF                   C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C93      10uF                   C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-C94      10uF                   C-EUC0805              C0805                      CAPACITOR, European symbol                                                                                                                                                                                                                                              
-D1       1N4148W-7-F            DIODE-SOD123           SOD123                     DIODE                                                                                                                                                                                                                                                                   
-D2       1N4148W-7-F            DIODE-SOD123           SOD123                     DIODE                                                                                                                                                                                                                                                                   
-JP5      IN                     M02PTH                 1X02                       Header 2                                                                                                                                                                                                                                                                
-LED1     RED                    LEDSML0805             SML0805                    LED                                                                                                                                                                                                                                                                     
-LED2     RED                    LEDSML0805             SML0805                    LED                                                                                                                                                                                                                                                                     
-LED3     YELLOW                 LEDSML0805             SML0805                    LED                                                                                                                                                                                                                                                                     
-LED4     GREEN                  LEDSML0805             SML0805                    LED                                                                                                                                                                                                                                                                     
-PAT_GND  TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-PAT_GND1 TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-PAT_GND2 TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-R1       1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R2       1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R3       1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R4       1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R5       1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R6       1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R7       1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R8       1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R9       1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R10      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R11      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R12      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R13      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R14      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R15      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R16      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R17      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R18      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R19      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R20      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R21      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R22      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R23      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R24      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R25      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R26      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R27      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R28      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R29      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R30      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R31      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R32      1M                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R33      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R34      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R35      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R36      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R37      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R38      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R39      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R40      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R41      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R42      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R43      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R44      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R45      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R46      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R47      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R48      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R49      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R50      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R51      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R52      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R53      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R54      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R55      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R56      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R57      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R58      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R59      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R60      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R61      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R62      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R63      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R64      1.6M                   R-EU_R0805             R0805                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R65      1k                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R66      1k                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R67      2k                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R68      470                    R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-R69      1k                     R-EU_R0402             R0402                      RESISTOR, European symbol                                                                                                                                                                                                                                               
-S1       PVA1F                  PVA1F                  PVA1F                      ITT SWITCH                                                                                                                                                                                                                                                              
-TP1      TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP2      TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP3      TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP4      TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP5      TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP6      TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP7      TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP8      TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP9      TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP10     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP11     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP12     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP13     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP14     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP15     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP16     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP17     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP18     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP19     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP20     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP21     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP22     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP23     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP24     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP25     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP26     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP27     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP28     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP29     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP30     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP31     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-TP32     TOUCHPROOF             TOUCHPROOF             TOUCHPROOF_PIN             Description Big hole for touch proof pins                                                                                                                                                                                                                               
-U1       AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U2       AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U3       AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U4       AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U5       AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U6       AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U7       AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U8       AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U9       AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U10      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U11      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U12      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U13      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U14      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U15      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U16      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U17      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U18      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U19      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U20      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U21      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U22      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U23      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U24      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U25      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U26      AD8244                 AD8244                 MSOP10                                                                                                                                                                                                                                                                                             
-U27      MCP73831               MCP73831               SOT23-5                    Miniature single cell, fully integrated Li-Ion, Li-polymer charge management controller                                                                                                                                                 IC-09995                        
-U28      LTC1044ACS8PBF         LTC1044ACS8PBF         SOIC127P600X175-8N         Switched Capacitor Voltage Regulator                                                    Warning      IC REG SWTCHD CAP INV 20MA 8SOIC Linear Technology LTC1044ACS8#PBF                                 SO-8 Linear Technology 3.74 USD                                 
-X1       EEGCON                 M37HP                  M37HP                      SUB-D                                                                                                                                                                              unknown    unknown                                                                   
-X2       EITCON                 F37HP                  F37HP                      SUB-D                                                                                                                                                                              unknown    unknown                                                                   
-X3                              47346-0001             MOLEX_47346-0001           CONN RCPT 5POS MICRO USB R/A  SMD                                                                                                                                       47346-0001 1568026    47M0505   5 POS MICRO USB R/A                      MOLEX                  
-X7       JST-XH-02-PIN-LONG-PAD JST-XH-02-PIN-LONG-PAD JST-XH-02-PACKAGE-LONG-PAD JST XH Connector 2 Pin                                                                                                                                                                                                                                                  
+%
+M48
+M72
+T01C0.0157
+T02C0.0320
+T03C0.0400
+T04C0.0551
+T05C0.1181
+T06C0.1300
+%
+T01
+X30650Y9503
+X31460Y8943
+X32360Y8393
+X35360Y9093
+X36110Y9843
+X40410Y8643
+X41660Y8193
+X41460Y7693
+X41910Y6693
+X41360Y6293
+X39560Y5493
+X41360Y4593
+X42910Y4443
+X44060Y4043
+X45660Y5143
+X45060Y5843
+X51760Y8143
+X51560Y8693
+X49260Y10693
+X51810Y11043
+X56710Y10943
+X58560Y11843
+X58910Y12493
+X60510Y12443
+X60210Y11393
+X59660Y11343
+X59610Y10843
+X60810Y10793
+X62960Y10043
+X61410Y9743
+X60960Y9743
+X60510Y9743
+X60060Y9743
+X59610Y9743
+X59660Y8593
+X59660Y8093
+X57960Y8343
+X57310Y8593
+X56660Y7443
+X56410Y5993
+X58010Y5743
+X59660Y5493
+X59660Y5993
+X60410Y6043
+X60260Y5443
+X60510Y4443
+X63810Y4493
+X64960Y5043
+X66060Y5493
+X66060Y5993
+X66810Y6043
+X66660Y5443
+X66910Y4443
+X67760Y4543
+X65960Y4493
+X70060Y4093
+X69110Y6843
+X67810Y7043
+X67360Y7043
+X66910Y7043
+X66460Y7043
+X66010Y7043
+X66060Y8093
+X66060Y8593
+X64410Y8343
+X62660Y6993
+X61410Y7043
+X60960Y7043
+X60510Y7043
+X60060Y7043
+X59610Y7043
+X66010Y9743
+X66460Y9743
+X66910Y9743
+X67360Y9743
+X67810Y9743
+X69360Y10043
+X67210Y10793
+X66610Y11393
+X66060Y11343
+X66060Y10843
+X64960Y11793
+X66910Y12443
+X66910Y14043
+X64960Y14593
+X66060Y15093
+X66060Y15593
+X66810Y15643
+X66660Y15043
+X66460Y16643
+X66910Y16643
+X67360Y16643
+X67810Y16643
+X69110Y16643
+X70360Y16643
+X72410Y16643
+X72860Y16643
+X73310Y16643
+X73760Y16643
+X74210Y16643
+X75510Y16543
+X73210Y15643
+X73060Y15043
+X72460Y15143
+X72460Y15643
+X71360Y14643
+X72110Y14043
+X73310Y14043
+X76560Y12443
+X75210Y12093
+X77860Y13543
+X77760Y14093
+X77160Y14093
+X77160Y14543
+X77860Y17843
+X78010Y18893
+X78510Y18893
+X78010Y19693
+X78010Y20143
+X77560Y20743
+X77710Y21293
+X77060Y22693
+X76660Y23143
+X75210Y23043
+X74210Y22843
+X73310Y22043
+X71610Y22743
+X71860Y23143
+X72510Y23443
+X72460Y23993
+X73260Y23643
+X71310Y24243
+X72410Y24743
+X73010Y24643
+X73160Y25243
+X72410Y25243
+X72360Y26243
+X72810Y26243
+X73260Y26243
+X73710Y26243
+X74160Y26243
+X75460Y26093
+X78910Y27393
+X79010Y28943
+X75710Y29193
+X74160Y28943
+X73710Y28943
+X73260Y28943
+X72810Y28943
+X72360Y28943
+X72410Y27843
+X72410Y27343
+X70760Y27593
+X67760Y28943
+X67310Y28943
+X66860Y28943
+X66410Y28943
+X65960Y28943
+X65960Y30093
+X67160Y29993
+X66560Y30593
+X65960Y30593
+X64860Y31043
+X66010Y31493
+X66860Y31643
+X71310Y30993
+X71860Y31943
+X73260Y31643
+X72960Y30593
+X72410Y30543
+X72410Y30043
+X73560Y29993
+X69310Y29243
+X66010Y27793
+X66010Y27293
+X64310Y27543
+X63560Y28943
+X62910Y29243
+X61360Y28943
+X60910Y28943
+X60460Y28943
+X60010Y28943
+X59560Y28943
+X59610Y27843
+X59610Y27293
+X57910Y27543
+X59560Y26243
+X60010Y26243
+X60460Y26243
+X60910Y26243
+X61360Y26243
+X62660Y26143
+X60360Y25243
+X59610Y25193
+X59610Y24693
+X60210Y24643
+X58510Y24243
+X60460Y23643
+X60510Y22043
+X60210Y20993
+X59660Y20943
+X59660Y20493
+X60810Y20393
+X62960Y19643
+X61410Y19343
+X60960Y19343
+X60510Y19343
+X60060Y19343
+X59610Y19343
+X58160Y19243
+X57810Y19643
+X57560Y20643
+X58560Y21443
+X64310Y23993
+X64910Y24243
+X66010Y24693
+X66010Y25193
+X66760Y25243
+X66610Y24643
+X66860Y23643
+X66910Y22043
+X64960Y21393
+X66060Y20943
+X66060Y20443
+X66610Y20993
+X67210Y20393
+X67360Y19343
+X67810Y19343
+X66910Y19343
+X66460Y19343
+X66010Y19343
+X66060Y18243
+X66060Y17743
+X64360Y17993
+X66010Y16643
+X63510Y16243
+X62710Y16543
+X61410Y16643
+X60960Y16643
+X60510Y16643
+X60060Y16643
+X59610Y16643
+X59660Y15593
+X59660Y15093
+X60260Y15043
+X60410Y15643
+X58510Y14643
+X60510Y14043
+X59660Y17693
+X59660Y18193
+X57960Y17943
+X69360Y19643
+X70010Y19343
+X70760Y17993
+X72460Y17743
+X72460Y18243
+X72410Y19343
+X72860Y19343
+X73310Y19343
+X73760Y19343
+X74210Y19343
+X75760Y19643
+X73610Y20393
+X73010Y20993
+X72460Y20943
+X72460Y20443
+X71360Y21443
+X70110Y26043
+X69060Y26043
+X67760Y26243
+X67310Y26243
+X66860Y26243
+X66410Y26243
+X65960Y26243
+X64910Y26243
+X60760Y29993
+X59610Y30093
+X59610Y30593
+X60160Y30593
+X60460Y31643
+X58510Y31043
+X57110Y32243
+X77310Y31943
+X84660Y32243
+X44210Y16043
+X40660Y18893
+X40110Y19193
+X36110Y18593
+X46610Y10643
+X44560Y10243
+X41510Y10243
+X35460Y6793
+X32660Y6793
+X31560Y6793
+X32410Y5393
+X31410Y4793
+X35460Y3993
+X57460Y4193
+X84610Y3993
+X17560Y20993
+X17260Y21643
+X15960Y20893
+X16310Y20093
+X16660Y19493
+X15610Y21793
+X15260Y22593
+X16960Y22693
+T02
+X46580Y7623
+X48540Y7623
+X48540Y5263
+X46580Y5263
+T03
+X43760Y6843
+X43760Y7843
+X38110Y6293
+X37110Y6293
+X14510Y8463
+X13510Y9003
+X14510Y9553
+X13510Y10093
+X14510Y10633
+X13510Y11183
+X14510Y11723
+X13510Y12263
+X14510Y12813
+X13510Y13353
+X14510Y13893
+X13510Y14443
+X14510Y14983
+X13510Y15523
+X14510Y16073
+X13510Y16613
+X14510Y17153
+X13510Y17703
+X14510Y18243
+X13510Y18783
+X14510Y19333
+X13510Y19873
+X14510Y20413
+X13510Y20963
+X14510Y21503
+X13510Y22053
+X14510Y22593
+X13510Y23133
+X14510Y23683
+X13510Y24223
+X14510Y24763
+X13510Y25313
+X14510Y25853
+X13510Y26393
+X14510Y26943
+X13510Y27483
+X14510Y28023
+X79860Y27873
+X79860Y26783
+X80860Y26243
+X79860Y25703
+X80860Y25153
+X80860Y24073
+X79860Y24613
+X79860Y23523
+X80860Y22983
+X79860Y22443
+X80860Y21893
+X79860Y21353
+X79860Y20263
+X80860Y19723
+X79860Y19183
+X80860Y18633
+X79860Y18093
+X80860Y17553
+X80860Y16463
+X79860Y15923
+X80860Y15373
+X79860Y14833
+X80860Y14293
+X79860Y13743
+X79860Y12653
+X80860Y12113
+X79860Y11573
+X80860Y11023
+X80860Y9943
+X79860Y10483
+X79860Y9393
+X80860Y8853
+X79860Y8313
+X80860Y13203
+X79860Y17003
+X80860Y20813
+X80860Y27333
+T04
+X55760Y27243
+X50760Y27243
+X45760Y27243
+X40760Y27243
+X35760Y27243
+X30760Y27243
+X25760Y27243
+X20760Y27243
+X20760Y22243
+X25760Y22243
+X30760Y22243
+X35760Y22243
+X40760Y22243
+X45760Y22243
+X50760Y22243
+X55760Y22243
+X55760Y17243
+X50760Y17243
+X45760Y17243
+X40760Y17243
+X35760Y17243
+X30760Y17243
+X25760Y17243
+X20760Y17243
+X20760Y12243
+X25760Y12243
+X30760Y12243
+X35760Y12243
+X40760Y12243
+X45760Y12243
+X50760Y12243
+X55710Y12243
+X24710Y7093
+X21560Y7093
+X18360Y7093
+T05
+X18046Y4808
+X77888Y4808
+X55160Y30989
+X18046Y30989
+T06
+X14010Y5743
+X14010Y30743
+X80360Y30593
+X80360Y5593
+M30
