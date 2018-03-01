@@ -10,6 +10,10 @@
 #define SDATA_SPI_Pin 11
 #define SCLK_SPI_Pin  13
 
+// ADG731 Sync pins
+#define ADG731_SYNC1 3
+#define ADG731_SYNC2 2
+#define NUM_SWITCH_CHANNELS 32
 #define SCLK_SWITCH_Pin 9
 #define SYNC_SWITCH_Pin 2
 #define RESET_SWITCH_Pin 3
@@ -43,11 +47,15 @@
 #define SPI_BIT_MASK 0xFF // Gives 8 MSB of an unsigned int
 #define FREQ_REG_MASK 0x4000 	//Use Register 0 (set 2 MSB to 01). To use Register 1, set 2MSB to 10 (0x8000)
 
-
 /*								*/
 /* Program_Switch Definitions 	*/
 /*								*/
 
 #define N_SWITCHES 8
+
+// There isn't a direct mapping from the switch channels to the elctrode numbering
+// Use these maps to address the correct electrode
+int electrode_map_switch[2][32] = { {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 32, 31, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 },
+                                    {12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 21, 22, 23, 24, 25, 26, 13, 14, 15, 16, 32, 31, 30, 29, 20, 19, 18, 17, 27, 28} };
 
 #endif

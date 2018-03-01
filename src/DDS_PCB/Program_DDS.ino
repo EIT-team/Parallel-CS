@@ -11,9 +11,8 @@ void AD9833_SendWord(unsigned int data, int chan) {
 	A few ms of delay are added before/after SPI transfer to account for propagation delay differences between digital isolators and switching circuitry */
 
 	// Set FSYNC pin on the DDS chip we want to program
-	Set_ADG984(chan);
-	delay(SWITCH_DELAY_TIME);
-
+	  digitalWrite(FSYNC_Pin, LOW);
+  
 	// SPI.transfer only sends 8 bits a a time
 	// Send 16 bit word as two 8 bit sections
 	SPI.transfer( (data >> 8) & SPI_BIT_MASK);
@@ -21,7 +20,7 @@ void AD9833_SendWord(unsigned int data, int chan) {
 
 	// Disable SPI
 	// We want to close all of the switches, so use some sentinel values >> than the number of switches (e.g. 1000) to make this happen
-	Set_ADG984(CLOSE_ALL_SWITCHES);
+	digitalWrite(FSYNC_Pin, HIGH);
 	delay(SWITCH_DELAY_TIME);
 }
 
@@ -122,7 +121,8 @@ on_time: how long to program each channel for (milliseconds) */
 
 
 void Reset_DDS(int chan) {
-	/* Reset single channel to midscale output (turns off AC output) */
+	/* Reset single channel to midscale output (
+	turns off AC output) */
 	AD9833_SendWord(RESET_CONTROL_REGISTER, chan);
 }
 
