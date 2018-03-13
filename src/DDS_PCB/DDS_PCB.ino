@@ -85,7 +85,7 @@ void loop() {
       }
 
       else if (what_to_program == "test") {
-        test_channels();
+        test_channels(chan_1_or_freq);
       }
 
       // default case - invalid command has been passed
@@ -192,7 +192,7 @@ void set_both_switches(unsigned int chan_1, unsigned int chan_2) {
   switch_adg731(2, chan_2);
 }
 
-void test_channels() {
+void test_channels(unsigned int ref_channel) {
 // Test all channels
 // Cycle through injections between channels 1-31 and 32. e.g. 1 & 32, 2 & 32, 3 & 32 etc
   Serial.println("Looping through all channels");
@@ -200,10 +200,10 @@ void test_channels() {
   int max_channels = 32;
   
   for (int i = 0; i < ( max_channels - 1) ; i ++) {
-
-    set_both_switches(i, max_channels);
-    delay(ONE_SECOND_DELAY);
-   
+    if (i != ref_channel) { // Don't set both channels the same
+      set_both_switches(i, ref_channel);
+      delay(ONE_SECOND_DELAY);
+    }
   }
   
 }
