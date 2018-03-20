@@ -55,7 +55,7 @@ unsigned int Get_LSB(unsigned long freq_word) {
 int Set_AD9833_Frequency(long freq, int chan) {
 	/* Generate the frequency word, msb and lsb, and send to the DDS chips */
 	
-	// Abort if frequency is 0, negative or greater than 100kHz
+	// Abort if frequency is 0, negative or greater than MAX_FREQUENCY
 	if (freq <= 0 || freq > MAX_FREQUENCY) {
 		Serial.println("Invalid Frequency.");
 		return -1;
@@ -107,28 +107,8 @@ Can be used to set particular phase difference between two channels */
 }
 
 
-void Sweep_Freq (int freq_min, int freq_step, int freq_max, int on_time, int chan) {
-	/* Sweeps the frequency output on a channel, with increment and max value set by user.
-freq_min: starting frequency (Hz)
-freq_step: increment (Hz)
-freq_max: Stopping frequency (Hz)
-chan: which channel to program
-on_time: how long to program each channel for (milliseconds) */
-
-	for (int i = freq_min ; i <= freq_max; i = i + freq_step) {
-		Set_AD9833_Frequency(i, chan);
-		delay(on_time);
-	}
-}
-
-
-void Reset_DDS(int chan) {
-	/* Reset channel to midscale output (turns off AC output) */
-	AD9833_SendWord(RESET_CONTROL_REGISTER, chan);
-}
-
-
 void Set_FSYNC_LOW(int chan) {
+  // Set the FSYNC pin for a partiular channel low
   
   switch (chan) {
     case 1:
@@ -159,6 +139,7 @@ void Set_FSYNC_LOW(int chan) {
 
 
 void Set_FSYNC_HIGH(int chan) {
+  // Set the FSYNC pin for a partiular channel high
 
   switch (chan) {
     case 1:

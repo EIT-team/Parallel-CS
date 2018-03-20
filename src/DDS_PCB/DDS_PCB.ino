@@ -1,12 +1,3 @@
-/* Code for programming the prototype Parallel CS board
-  Tom Dowrick 19.10.2015
-*/
-
-// Pin Descriptions:
-// SDATA_SPI - Data signal for SPI, used to program AD9833
-// SCLK_SPI - Clock signal for SPI, used to program AD9833
-//FSYNC - SYNC pin for SPI, used to program AD9833, but is routed by the ADG985 switch, where it is input to the DIN pin.
-
 // Library for handling the SPI transfer
 #include <SPI.h>
 
@@ -18,23 +9,24 @@ void setup() {
 
   Serial.begin(SERIAL_BAUD_RATE);
 
-  // For SPI data transfer setup
   pinMode(FSYNC1_Pin, OUTPUT);
   pinMode(FSYNC2_Pin, OUTPUT);
   pinMode(FSYNC3_Pin, OUTPUT);
   pinMode(FSYNC4_Pin, OUTPUT);
   pinMode(FSYNC5_Pin, OUTPUT);
   pinMode(FSYNC6_Pin, OUTPUT);
-  
+
+    //Set FSYNC pins High. FSYNC is active low
+  digitalWrite(FSYNC1_Pin, HIGH); 
+  digitalWrite(FSYNC2_Pin, HIGH); 
+  digitalWrite(FSYNC3_Pin, HIGH);
+  digitalWrite(FSYNC4_Pin, HIGH); 
+  digitalWrite(FSYNC5_Pin, HIGH); 
+  digitalWrite(FSYNC6_Pin, HIGH); 
+
+  // For SPI data transfer setup
   pinMode(SDATA_SPI_Pin, OUTPUT);
   pinMode(SCLK_SPI_Pin, OUTPUT);
-
-  digitalWrite(FSYNC1_Pin, HIGH); //Set FSYNC High. FSYNC is active low
-  digitalWrite(FSYNC2_Pin, HIGH); //Set FSYNC High. FSYNC is active low
-  digitalWrite(FSYNC3_Pin, HIGH); //Set FSYNC High. FSYNC is active low
-  digitalWrite(FSYNC4_Pin, HIGH); //Set FSYNC High. FSYNC is active low
-  digitalWrite(FSYNC5_Pin, HIGH); //Set FSYNC High. FSYNC is active low
-  digitalWrite(FSYNC6_Pin, HIGH); //Set FSYNC High. FSYNC is active low
 
   digitalWrite(SDATA_SPI_Pin, LOW);
   digitalWrite(SCLK_SPI_Pin, LOW);
@@ -49,9 +41,9 @@ void setup() {
 void loop() {
 
   byte byteRead; // Serial read data
-  int val_to_program; // Frequency (Hz) or phase (degrees) value
+  int val_to_program; // Frequency (Hz), phase (degrees), time etc.
   int chan_to_program;
-  String what_to_program; // Freq, Phase, All or Reset
+  String what_to_program; //  Command to execute
 
   // Allow setting of frequency/phase from serial monitor
   // Input 'freq val_to_program' to program frequency
@@ -115,5 +107,34 @@ void Program_Then_Turn_Off(long freq, unsigned int on_time_milli, int chan) {
   delay(on_time_milli);
   Reset_DDS(chan);
 
+}
+
+
+void Sweep_Freq (int freq_min, int freq_step, int freq_max, int on_time, int chan) {
+  /* Sweeps the frequency output on a channel, with increment and max value set by user.
+freq_min: starting frequency (Hz)
+freq_step: increment (Hz)
+freq_max: Stopping frequency (Hz)
+chan: which channel to program
+on_time: how long to program each channel for (milliseconds) */
+
+  for (int i = freq_min ; i <= freq_max; i = i + freq_step) {
+    Set_AD9833_Frequency(i, chan);
+    delay(on_time);
+  }
+}
+
+
+void Reset_DDS(int chan) {
+  /* Reset channel to midscale output (turns off AC output) */
+  AD9833_SendWord(RESET_CONTROL_REGISTER, chan);
+}
+
+
+void Reset_All() {
+  for (int i = 0; i < NUM_CHANNELS; i++) {
+    Reset_DDS(i);
+  }
+ 
 }
 
