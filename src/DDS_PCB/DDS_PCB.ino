@@ -83,10 +83,6 @@ void loop() {
         Set_AD9833_Phase(val_to_program, chan_to_program);
       }
 
-      else if (what_to_program == "switch")   {
-        Program_ADG731(19, 20);
-      }
-
       // default case - invalid command has been passed
       else {
         Serial.println("Command not recognised.");
@@ -118,7 +114,6 @@ void Program_Then_Turn_Off(long freq, unsigned int on_time_milli, int chan) {
   Set_AD9833_Frequency(freq, chan);
   delay(on_time_milli);
   Reset_DDS(chan);
-
 
 }
 

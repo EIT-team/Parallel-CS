@@ -127,6 +127,7 @@ void Reset_DDS(int chan) {
 	AD9833_SendWord(RESET_CONTROL_REGISTER, chan);
 }
 
+
 void Set_FSYNC_LOW(int chan) {
   
   switch (chan) {
