@@ -19,11 +19,23 @@ void setup() {
   Serial.begin(SERIAL_BAUD_RATE);
 
   // For SPI data transfer setup
-  pinMode(FSYNC_Pin, OUTPUT);
+  pinMode(FSYNC1_Pin, OUTPUT);
+  pinMode(FSYNC2_Pin, OUTPUT);
+  pinMode(FSYNC3_Pin, OUTPUT);
+  pinMode(FSYNC4_Pin, OUTPUT);
+  pinMode(FSYNC5_Pin, OUTPUT);
+  pinMode(FSYNC6_Pin, OUTPUT);
+  
   pinMode(SDATA_SPI_Pin, OUTPUT);
   pinMode(SCLK_SPI_Pin, OUTPUT);
 
-  digitalWrite(FSYNC_Pin, HIGH); //Set FSYNC High. FSYNC is active low
+  digitalWrite(FSYNC1_Pin, HIGH); //Set FSYNC High. FSYNC is active low
+  digitalWrite(FSYNC2_Pin, HIGH); //Set FSYNC High. FSYNC is active low
+  digitalWrite(FSYNC3_Pin, HIGH); //Set FSYNC High. FSYNC is active low
+  digitalWrite(FSYNC4_Pin, HIGH); //Set FSYNC High. FSYNC is active low
+  digitalWrite(FSYNC5_Pin, HIGH); //Set FSYNC High. FSYNC is active low
+  digitalWrite(FSYNC6_Pin, HIGH); //Set FSYNC High. FSYNC is active low
+
   digitalWrite(SDATA_SPI_Pin, LOW);
   digitalWrite(SCLK_SPI_Pin, LOW);
 

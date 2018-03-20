@@ -128,26 +128,31 @@ void Reset_DDS(int chan) {
 }
 
 void Set_FSYNC_LOW(int chan) {
-
+  
   switch (chan) {
     case 1:
         digitalWrite(FSYNC1_Pin,LOW);
+        break;
         
     case 2:
         digitalWrite(FSYNC2_Pin,LOW);
+        break;
         
     case 3:
         digitalWrite(FSYNC3_Pin,LOW);
+        break;
         
     case 4:
         digitalWrite(FSYNC4_Pin,LOW);
+        break;
         
     case 5:
         digitalWrite(FSYNC5_Pin,LOW);
+        break;
         
     case 6:
         digitalWrite(FSYNC6_Pin,LOW);
-
+        break;
   }
 }
 
@@ -157,22 +162,27 @@ void Set_FSYNC_HIGH(int chan) {
   switch (chan) {
     case 1:
         digitalWrite(FSYNC1_Pin,HIGH);
+        break;
         
     case 2:
         digitalWrite(FSYNC2_Pin,HIGH);
+        break;
         
     case 3:
         digitalWrite(FSYNC3_Pin,HIGH);
+        break;
         
     case 4:
         digitalWrite(FSYNC4_Pin,HIGH);
+        break;
         
     case 5:
         digitalWrite(FSYNC5_Pin,HIGH);
+        break;
         
     case 6:
         digitalWrite(FSYNC6_Pin,HIGH);
-
+        break;
   }
 }
 
