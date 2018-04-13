@@ -1,4 +1,4 @@
-function [HDR,V]=check_eit_system(fname)
+function [HDR,Vfull]=check_eit_system(fname)
 % check_eit_system
 %
 %   Plots some sanity checks for the parallel EIT system
@@ -21,7 +21,6 @@ SecondsToLoad=min([MaxLength SecondsToLoad]);
 V=sread(HDR,SecondsToLoad,0);
 Fs=HDR.SampleRate;
 t=(0:(length(V)-1))/Fs;
-\
 %%
 %normally we want to plot
 if exist('PlotFlag','var') ==0 || isempty(PlotFlag)
@@ -33,8 +32,13 @@ fname=HDR.FILE.Name;
 % get the chan labels from actichamp software
 Chn_labels= str2double(HDR.Label);
 
+if any(isnan(Chn_labels))
+    Chn_labels=1:size(HDR.Label);
+end
+
+
 % number of channels recorded
-Chn_total=size(Chn_labels,1);
+Chn_total=max(size(Chn_labels));
 
 % maximum channel number
 Chn_max = max(Chn_labels);
@@ -144,7 +148,7 @@ for iFreq = 1:N_freqs
     fprintf('Processing freq %d\n',iFreq);
 %     [cur_trim_demod,cur_Filt,cur_Fc]=ScouseTom_data_GetFilterTrim(V(:,Injs(iFreq,1)),Fs,BW,FilterLength,Freqs(iFreq) );
     
-    cur_Filt =designfilt('bandpassiir', 'FilterOrder', 4, ...
+    cur_Filt =designfilt('bandpassiir', 'FilterOrder', 20, ...
                 'HalfpowerFrequency1',Freqs(iFreq)-BW/2 ,...
                 'HalfpowerFrequency2',Freqs(iFreq)+BW/2,...
                 'DesignMethod','butter',...
