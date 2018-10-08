@@ -11,7 +11,7 @@ void AD9833_SendWord(unsigned int data, int chan) {
 	A few ms of delay are added before/after SPI transfer to account for propagation delay differences between digital isolators and switching circuitry */
 
 	// Set FSYNC pin on the DDS chip we want to program
-	Set_ADG984(chan);
+  Set_FSYNC_LOW(chan);
 	delay(SWITCH_DELAY_TIME);
 
 	// SPI.transfer only sends 8 bits a a time
@@ -21,7 +21,8 @@ void AD9833_SendWord(unsigned int data, int chan) {
 
 	// Disable SPI
 	// We want to close all of the switches, so use some sentinel values >> than the number of switches (e.g. 1000) to make this happen
-	Set_ADG984(CLOSE_ALL_SWITCHES);
+  Set_FSYNC_HIGH(chan);
+
 	delay(SWITCH_DELAY_TIME);
 }
 
@@ -54,7 +55,7 @@ unsigned int Get_LSB(unsigned long freq_word) {
 int Set_AD9833_Frequency(long freq, int chan) {
 	/* Generate the frequency word, msb and lsb, and send to the DDS chips */
 	
-	// Abort if frequency is 0, negative or greater than 100kHz
+	// Abort if frequency is 0, negative or greater than MAX_FREQUENCY
 	if (freq <= 0 || freq > MAX_FREQUENCY) {
 		Serial.println("Invalid Frequency.");
 		return -1;
@@ -74,13 +75,13 @@ int Set_AD9833_Frequency(long freq, int chan) {
 	
 	// Everything OK, print confirmation
 	char buffer[PRINT_BUFFER_SIZE];
-	snprintf(buffer, PRINT_BUFFER_SIZE, "Channel %d programmed with frequency %ld", chan, freq);
+	snprintf(buffer, PRINT_BUFFER_SIZE, "Channel programmed with frequency %d", freq);
 	Serial.println(buffer);
 	return 1;
 }
 
 
-unsigned int Set_AD9833_Phase(int phase, int chan) {
+unsigned int Set_AD9833_Phase(int phase,int chan) {
 	/* Function to set only the phase of a particular channel, frequency remains unchanged.
 Can be used to set particular phase difference between two channels */
 	
@@ -99,42 +100,72 @@ Can be used to set particular phase difference between two channels */
 	
 	// Print confirmation
 	char buffer[PRINT_BUFFER_SIZE];
-	snprintf(buffer, PRINT_BUFFER_SIZE, "Channel %d programmed with phase %d", chan, phase);
+	snprintf(buffer, PRINT_BUFFER_SIZE, "Channel programmed with phase %d", phase);
 	Serial.println(buffer);
 	
 	return phase_word;
 }
 
 
-void Sweep_Freq (int freq_min, int freq_step, int freq_max, int chan, int on_time) {
-	/* Sweeps the frequency output on a channel, with increment and max value set by user.
-freq_min: starting frequency (Hz)
-freq_step: increment (Hz)
-freq_max: Stopping frequency (Hz)
-chan: which channel to program
-on_time: how long to program each channel for (milliseconds) */
-
-	for (int i = freq_min ; i <= freq_max; i = i + freq_step) {
-		Set_AD9833_Frequency(i, chan);
-		delay(on_time);
-	}
+void Set_FSYNC_LOW(int chan) {
+  // Set the FSYNC pin for a partiular channel low
+  
+  switch (chan) {
+    case 1:
+        digitalWrite(FSYNC1_Pin,LOW);
+        break;
+        
+    case 2:
+        digitalWrite(FSYNC2_Pin,LOW);
+        break;
+        
+    case 3:
+        digitalWrite(FSYNC3_Pin,LOW);
+        break;
+        
+    case 4:
+        digitalWrite(FSYNC4_Pin,LOW);
+        break;
+        
+    case 5:
+        digitalWrite(FSYNC5_Pin,LOW);
+        break;
+        
+    case 6:
+        digitalWrite(FSYNC6_Pin,LOW);
+        break;
+  }
 }
 
 
-void Reset_DDS(int chan) {
-	/* Reset single channel to midscale output (turns off AC output) */
-	AD9833_SendWord(RESET_CONTROL_REGISTER, chan);
+void Set_FSYNC_HIGH(int chan) {
+  // Set the FSYNC pin for a partiular channel high
+
+  switch (chan) {
+    case 1:
+        digitalWrite(FSYNC1_Pin,HIGH);
+        break;
+        
+    case 2:
+        digitalWrite(FSYNC2_Pin,HIGH);
+        break;
+        
+    case 3:
+        digitalWrite(FSYNC3_Pin,HIGH);
+        break;
+        
+    case 4:
+        digitalWrite(FSYNC4_Pin,HIGH);
+        break;
+        
+    case 5:
+        digitalWrite(FSYNC5_Pin,HIGH);
+        break;
+        
+    case 6:
+        digitalWrite(FSYNC6_Pin,HIGH);
+        break;
+  }
 }
-
-
-void Reset_All(int n_chans) {
-	/* Resets all channels to default output */
-	for (int j = 1; j <= n_chans  ; j++) {
-		Reset_DDS(j);
-	}
-	Serial.println("Resetting all channel");
-}
-
-
 
 
